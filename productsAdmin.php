@@ -627,14 +627,14 @@ include "connection.php";
      
       <div class="container text-center">
     <div class="row align-items-stretch">
-        <!-- Silent Hill Card -->
+        <!-- GLOCK 18 Card -->
         <div class="col"> 
             <div class="card" style="height: 400px; background-color: #2962ff;">
                 <a href="javascript:alert('This is where description and photo of game goes using bootstrap modal!');">
-                    <img src="Silent.png" class="card-img-top img-fluid" alt="Silent Hill" style="height: 180px; object-fit: cover;">
+                    <img src="GLOCK 18.jpg" class="card-img-top img-fluid" alt="GLOCK 18" style="height: 180px; object-fit: cover;">
                 </a>
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">Silent Hill</h5>
+                    <h5 class="feature-title" style="color: white;">GLOCK 18</h5>
                     <p style="color: white;">29$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span>5.0 ★★★★★</span>
@@ -642,29 +642,29 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Silent Hill', -1)">-</button>
-                            <span id="stock-count-silent-hill">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Silent Hill', 1)">+</button>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('GLOCK 18', -1)">-</button>
+                            <span id="stock-count-glock-18">0</span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('GLOCK 18', 1)">+</button>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
                     <button class="btn btn-success buy-now btn-sm" 
                                 style="font-size: 0.8em; white-space: nowrap;" 
-                                onclick="confirmPurchase('Silent Hill', 29, 'Silent.png'); modifyStock('Silent Hill', -1)">
+                                onclick="confirmPurchase('GLOCK 18', 29, 'GLOCK 18.jpg'); modifyStock('GLOCK 18', -1)">
                             Buy Now
                         </button>
-                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="Silent Hill" data-price="29" data-image="Silent.png" onclick="addDBuy('Silent Hill', 1, 29);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="GLOCK 18" data-price="29" data-image="GLOCK 18.jpg" onclick="addDBuy('GLOCK 18', 1, 29);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Tomb Raider Card -->
+        <!-- CZ P-10C C02 BLK Card -->
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="Tomb.png" class="card-img-top img-fluid" alt="Tomb Raider" style="height: 180px; object-fit: cover;">
+                <img src="CZ P-10C C02 BLK.webp" class="card-img-top img-fluid" alt="CZ P-10C C02 BLK" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">Tomb Raider</h5>
+                    <h5 class="feature-title" style="color: white;">CZ P-10C C02</h5>
                     <p style="color: white;">29$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span>5.0 ★★★★★</span>
@@ -672,25 +672,25 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Tomb Raider', -1)">-</button>
-                            <span id="stock-count-tomb-raider">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Tomb Raider', 1)">+</button>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('CZ P-10C C02 BLK', -1)">-</button>
+                            <span id="stock-count-cz-p-10c-c02-blk">0</span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('CZ P-10C C02 BLK', 1)">+</button>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Tomb Raider', 29, 'Tomb.png'); modifyStock('Tomb Raider', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="Tomb Raider" data-price="29" data-image="Tomb.png" onclick="addDBuy('Tomb Raider', 1, 29);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('CZ P-10C C02 BLK', 29, 'CZ P-10C C02 BLK.webp'); modifyStock('CZ P-10C C02 BLK', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="CZ P-10C C02 BLK" data-price="29" data-image="CZ P-10C C02 BLK.webp" onclick="addDBuy('CZ P-10C C02 BLK', 1, 29);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Resident Evil Card -->
+        <!-- KJW CZ TS2 Card -->
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="Red.jpg" class="card-img-top img-fluid" alt="Resident Evil" style="height: 180px; object-fit: cover;">
+                <img src="KJW CZ TS2.jpg" class="card-img-top img-fluid" alt="KJW CZ TS2" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">Resident Evil</h5>
+                    <h5 class="feature-title" style="color: white;">KJW CZ TS2</h5>
                     <p style="color: white;">29$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span>5.0 ★★★★★</span>
@@ -698,25 +698,25 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Resident Evil', -1)">-</button>
-                            <span id="stock-count-resident-evil">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Resident Evil', 1)">+</button>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('KJW CZ TS2', -1)">-</button>
+                            <span id="stock-count-kjw-cz-ts2">0</span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('KJW CZ TS2', 1)">+</button>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Resident Evil', 29, 'Red.jpg'); modifyStock('Resident Evil', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="Resident Evil" data-price="29" data-image="Red.jpg" onclick="addDBuy('Resident Evil', 1, 29);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('KJW CZ TS2', 29, 'KJW CZ TS2.jpg'); modifyStock('KJW CZ TS2', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="KJW CZ TS2" data-price="29" data-image="KJW CZ TS2.jpg" onclick="addDBuy('KJW CZ TS2', 1, 29);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Crash Bandicoot Card -->
+        <!-- WG 701 BLK Card -->
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="Crash.png" class="card-img-top img-fluid" alt="Crash Bandicoot" style="height: 180px; object-fit: cover;">
+                <img src="WG 701 BLK.jpg" class="card-img-top img-fluid" alt="WG 701 BLK" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">Crash Bandicoot</h5>
+                    <h5 class="feature-title" style="color: white;">WG 701 BLK</h5>
                     <p style="color: white;">29$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span>4.2 ★★★★☆</span>
@@ -724,25 +724,25 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Crash Bandicoot', -1)">-</button>
-                            <span id="stock-count-crash-bandicoot">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Crash Bandicoot', 1)">+</button>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('WG 701 BLK', -1)">-</button>
+                            <span id="stock-count-wg-701-blk">0</span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('WG 701 BLK', 1)">+</button>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Crash Bandicoot', 29, 'Crash.png'); modifyStock('Crash Bandicoot', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="Crash Bandicoot" data-price="29" data-image="Crash.png" onclick="addDBuy('Crash Bandicoot', 1, 29);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('WG 701 BLK', 29, 'WG 701 BLK.jpg'); modifyStock('WG 701 BLK', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="WG 701 BLK" data-price="29" data-image="WG 701 BLK.jpg" onclick="addDBuy('WG 701 BLK', 1, 29);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Pepsiman Card -->
+        <!-- KJW KP-06 HICAPA Card -->
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="pepsi.jpg" class="card-img-top img-fluid" alt="Pepsiman" style="height: 180px; object-fit: cover;">
+                <img src="KJW KP-06 HICAPA.webp" class="card-img-top img-fluid" alt="KJW KP-06 HICAPA" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">Pepsiman</h5>
+                    <h5 class="feature-title" style="color: white;">KJW KP-06</h5>
                     <p style="color: white;">19$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span class="star-rating">4.5 ★★★★☆</span>
@@ -750,14 +750,14 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Pepsiman', -1)">-</button>
-                            <span id="stock-count-pepsiman">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Pepsiman', 1)">+</button>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('KJW KP-06 HICAPA', -1)">-</button>
+                            <span id="stock-count-kjw-kp-06-hicapa">0</span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('KJW KP-06 HICAPA', 1)">+</button>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Pepsiman', 19, 'pepsi.jpg'); modifyStock('Pepsiman', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="Pepsiman" data-price="19" data-image="pepsi.jpg" onclick="addDBuy('Pepsiman', 1, 19);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('KJW KP-06 HICAPA', 19, 'pKJW KP-06 HICAPA.webp'); modifyStock('KJW KP-06 HICAPA', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="KJW KP-06 HICAPA" data-price="19" data-image="KJW KP-06 HICAPA.webp" onclick="addDBuy('KJW KP-06 HICAPA', 1, 19);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -771,9 +771,9 @@ include "connection.php";
     <div class="row align-items-stretch">
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="Oca.jpg" class="card-img-top img-fluid" alt="The Legend of Zelda: Ocarina of Time" style="height: 180px; object-fit: cover;">
+                <img src="D BELL VSR 10 WOOD DESIGN.jpg" class="card-img-top img-fluid" alt="D BELL VSR 10 WOOD DESIGN" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">Legend of Zelda</h5>
+                    <h5 class="feature-title" style="color: white;">D BELL VSR 10</h5>
                     <p style="color: white;">15$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span class="star-rating">4.3 ★★★★☆</span>
@@ -781,14 +781,14 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Legend of Zelda', -1)">-</button>
-                            <span id="stock-count-legend-of-zelda">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Legend of Zelda', 1)">+</button>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('D BELL VSR 10 WOOD DESIGN', -1)">-</button>
+                            <span id="stock-count-d-bell-vsr-10-wood-design">0</span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('D BELL VSR 10 WOOD DESIGN', 1)">+</button>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('The Legend of Zelda: Ocarina of Time', 15, 'Oca.jpg'); modifyStock('Legend of Zelda', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="The Legend of Zelda: Ocarina of Time" data-price="15" data-image="Oca.jpg" onclick="addDBuy('The Legend of Zelda: Ocarina of Time', 1, 15);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('The D BELL VSR 10 WOOD DESIGN', 15, 'D BELL VSR 10 WOOD DESIGN.jpg'); modifyStock('D BELL VSR 10 WOOD DESIGN', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="The D BELL VSR 10 WOOD DESIGN" data-price="15" data-image="D BELL VSR 10 WOOD DESIGN.jpg" onclick="addDBuy('The D BELL VSR 10 WOOD DESIGN', 1, 15);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -796,9 +796,9 @@ include "connection.php";
 
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="Gold.jpg" class="card-img-top img-fluid" alt="GoldenEye 007" style="height: 180px; object-fit: cover;">
+                <img src="DBELL VSR10 BLACK.jpg" class="card-img-top img-fluid" alt="DBELL VSR10 BLACK" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">GoldenEye 007</h5>
+                    <h5 class="feature-title" style="color: white;">DBELL VSR10</h5>
                     <p style="color: white;">15$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span class="star-rating">4.5 ★★★★☆</span>
@@ -806,14 +806,14 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('GoldenEye 007', -1)">-</button>
-                            <span id="stock-count-goldeneye-007">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('GoldenEye 007', 1)">+</button>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('DBELL VSR10 BLACK', -1)">-</button>
+                            <span id="stock-count-dbell-vsr10-black">0</span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('DBELL VSR10 BLACK', 1)">+</button>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('GoldenEye 007', 15, 'Gold.jpg'); modifyStock('GoldenEye 007', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="GoldenEye 007" data-price="15" data-image="Gold.jpg" onclick="addDBuy('GoldenEye 007', 1, 15);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('DBELL VSR10 BLACK', 15, 'DBELL VSR10 BLACK.jpg'); modifyStock('DBELL VSR10 BLACK', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="DBELL VSR10 BLACK" data-price="15" data-image="DBELL VSR10 BLACK.jpg" onclick="addDBuy('DBELL VSR10 BLACK', 1, 15);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -821,9 +821,9 @@ include "connection.php";
 
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="Duke.jpg" class="card-img-top img-fluid" alt="Duke Nukem 64" style="height: 180px; object-fit: cover;">
+                <img src="MOD 24 SSG GSPEC.jpg" class="card-img-top img-fluid" alt="MOD 24 SSG GSPEC" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">Duke Nukem 64</h5>
+                    <h5 class="feature-title" style="color: white;">MOD 24 SSG</h5>
                     <p style="color: white;">15$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span class="star-rating">4.0 ★★★★☆</span>
@@ -831,14 +831,14 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Duke Nukem 64', -1)">-</button>
-                            <span id="stock-count-duke-nukem-64">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Duke Nukem 64', 1)">+</button>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('MOD 24 SSG GSPEC', -1)">-</button>
+                            <span id="stock-count-mod-24-ssg-gspec">0</span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('MOD 24 SSG GSPEC', 1)">+</button>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Duke Nukem 64', 15, 'Duke.jpg'); modifyStock('Duke Nukem 64', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Duke Nukem 64" data-price="15" data-image="Duke.jpg" onclick="addDBuy('Duke Nukem 64', 1, 15);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('MOD 24 SSG GSPEC', 15, 'MOD 24 SSG GSPEC.jpg'); modifyStock('MOD 24 SSG GSPEC', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="MOD 24 SSG GSPEC" data-price="15" data-image="MOD 24 SSG GSPEC.jpg" onclick="addDBuy('MOD 24 SSG GSPEC', 1, 15);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -846,9 +846,9 @@ include "connection.php";
 
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="SuperMario.jpg" class="card-img-top img-fluid" alt="Super Mario 64" style="height: 180px; object-fit: cover;">
+                <img src="LT-28AB LANCER TACTICAL M24.jpg" class="card-img-top img-fluid" alt="LT-28AB LANCER TACTICAL M24" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">Super Mario 64</h5>
+                    <h5 class="feature-title" style="color: white;">LT-28AB</h5>
                     <p style="color: white;">15$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span class="star-rating">4.7 ★★★★★</span>
@@ -856,14 +856,14 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Super Mario 64', -1)">-</button>
-                            <span id="stock-count-super-mario-64">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Super Mario 64', 1)">+</button>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('LT-28AB LANCER TACTICAL M24', -1)">-</button>
+                            <span id="stock-count-lt-28ab-lancer-tactical-m24">0</span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('LT-28AB LANCER TACTICAL M24', 1)">+</button>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Super Mario 64', 15, 'SuperMario.jpg'); modifyStock('Super Mario 64', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Super Mario 64" data-price="15" data-image="SuperMario.jpg" onclick="addDBuy('Super Mario 64', 1, 15);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('LT-28AB LANCER TACTICAL M24', 15, 'LT-28AB LANCER TACTICAL M24.jpg'); modifyStock('LT-28AB LANCER TACTICAL M24', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="LT-28AB LANCER TACTICAL M24" data-price="15" data-image="LT-28AB LANCER TACTICAL M24.jpg" onclick="addDBuy('LT-28AB LANCER TACTICAL M24', 1, 15);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -871,9 +871,9 @@ include "connection.php";
 
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="Donkey.jpg" class="card-img-top img-fluid" alt="Donkey Kong 64" style="height: 180px; object-fit: cover;">
+                <img src="EC 501C L96 BLACK.jpg" class="card-img-top img-fluid" alt="EC 501C L96 BLACK" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">Donkey Kong 64</h5>
+                    <h5 class="feature-title" style="color: white;">EC 501C L96</h5>
                     <p style="color: white;">15$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span class="star-rating">4.4 ★★★★☆</span>
@@ -881,14 +881,14 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Donkey Kong 64', -1)">-</button>
-                            <span id="stock-count-donkey-kong-64">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Donkey Kong 64', 1)">+</button>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('EC 501C L96 BLACK', -1)">-</button>
+                            <span id="stock-count-ec-501c-l96-black">0</span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('EC 501C L96 BLACK', 1)">+</button>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Donkey Kong 64', 15, 'Donkey.jpg'); modifyStock('Donkey Kong 64', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Donkey Kong 64" data-price="15" data-image="Donkey.jpg" onclick="addDBuy('Donkey Kong 64', 1, 15);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('EC 501C L96 BLACK', 15, 'EC 501C L96 BLACK.jpg'); modifyStock('EC 501C L96 BLACK', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="EC 501C L96 BLACK" data-price="15" data-image="EC 501C L96 BLACK.jpg" onclick="addDBuy('EC 501C L96 BLACK', 1, 15);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -902,9 +902,9 @@ include "connection.php";
     <div class="row align-items-stretch">
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="Sonic.jpg" class="card-img-top img-fluid" alt="Sonic Adventure" style="height: 180px; object-fit: cover;">
+                <img src="Heckler & Koch - HK416.jpg" class="card-img-top img-fluid" alt="Heckler & Koch - HK416" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">Sonic Adventure</h5>
+                    <h5 class="feature-title" style="color: white;">Heckler & Koch</h5>
                     <p style="color: white;">19$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span class="star-rating">4.5 ★★★★☆</span>
@@ -912,14 +912,14 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Sonic Adventure', -1)">-</button>
-                            <span id="stock-count-sonic-adventure"><?php echo isset($products['Sonic Adventure']) ? $products['Sonic Adventure'] : 0; ?></span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Heckler & Koch - HK416', -1)">-</button>
+                            <span id="stock-count-heckler-&-koch---hk416"><?php echo isset($products['Heckler & Koch - HK416']) ? $products['Heckler & Koch - HK416'] : 0; ?></span>
                         </div>
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('Sonic Adventure', 1)">+</button>
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('Heckler & Koch - HK416', 1)">+</button>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Sonic Adventure', 19, 'Sonic.jpg'); modifyStock('Sonic Adventure', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Sonic Adventure" data-price="19" data-image="Sonic.jpg" onclick="addDBuy('Sonic Adventure', 1, 19);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Heckler & Koch - HK416', 19, 'Heckler & Koch - HK416.jpg'); modifyStock('Heckler & Koch - HK416', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Heckler & Koch - HK416" data-price="19" data-image="Heckler & Koch - HK416.jpg" onclick="addDBuy('Heckler & Koch - HK416', 1, 19);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -927,9 +927,9 @@ include "connection.php";
 
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="Marvel.jpg" class="card-img-top img-fluid" alt="Marvel vs Capcom 2" style="height: 180px; object-fit: cover;">
+                <img src="Tokyo Marui VSR-10.jpg" class="card-img-top img-fluid" alt="Tokyo Marui VSR-10" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h6 class="feature-title" style="color: white;">Marvel vs Capcom 2</h6>
+                    <h6 class="feature-title" style="color: white;">Tokyo Marui VSR-10</h6>
                     <p style="color: white;">20$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span class="star-rating">4.5 ★★★★☆</span>
@@ -937,14 +937,14 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Marvel vs Capcom 2', -1)">-</button>
-                            <span id="stock-count-marvel-vs-capcom-2"><?php echo isset($products['Marvel vs Capcom 2']) ? $products['Marvel vs Capcom 2'] : 0; ?></span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Tokyo Marui VSR-10', -1)">-</button>
+                            <span id="stock-count-tokyo-marui-vsr-10"><?php echo isset($products['Tokyo Marui VSR-10']) ? $products['Tokyo Marui VSR-10'] : 0; ?></span>
                         </div>
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('Marvel vs Capcom 2', 1)">+</button>
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('Tokyo Marui VSR-10', 1)">+</button>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Marvel vs Capcom 2', 20, 'Marvel.jpg'); modifyStock('Marvel vs Capcom 2', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Marvel vs Capcom 2" data-price="20" data-image="Marvel.jpg" onclick="addDBuy('Marvel vs Capcom 2', 1, 20);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Tokyo Marui VSR-10', 20, 'Tokyo Marui VSR-10.jpg'); modifyStock('Tokyo Marui VSR-10', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Tokyo Marui VSR-10" data-price="20" data-image="Tokyo Marui VSR-10.jpg" onclick="addDBuy('Tokyo Marui VSR-10', 1, 20);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -952,9 +952,9 @@ include "connection.php";
 
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="Power.jpg" class="card-img-top img-fluid" alt="Power Stone" style="height: 180px; object-fit: cover;">
+                <img src="AK74 SERIES.jpg" class="card-img-top img-fluid" alt="AK74 SERIES" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">Power Stone</h5>
+                    <h5 class="feature-title" style="color: white;">AK74 SERIES</h5>
                     <p style="color: white;">20$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span class="star-rating">4.2 ★★★★☆</span>
@@ -962,14 +962,14 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Power Stone', -1)">-</button>
-                            <span id="stock-count-power-stone"><?php echo isset($products['Power Stone']) ? $products['Power Stone'] : 0; ?></span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('AK74 SERIES', -1)">-</button>
+                            <span id="stock-count-ak74-series"><?php echo isset($products['AK74 SERIES']) ? $products['AK74 SERIES'] : 0; ?></span>
                         </div>
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('Power Stone', 1)">+</button>
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('AK74 SERIES', 1)">+</button>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Power Stone', 20, 'Power.jpg'); modifyStock('Power Stone', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Power Stone" data-price="20" data-image="Power.jpg" onclick="addDBuy('Power Stone', 1, 20);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('AK74 SERIES', 20, 'AK74 SERIES.jpg'); modifyStock('AK74 SERIES', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="AK74 SERIES" data-price="20" data-image="AK74 SERIES.jpg" onclick="addDBuy('AK74 SERIES', 1, 20);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -977,9 +977,9 @@ include "connection.php";
 
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="Jets.jpg" class="card-img-top img-fluid" alt="JetSet Radio" style="height: 180px; object-fit: cover;">
+                <img src="M4A1 SERIES.jpg" class="card-img-top img-fluid" alt="M4A1 SERIES" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">JetSet Radio</h5>
+                    <h5 class="feature-title" style="color: white;">M4A1 SERIES</h5>
                     <p style="color: white;">20$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span class="star-rating">4.3 ★★★★☆</span>
@@ -987,14 +987,14 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('JetSet Radio', -1)">-</button>
-                            <span id="stock-count-jetset-radio"><?php echo isset($products['JetSet Radio']) ? $products['JetSet Radio'] : 0; ?></span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('M4A1 SERIES', -1)">-</button>
+                            <span id="stock-count-m4a1-series"><?php echo isset($products['M4A1 SERIES']) ? $products['M4A1 SERIES'] : 0; ?></span>
                         </div>
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('JetSet Radio', 1)">+</button>
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('M4A1 SERIES', 1)">+</button>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('JetSet Radio', 20, 'Jets.jpg');modifyStock('JetSet Radio', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="JetSet Radio" data-price="20" data-image="Jets.jpg" onclick="addDBuy('JetSet Radio', 1, 20);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('M4A1 SERIES', 20, 'M4A1 SERIES.jpg');modifyStock('M4A1 SERIES', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="M4A1 SERIES" data-price="20" data-image="M4A1 SERIES.jpg" onclick="addDBuy('M4A1 SERIES', 1, 20);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -1002,9 +1002,9 @@ include "connection.php";
 
         <div class="col">
             <div class="card" style="height: 400px; background-color: #2962ff;">
-                <img src="Crazy.jpg" class="card-img-top img-fluid" alt="Crazy Taxi" style="height: 180px; object-fit: cover;">
+                <img src="FN SCAR.jpg" class="card-img-top img-fluid" alt="FN SCAR" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">Crazy Taxi</h5>
+                    <h5 class="feature-title" style="color: white;">FN SCAR</h5>
                     <p style="color: white;">20$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
                         <span class="star-rating">4.1 ★★★★☆</span>
@@ -1012,14 +1012,14 @@ include "connection.php";
                     </div>
                     <div class="d-flex align-items-center mt-2">
                         <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Crazy Taxi', -1)">-</button>
-                            <span id="stock-count-crazy-taxi"><?php echo isset($products['Crazy Taxi']) ? $products['Crazy Taxi'] : 10; ?></span>
+                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('FN SCAR', -1)">-</button>
+                            <span id="stock-count-fn-scar"><?php echo isset($products['FN SCAR']) ? $products['FN SCAR'] : 0; ?></span>
                         </div>
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('Crazy Taxi', 1)">+</button>
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('FN SCAR', 1)">+</button>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Crazy Taxi', 20, 'Crazy.jpg');modifyStock('Crazy Taxi', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Crazy Taxi" data-price="20" data-image="Crazy.jpg" onclick="addDBuy('Crazy Taxi', 1, 20);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('FN SCAR', 20, 'FN SCAR.jpg');modifyStock('FN SCAR', -1)">Buy Now</button>
+                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="FN SCAR" data-price="20" data-image="FN SCAR.jpg" onclick="addDBuy('FN SCAR', 1, 20);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -1028,133 +1028,6 @@ include "connection.php";
 
 
     <br>
-
-    <div class="row align-items-stretch">
-    <div class="col">
-        <div class="card" style="height: 400px; background-color: #2962ff;">
-            <img src="black.jpg" class="card-img-top img-fluid" alt="Call of Duty: Black Ops 2" style="height: 170px; object-fit: cover;">
-            <div class="card-body d-flex flex-column">
-                <h6 class="feature-title" style="color: white;">Call of Duty: Black Ops 2</h6>
-                <p style="color: white;">30$</p>
-                <div class="d-flex align-items-center" style="color: gold;">
-                    <span class="star-rating">4.8 ★★★★★</span>
-                    <span style="margin-left: 5px; color: white;">600 sold</span>
-                </div>
-                <div class="d-flex align-items-center mt-2">
-                    <div style="color: white; margin-top: 5px;">In stock: 
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('Call of Duty Black Ops 2', -1)">-</button>
-                        <span id="stock-count-call-of-duty-black-ops-2"><?php echo isset($products['Call of Duty Black Ops 2']) ? $products['Call of Duty Black Ops 2'] : 0; ?></span>
-                    </div>
-                    <button class="btn btn-secondary btn-sm" onclick="modifyStock('Call of Duty Black Ops 2', 1)">+</button>
-                </div>
-                <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Call of Duty Black Ops 2', 30, 'black.jpg'); modifyStock('Call of Duty Black Ops 2', -1)">Buy Now</button>
-                    <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Call of Duty Black Ops 2" data-price="30" data-image="black.jpg" onclick="addDBuy('Call of Duty Black Ops 2', 1, 30);alert('Added to cart')">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card" style="height: 400px; background-color: #2962ff;">
-            <img src="border.jpg" class="card-img-top img-fluid" alt="Borderlands 2" style="height: 170px; object-fit: cover;">
-            <div class="card-body d-flex flex-column">
-                <h5 class="feature-title" style="color: white;">Borderlands 2</h5>
-                <p style="color: white;">30$</p>
-                <div class="d-flex align-items-center" style="color: gold;">
-                    <span class="star-rating">4.7 ★★★★★</span>
-                    <span style="margin-left: 5px; color: white;">500 sold</span>
-                </div>
-                <div class="d-flex align-items-center mt-2">
-                    <div style="color: white; margin-top: 5px;">In stock: 
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('Borderlands 2', -1)">-</button>
-                        <span id="stock-count-borderlands-2"><?php echo isset($products['Borderlands 2']) ? $products['Borderlands 2'] : 7; ?></span>
-                    </div>
-                    <button class="btn btn-secondary btn-sm" onclick="modifyStock('Borderlands 2', 1)">+</button>
-                </div>
-                <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Borderlands 2', 30, 'border.jpg');modifyStock('Borderlands 2', -1)">Buy Now</button>
-                    <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Borderlands 2" data-price="30" data-image="border.jpg" onclick="addDBuy('Borderlands 2', 1, 30);alert('Added to cart')">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card" style="height: 400px; background-color: #2962ff;">
-            <img src="fallout.jpg" class="card-img-top img-fluid" alt="Fallout 3" style="height: 170px; object-fit: cover;">
-            <div class="card-body d-flex flex-column">
-                <h5 class="feature-title" style="color: white;">Fallout 3</h5>
-                <p style="color: white;">30$</p>
-                <div class="d-flex align-items-center" style="color: gold;">
-                    <span class="star-rating">4.4 ★★★★☆</span>
-                    <span style="margin-left: 5px; color: white;">400 sold</span>
-                </div>
-                <div class="d-flex align-items-center mt-2">
-                    <div style="color: white; margin-top: 5px;">In stock: 
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('Fallout 3', -1)">-</button>
-                        <span id="stock-count-fallout-3"><?php echo isset($products['Fallout 3']) ? $products['Fallout 3'] : 0; ?></span>
-                    </div>
-                    <button class="btn btn-secondary btn-sm" onclick="modifyStock('Fallout 3', 1)">+</button>
-                </div>
-                <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Fallout 3', 30, 'fallout.jpg'); modifyStock('Fallout 3', -1)">Buy Now</button>
-                    <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Fallout 3" data-price="30" data-image="fallout.jpg" onclick="addDBuy('Fallout 3', 1, 30);alert('Added to cart')">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card" style="height: 400px; background-color: #2962ff;">
-            <img src="forza.jpg" class="card-img-top img-fluid" alt="Forza Horizon" style="height: 170px; object-fit: cover;">
-            <div class="card-body d-flex flex-column">
-                <h5 class="feature-title" style="color: white;">Forza Horizon</h5>
-                <p style="color: white;">30$</p>
-                <div class="d-flex align-items-center" style="color: gold;">
-                    <span class="star-rating">4.6 ★★★★★</span>
-                    <span style="margin-left: 5px; color: white;">450 sold</span>
-                </div>
-                <div class="d-flex align-items-center mt-2">
-                    <div style="color: white; margin-top: 5px;">In stock: 
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('Forza Horizon', -1)">-</button>
-                        <span id="stock-count-forza-horizon"><?php echo isset($products['Forza Horizon']) ? $products['Forza Horizon'] : 11; ?></span>
-                    </div>
-                    <button class="btn btn-secondary btn-sm" onclick="modifyStock('Forza Horizon', 1)">+</button>
-                </div>
-                <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Forza Horizon', 30, 'forza.jpg'); modifyStock('Forza Horizon', -1);">Buy Now</button>
-                    <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Forza Horizon" data-price="30" data-image="forza.jpg" onclick="addDBuy('Forza Horizon', 1, 30);alert('Added to cart')">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card" style="height: 400px; background-color: #2962ff;">
-            <img src="Mirror.jpg" class="card-img-top img-fluid" alt="Mirror's Edge" style="height: 170px; object-fit: cover;">
-            <div class="card-body d-flex flex-column">
-                <h5 class="feature-title" style="color: white;">Mirror's Edge</h5>
-                <p style="color: white;">30$</p>
-                <div class="d-flex align-items-center" style="color: gold;">
-                    <span class="star-rating">4.2 ★★★★☆</span>
-                    <span style="margin-left: 5px; color: white;">300 sold</span>
-                </div>
-                <div class="d-flex align-items-center mt-2">
-                    <div style="color: white; margin-top: 5px;">In stock: 
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('Mirrors Edge', -1)">-</button>
-                        <span id="stock-count-mirrors-edge"><?php echo isset($products['Mirrors Edge']) ? $products['Mirrors Edge'] : 6; ?></span>
-                    </div>
-                    <button class="btn btn-secondary btn-sm" onclick="modifyStock('Mirrors Edge', 1)">+</button>
-                </div>
-                <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Mirrors Edge', 30, 'Mirror.jpg'); modifyStock('Mirrors Edge', -1);">Buy Now</button>
-                    <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Mirrors Edge" data-price="30" data-image="Mirror.jpg" onclick="addDBuy('Mirrors Edge', 1, 30);alert('Added to cart')">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 </div>
