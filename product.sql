@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2024 at 06:36 PM
+-- Generation Time: Aug 15, 2025 at 05:23 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,26 +38,42 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`ID`, `Name`, `Stock`) VALUES
-(1, 'Silent Hill', 31),
-(2, 'Tomb Raider', 24),
-(3, 'Resident Evil', 16),
-(4, 'donkey-kong-64', 21),
-(5, 'Crash Bandicoot', 21),
-(6, 'duke-nukem-64', 27),
-(7, 'Pepsiman', 31),
-(8, 'legend-of-zelda', 13),
-(9, 'goldeneye-007', 19),
-(10, 'super-mario-64', 11),
-(11, 'jetset-radio', 16),
-(12, 'power-stone', 13),
-(13, 'marvel-vs-capcom-2', 9),
-(14, 'sonic-adventure', 11),
-(15, 'crazy-taxi', 11),
-(16, 'mirrors-edge', 7),
-(17, 'forza-horizon', 12),
-(18, 'fallout-3', 10),
-(19, 'borderlands-2', 8),
-(20, 'call-of-duty-black-ops-2', 6);
+(1, 'Silent Hill', 2),
+(2, 'Tomb Raider', 12),
+(3, 'Resident Evil', 8),
+(4, 'Crash Bandicoot', 20),
+(5, 'Pepsiman', 27),
+(6, 'Legend of Zelda', 6),
+(7, 'GoldenEye 007', 14),
+(8, 'Duke Nukem 64', 5),
+(9, 'Super Mario 64', 12),
+(10, 'Donkey Kong 64', 10),
+(11, 'Sonic Adventure', 13),
+(12, 'Marvel vs Capcom 2', 8),
+(13, 'Power Stone', 11),
+(14, 'JetSet Radio', 11),
+(15, 'Crazy Taxi', 18),
+(16, 'Call of Duty Black Ops 2', 17),
+(17, 'Borderlands 2', 4),
+(18, 'Fallout 3', 7),
+(19, 'Forza Horizon', 6),
+(20, 'Mirrors Edge', 7),
+(45, 'GLOCK 18', 4),
+(46, 'CZ P-10C C02', 1),
+(47, 'KJW CZ TS2', 1),
+(48, 'WG 701 BLK', 1),
+(49, 'KJW KP-06 HICAPA', 1),
+(50, 'D BELL VSR 10 WOOD DESIGN', 2),
+(51, 'DBELL VSR10 BLACK', 1),
+(52, 'MOD 24 SSG GSPEC', 1),
+(53, 'LT-28AB LANCER TACTICAL M24', 2),
+(54, 'EC 501C L96 BLACK', 2),
+(55, 'Heckler & Koch - HK416', 3),
+(56, 'Tokyo Marui VSR-10', 1),
+(57, 'AK74 SERIES', 1),
+(58, 'M4A1 SERIES', 1),
+(59, 'FN SCAR', 2),
+(60, 'CZ P-10C C02 BLK', 2);
 
 -- --------------------------------------------------------
 
@@ -77,22 +93,16 @@ CREATE TABLE `table1` (
 --
 
 INSERT INTO `table1` (`ID`, `Name`, `Quantity`, `Price`) VALUES
-(86, 'Silent Hill', 19, 551.00),
-(87, 'Duke Nukem 64', 5, 75.00),
-(88, 'Resident Evil', 53, 1537.00),
-(89, 'Power Stone', 1, 20.00),
-(90, 'Fallout 3', 4, 120.00),
-(91, 'Pepsiman', 25, 475.00),
-(92, 'Sonic the Hedgehog', 5, 95.00),
-(93, 'Crash Bandicoot', 6, 174.00),
-(94, 'Tomb Raider', 15, 435.00),
-(95, 'Donkey Kong 64', 3, 45.00),
-(96, 'Super Mario 64', 2, 30.00),
-(97, 'Mirrors Edge', 1, 30.00),
-(98, 'Forza Horizon', 4, 120.00),
-(99, 'Borderlands 2', 4, 120.00),
-(100, 'JetSet Radio', 2, 40.00),
-(101, 'Crazy Taxi', 3, 60.00);
+(2, 'Pepsiman', 1, 19.00),
+(6, 'Resident Evil', 1, 29.00),
+(7, 'Silent Hill', 7, 29.00),
+(9, 'KJW CZ TS2', 3, 29.00),
+(10, 'KJW KP-06 HICAPA', 1, 19.00),
+(11, 'Heckler & Koch - HK416', 2, 19.00),
+(12, 'Tokyo Marui VSR-10', 2, 20.00),
+(13, 'CZ P-10C C02 BLK', 3, 29.00),
+(15, 'MOD 24 SSG GSPEC', 1, 15.00),
+(16, 'GLOCK 18', 8, 29.00);
 
 -- --------------------------------------------------------
 
@@ -112,19 +122,35 @@ CREATE TABLE `transaction` (
 --
 
 INSERT INTO `transaction` (`ID`, `Total`, `Discount`, `Discounted`) VALUES
-(16, 56.00, 20, 46.40),
-(17, 28.00, 20, 23.20),
-(18, 55.68, 20, 46.40),
-(19, 27.84, 20, 23.20),
-(20, 46.40, 20, 46.40),
-(21, 23.20, 20, 23.20),
-(22, 29.00, 20, 23.20),
-(23, 135.00, 20, 108.00),
-(24, 116.00, 20, 92.80),
-(25, 35.00, 20, 28.00),
-(28, 19.00, 10, 17.10),
-(29, 67.00, 10, 60.30),
-(30, 106.00, 20, 84.80);
+(1, 87.00, 20, 69.60),
+(2, 29.00, 10, 26.10),
+(3, 145.00, 0, 145.00),
+(4, 58.00, 10, 52.20);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transactions`
+--
+
+CREATE TABLE `transactions` (
+  `id` int(11) NOT NULL,
+  `data_name` varchar(100) DEFAULT NULL,
+  `data_color` varchar(50) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `coupon_applied` varchar(50) DEFAULT NULL,
+  `total_price` decimal(10,2) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `transactions`
+--
+
+INSERT INTO `transactions` (`id`, `data_name`, `data_color`, `quantity`, `coupon_applied`, `total_price`, `created_at`) VALUES
+(15, 'RetroGlow Tee', 'Mirage', 1, '', 163.00, '2025-05-16 02:05:37'),
+(16, 'ExecutiveEdge Trousers', 'Woodsmoke', 1, '', 142.00, '2025-05-16 02:24:17'),
+(17, 'RetroGlow Tee', 'Mirage', 1, '', 163.00, '2025-08-07 09:47:27');
 
 --
 -- Indexes for dumped tables
@@ -149,6 +175,12 @@ ALTER TABLE `transaction`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `transactions`
+--
+ALTER TABLE `transactions`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -156,19 +188,25 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `table1`
 --
 ALTER TABLE `table1`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `transactions`
+--
+ALTER TABLE `transactions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

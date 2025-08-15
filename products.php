@@ -17,550 +17,376 @@ include "connection.php";
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="products.css">
     <style>
-        body {
-            font-family: Arial, "Open Sans", sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #2962ff;
-            color: white;
-        }
-
-        h2 {
-            color: #333;
-            text-align: center;
-            text-transform: uppercase;
-            font-family: "Roboto", sans-serif;
-            font-weight: bold;
-            position: relative;
-            margin: 30px 0 60px;
-        }
-        h2::after {
-            width: 100px;
-            position: absolute;
-            margin: 0 auto;
-            height: 3px;
-            background: #8fbc54;
-            left: 0;
-            right: 0;
-            bottom: -10px;
-        }
-
-        h3 {
-            color: #ffffff;
-            text-align: center;
-            text-transform: uppercase;
-            font-family: "Roboto", sans-serif;
-            font-weight: bold;
-            position: relative;
-            margin: 30px 0 60px;
-        }
-
-        header {
-            background-color: rgb(13, 71, 161);
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #1976d2;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between; /* Space between logo and nav items */
-            align-items: center; /* Center items vertically */
-        }
-        .navbar-nav {
-            display: flex;
-            justify-content: center; /* Center the nav items */
-            flex-grow: 1; /* Allow the nav items to take available space */
-        }
-        .nav-item {
-            margin: 0 15px; /* Add some margin between items */
-        }
-        .navbar-brand {
-            margin-right: auto; /* Push the brand/logo to the left */
-        }
-
-        .banner {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .banner img {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-        }
-
-        .content {
-            padding: 10px;
-            align-items: center;
-            text-align: center;
-        }
-
-        footer {
-            background-color: #0d47a1;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        #nav {
-            display: inline-block; /* Center the ul */
-            padding: 0;
-            position: relative;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            display: block; /* Show on hover */
-        }
-
-        .dropdown-menu li {
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .dropdown-menu li:hover {
-            background-color: white; /* Change to white on hover */
-        }
-
-        .dropdown-menu a {
-            text-decoration: none;
-            color: #333; /* Default text color */
-        }
-
-        .dropdown-menu a:hover {
-            background-color: white; /* Change background to white on hover */
-            color: #333; /* Keep text color black on hover */
-        }
-
-        .search-container {
-            float: right;
-            margin-left: 20px;
-            vertical-align: center; /* Aligns the search container with dropdown items */
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            width: 200px;
-            border: 1px solid white;
-            border-radius: 5px 0 0 5px;
-        }
-
-        button {
-            background-color: white;
-            color: #4285f4;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #f44336; /* Red on hover */
-            color: white;
-        }
-        
-        .button-container {
-            display: flex; /* Use Flexbox for alignment */
-            gap: 10px; /* Optional: Add space between buttons */
-            margin-top: 10px; /* Optional: Add some space above the buttons */
-        }
-
-        .button-container button {
-            font-size: 12px; /* Smaller font size */
-            padding: 5px 10px; /* Adjust padding if necessary */
-        }
-
-        .col-center {
-            margin: 0 auto;
-            float: none !important;
-        }
-
-        .carousel {
-            padding: 0 70px;
-        }
-    
-        .carousel .carousel-item {
-            color: #999;
-            font-size: 14px;
-            text-align: center;
-            overflow: hidden;
-            min-height: 290px;
-        }
-    
-        .carousel .carousel-item .img-box {
-            width: 300px;
-            height: 300px;
-            margin: 0 auto;
-            padding: 5px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-        }
-    
-        .carousel .img-box img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-    
-        .carousel .testimonial {
-            padding: 30px 0 10px;
-        }
-    
-        .carousel .overview {
-            font-style: italic;
-        }
-    
-        .carousel .overview b {
-            text-transform: uppercase;
-            color: #7AA641;
-        }
-    
-        .carousel-control-prev, .carousel-control-next {
-            width: 40px;
-            height: 40px;
-            margin-top: -20px;
-            top: 50%;
-            background: none;
-        }
-    
-        .carousel-control-prev i, .carousel-control-next i {
-            font-size: 68px;
-            line-height: 42px;
-            position: absolute;
-            display: inline-block;
-            color: rgba(0, 0, 0, 0.8);
-            text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
-        }
-    
-        .carousel-indicators {
-            bottom: -40px;
-        }
-    
-        .carousel-indicators li, .carousel-indicators li.active {
-            width: 12px;
-            height: 12px;
-            margin: 1px 3px;
-            border-radius: 50%;
-            border: none;
-        }
-    
-        .carousel-indicators li {
-            background: #999;
-            border-color: transparent;
-            box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
-        }
-    
-        .carousel-indicators li.active {
-            background: #555;
-            box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
-        }
-
-        h5{
-        color: black;
-       }
-        header, footer {
-            background-color: #0d47a1;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-        }
-        .product img {
-            width: 200px;
-            height: auto;
-        }
-        footer p {  
-            margin: 0;
-        }
-        .modal-header {
-            background-color: #fbfbfc;
-            color: rgb(0, 0, 0);
-            max-height: 500px;
-            
-        }
-        #cart-items {
-            max-height: 500px;
-            overflow-y: auto;
-            background-color: rgb(108, 108, 236)  ;
-        }
-        .cart-item {
-            display: flex;
-            justify-content: normal;
-            margin-bottom: 10px;
-        }
-        button {
-            cursor: pointer;
-        }
-        .button-container {
-    display: flex; /* Use Flexbox for alignment */
-    gap: 10px; /* Optional: Add space between buttons */
-    margin-top: 10px; /* Optional: Add some space above the buttons */
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121218;
+    color: #e0e0e0;
 }
-         #cart-items {
-            max-height: 500px;
 
-            overflow-y: auto;
-            margin-bottom: 20px;
-        }
-        table {
-            width: 100%;
-            color: black;
-            background-color: white;
-            text-align: left; 
-            border-spacing: 0; 
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            
-        
-        }
-        th, td  {
-            padding: 10px;
-           border: 1px solid #ddd; 
-           vertical-align: middle; 
-          text-align: center; 
-        }
-        .coupon-section {
-          margin-top: 15px;
-           display: flex; 
-          justify-content: space-between;
-          align-items: center;
-        }
+header, footer {
+    background-color: #1e1e2f;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
 
-        .coupon-section input {
-            width: 70%;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+nav {
+    background-color: #1e1e2f;
+    padding: 10px;
+    text-align: center;
+}
 
-        .coupon-section button {
-            width: 25%;
-            padding: 5px;
-            background-color: #28a745; 
-            border: none;
-            color: white;
-            border-radius: 4px;
-        }
+nav a {
+    color: #f2f2f2;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s;
+}
 
-        #coupon-message {
-            margin-top: 10px;
-            color: red;
-            font-weight: bold;
-            text-align: center;
-        }
-        .product-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between; 
-        }
+nav a:hover {
+    color: #f2c94c;
+}
 
-        .product {
-            flex: 1 1 calc(25% - 20px); 
-            margin: 10px; 
-            text-align: center; 
-        }
-
-        .checkout-section {
-            flex: 1 1 100%; 
-            background-color: #f9f9f9; 
-            padding: 20px;
-            border-radius: 5px; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-        }
-        .products-container {
-                    display: flex; 
-                    justify-content: space-between; 
-                    flex-wrap: wrap; 
-                }
-            
-                .product {
-                    width: 200px; 
-                    height: 300px; 
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: space-between; 
-                    box-sizing: border-box; 
-                    text-align: center;
-                }
-            
-                .product img {
-                    width: 100%; 
-                    height: 200px; /* Set a fixed height for the image */
-                    object-fit: cover; /* Maintain aspect ratio and cover the area */
-                }
-                .modal-body img {
-        width: 100px; /* Make the image responsive */
-        height: 120px; /* Maintain aspect ratio */
-        max-width: 300px; /* Set a maximum width */
-    }
-    .content {
+.navbar {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
     justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    flex-grow: 1;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.banner {
+    text-align: center;
     padding: 20px;
 }
 
-.products-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; 
+.banner img {
     width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
 }
-.btn.btn-warning {
-    margin-top: 20px;
-    padding: 10px 20px
+
+h2, h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #f2f2f2;
+    margin: 30px 0 30px;
 }
-.btn-warning {
-      background-color: #ffdd00;
-      border-color: #ffdd00;
-      color: #000;
-      font-size: 18px;
-      font-weight: bold;
-      text-transform: uppercase;
-      padding: 12px 40px;
-    }
 
-    .btn-warning:hover {
-      background-color: #ffd200;
-      border-color: #ffd200;
-      color: #000;
-    }
+h2::after, h3::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #f2c94c;
+    margin: 10px auto 0;
+}
 
-    .dk-store,
-    .company,
-    .account,
-    .get-social {
-      font-size: 16px;
-    }
+.content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #1b1b27;
+    border-radius: 8px;
+}
 
-    .dk-store a,
-    .company a,
-    .account a,
-    .get-social a {
-      color: #fff;
-      text-decoration: none;
-    }
+footer p {
+    margin: 0;
+    color: #ccc;
+}
 
-    .dk-store a:hover,
-    .company a:hover,
-    .account a:hover,
-    .get-social a:hover {
-      color: #ffdd00;
-    }
-    .quantity-controls {
+input[type="text"] {
+    padding: 8px;
+    width: 200px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #2c2c3d;
+    color: #fff;
+}
+
+button {
+    background-color: #f2c94c;
+    color: #111;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e0b93e;
+}
+
+.product-container, .products-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.product {
+    width: 220px;
+    background-color: #1e1e2f;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    padding: 10px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.checkout-section {
+    background-color: #1e1e2f;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.btn-warning {
+    background-color: #f2c94c;
+    color: black;
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.btn-warning:hover {
+    background-color: #e0b93e;
 }
 
 .quantity-controls button {
-    padding: 2px 8px;
+    padding: 4px 8px;
     font-size: 14px;
+    background-color: #2c2c3d;
+    border: 1px solid #555;
+    color: #f2f2f2;
 }
 
-.quantity-controls span {
-    min-width: 20px;
+.modal-header {
+    background-color: #1e1e2f;
+    color: #f2f2f2;
+}
+
+#cart-items {
+    max-height: 500px;
+    overflow-y: auto;
+    background-color: #181824;
+    padding: 10px;
+    border: 1px solid #333;
+    color: white;
+}
+
+#navitemu, #cart-btn {
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+#navitemu:hover, #cart-btn:hover {
+    color: #f2c94c;
+}
+
+.card {
+    background-color: #1e1e2f !important;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.card-body {
+    color: white;
+}
+
+.card h5, .card h6 {
+    color: #ffffff;
+}
+
+.card p {
+    color: #cccccc;
+}
+
+.star-rating {
+    color: gold;
+    font-weight: bold;
+}
+
+.btn-outline-success {
+    color: #00c853;
+    border-color: #00c853;
+}
+
+.btn-outline-light {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.btn-outline-success:hover,
+.btn-outline-light:hover {
+    background-color: #00c853;
+    color: white;
+    border-color: #00c853;
+}
+/* Cart modal text and layout fixes */
+#cart-items {
+    color: #ffffff;
+    background-color: #181824;
+    padding: 10px;
+    border: 1px solid #2a2a3a;
+}
+
+#cart-items p,
+#cart-items span,
+#cart-items .item-name,
+#cart-items .item-qty,
+#cart-items .item-price,
+#cart-items .item-total {
+    color: #ffffff !important;
+}
+
+/* Quantity button colors */
+#cart-items .btn {
+    color: #ffffff;
+    background-color: #333;
+    border: 1px solid #555;
+}
+
+#cart-items .btn:hover {
+    background-color: #555;
+}
+
+/* Make sure the image is visible and styled */
+#cart-items img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+/* Table-style row enhancements */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.cart-item span,
+.cart-item div {
+    color: #ddd;
+}
+
+.cart-item .remove-btn {
+    background-color: #e74c3c;
+    border: none;
+    padding: 4px 10px;
+    color: white;
+    border-radius: 4px;
+}
+#cart-items table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+    background-color: transparent;
+}
+
+#cart-items th,
+#cart-items td {
+    padding: 10px;
     text-align: center;
+    color: #e0e0e0;
+    border-bottom: 1px solid #333;
 }
-.deal-list {
-        max-height: 300px;
-        overflow-y: auto;
-    }
-    .list-group-item {
-        position: relative;
-    }
-#navitemu{
-    color:white;
-    transition-duration: 0.2s;
+.modal-footer {
+    background-color: #2e2e2e; /* dark grey background */
+    color: #fff; /* white text */
+    border-top: 1px solid #444; /* subtle border on top */
 }
 
-#cart-btn{
-    color:white;
-    transition-duration: 0.2s;
+.modal-footer .btn {
+    color: #fff; /* ensure buttons have white text */
 }
 
-#navitemu:hover{
-    color:black;
+/* Optional: specifically style the coupon message text color */
+#coupon-message {
+    color: #ff6b6b; /* or keep your existing text-danger style */
+}
+#coupon-code {
+    background-color: #f0f0f0; /* light grey background */
+    color: #333; /* dark text for readability */
+    border: 1px solid #ccc; /* subtle border */
+    padding: 6px 10px; /* add some padding for comfort */
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
 }
 
-#cart-btn:hover{
-    color:black;
-}
-
-.testimonial{
-    color:white;
-
+#coupon-code:focus {
+    border-color: #28a745; /* green border on focus (matching apply button) */
+    outline: none;
+    box-shadow: 0 0 5px #28a745;
 }
 
     </style>
 </head>
 <body>
     
-    <header>
-        <h1><span style="color: black;"><b>H</b></span>anzOn Airsoft Supplies.</h1>
-    </header>
+    <header style="background-color: #222; color: white; padding: 15px; text-align: center;">
+    <h1 style="margin: 0; font-weight: 600; font-size: 1.8em;">
+        <span style="color: #f2c94c;">H</span>anzOn Airsoft Supplies.
+    </h1>
+</header>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <a class="navbar-brand" href="Landing Page (Soteria's Game Archive).php">
-            <img src="Logo.png" height="100px" width="100px">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="AboutUs.html" id="navitemu">About Us</a>
-                <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#dealsModal" id="navitemu">Deals and Coupons</a>
-                <a class="nav-item nav-link" href="#" id="navitemu">Account</a>
-                <a class="nav-item nav-link" href="login.php" id="navitemu">Sign In</a>
-                <a class="nav-item nav-link" id="cart-btn" data-toggle="modal" data-target="#cartModal">Cart (<span id="cart-count">0</span>)</a>
-                <input type="text" placeholder="Search the store">
-                <button>Search</button>
+<nav class="navbar navbar-expand-lg" style="background-color: #333; padding: 10px;">
+    <a class="navbar-brand" href="Landing Page (Soteria's Game Archive).php">
+        <img src="Logo.png" height="60px" width="60px" alt="Logo" style="border-radius: 5px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" 
+        aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <div class="navbar-nav ml-auto" style="display: flex; align-items: center; gap: 20px;">
+            <a class="nav-item nav-link" href="AboutUs.html" id="navitemu" style="color: white;">About Us</a>
+            <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#dealsModal" id="navitemu" style="color: white;">Deals and Coupons</a>
+            <a class="nav-item nav-link" href="#" id="navitemu" style="color: white;">Account</a>
+            <a class="nav-item nav-link" href="login.php" id="navitemu" style="color: white;">Sign In</a>
+            <a class="nav-item nav-link" id="cart-btn" data-toggle="modal" data-target="#cartModal" style="color: white;">Cart (<span id="cart-count">0</span>)</a>
+
+            <div class="search-container" style="display: flex;">
+                <input type="text" placeholder="Search the store" style="padding: 6px; border: 1px solid #ccc; border-radius: 5px 0 0 5px;">
+                <button style="background-color: #f2c94c; color: black; border: none; border-radius: 0 5px 5px 0; padding: 6px 10px;">Search</button>
             </div>
         </div>
-    </nav>
-
+    </div>
+</nav>
     <div class="modal fade" id="dealsModal" tabindex="-1" role="dialog" aria-labelledby="dealsModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -598,30 +424,32 @@ include "connection.php";
     
     <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content custom-modal-dark">
                 <div class="modal-header">
                     <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body" id="cart-items">
                     <p>Your cart is empty.</p>
                 </div>
-                <div class="modal-footer" style="display: flex; flex-direction: column; align-items: flex-start; width: 100%;">
-                    <div class="coupon-section" style="display: flex; align-items: center; width: 100%;">
-                        <input type="text" id="coupon-code" class="form-control" placeholder="Enter coupon code" style="flex: 1; margin-right: 10px;">
-                        <button class="btn btn-info" id="apply-coupon">Apply Coupon</button>
+                <div class="modal-footer flex-column align-items-start w-100">
+                    <div class="coupon-section w-100 d-flex align-items-center mb-2">
+                        <input type="text" id="coupon-code" class="form-control custom-input-dark" placeholder="Enter coupon code">
+                        <button class="btn btn-outline-success ml-2" id="apply-coupon">Apply Coupon</button>
                     </div>
-                    <p id="coupon-message" style="color: red; margin-top: 5px;"></p>
-                    <div style="display: flex; justify-content: space-between; width: 100%;">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="flex: 1; margin-right: 10px;">Close</button>
-                        <button class="btn btn-primary" id="checkout-btn" style="flex: 1;">Checkout</button>
+                    <p id="coupon-message" class="w-100 text-danger mt-1"></p>
+                    <div class="d-flex justify-content-between w-100 mt-2">
+                        <button type="button" class="btn btn-secondary w-50 mr-2" data-dismiss="modal">Close</button>
+                        <button class="btn btn-warning w-50" id="checkout-btn">Checkout</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 
       <br>  <h1> <center> Products </center></h1> <br>
      
@@ -629,7 +457,7 @@ include "connection.php";
     <div class="row align-items-stretch">
         <!-- Silent Hill Card -->
         <div class="col"> 
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <a href="javascript:alert('This is where description and photo of game goes using bootstrap modal!');">
                     <img src="GLOCK 18.jpg" class="card-img-top img-fluid" alt="GLOCK 18" style="height: 180px; object-fit: cover;">
                 </a>
@@ -643,16 +471,16 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-GLOCK 18" style="margin-left: 5px;">0</span>
+                            <span id="stock-count-glock-18" style="margin-left: 5px;">0</span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-success buy-now btn-sm" 
+                        <button class="btn btn-outline-success buy-now btn-sm" 
                                 style="font-size: 0.8em; white-space: nowrap;" 
                                 onclick="confirmPurchase('GLOCK 18', 29, 'GLOCK 18.jpg'); modifyStock('GLOCK 18', -1)">
                             Buy Now
                         </button>
-                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="GLOCK 18" data-price="29" data-image="GLOCK 18.jpg" onclick="addDBuy('GLOCK 18', 1, 29);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="GLOCK 18" data-price="29" data-image="GLOCK 18.jpg" onclick="addDBuy('GLOCK 18', 1, 29);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -660,7 +488,7 @@ include "connection.php";
 
         <!-- CZ P-10C C02 BLK Card -->
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="CZ P-10C C02 BLK.webp" class="card-img-top img-fluid" alt="CZ P-10C C02 BLK" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">CZ P-10C C02</h5>
@@ -672,12 +500,12 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-CZ P-10C C02 BLK" style="margin-left: 5px;">0</span>
+                            <span id="stock-count-cz-p-10c-c02-blk" style="margin-left: 5px;">0</span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('CZ P-10C C02 BLK', 29, 'CZ P-10C C02 BLK.webp'); modifyStock('CZ P-10C C02 BLK', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="CZ P-10C C02 BLK" data-price="29" data-image="CZ P-10C C02 BLK.webp" onclick="addDBuy('CZ P-10C C02 BLK', 1, 29);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('CZ P-10C C02 BLK', 29, 'CZ P-10C C02 BLK.webp'); modifyStock('CZ P-10C C02 BLK', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="CZ P-10C C02 BLK" data-price="29" data-image="CZ P-10C C02 BLK.webp" onclick="addDBuy('CZ P-10C C02 BLK', 1, 29);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -685,7 +513,7 @@ include "connection.php";
 
         <!-- KJW CZ TS2 Card -->
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="KJW CZ TS2.jpg" class="card-img-top img-fluid" alt="KJW CZ TS2" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">KJW CZ TS2</h5>
@@ -697,12 +525,12 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-KJW CZ TS2" style="margin-left: 5px;">0</span>
+                            <span id="stock-count-kjw-cz-ts2" style="margin-left: 5px;">0</span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('KJW CZ TS2', 29, 'KJW CZ TS2.jpg'); modifyStock('KJW CZ TS2', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="KJW CZ TS2" data-price="29" data-image="KJW CZ TS2.jpg" onclick="addDBuy('KJW CZ TS2', 1, 29);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('KJW CZ TS2', 29, 'KJW CZ TS2.jpg'); modifyStock('KJW CZ TS2', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="KJW CZ TS2" data-price="29" data-image="KJW CZ TS2.jpg" onclick="addDBuy('KJW CZ TS2', 1, 29);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -710,7 +538,7 @@ include "connection.php";
 
         <!-- WG 701 BLK Card -->
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="WG 701 BLK.jpg" class="card-img-top img-fluid" alt="WG 701 BLK" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">WG 701 BLK</h5>
@@ -722,12 +550,12 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-WG 701 BLK-bandicoot" style="margin-left: 5px;">0</span>
+                            <span id="stock-count-wg-701-blk" style="margin-left: 5px;">0</span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('WG 701 BLK', 29, 'WG 701 BLK.jpg'); modifyStock('WG 701 BLK', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="WG 701 BLK" data-price="29" data-image="WG 701 BLK.jpg" onclick="addDBuy('WG 701 BLK', 1, 29);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('WG 701 BLK', 29, 'WG 701 BLK.jpg'); modifyStock('WG 701 BLK', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="WG 701 BLK" data-price="29" data-image="WG 701 BLK.jpg" onclick="addDBuy('WG 701 BLK', 1, 29);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -735,7 +563,7 @@ include "connection.php";
 
         <!-- KJW KP-06 HICAPA Card -->
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="KJW KP-06 HICAPA.webp" class="card-img-top img-fluid" alt="KJW KP-06 HICAPA" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">KJW KP-06</h5>
@@ -747,12 +575,12 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-KJW KP-06 HICAPA" style="margin-left: 5px;">0</span>
+                            <span id="stock-count-kjw-kp-06-hicapa" style="margin-left: 5px;">0</span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('KJW KP-06 HICAPA', 19, 'KJW KP-06 HICAPA.webp'); modifyStock('KJW KP-06 HICAPA', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="KJW KP-06 HICAPA" data-price="19" data-image="KJW KP-06 HICAPA.webp" onclick="addDBuy('KJW KP-06 HICAPA', 1, 19);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('KJW KP-06 HICAPA', 19, 'KJW KP-06 HICAPA.webp'); modifyStock('KJW KP-06 HICAPA', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="KJW KP-06 HICAPA" data-price="19" data-image="KJW KP-06 HICAPA.webp" onclick="addDBuy('KJW KP-06 HICAPA', 1, 19);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -765,7 +593,7 @@ include "connection.php";
 <div class="container text-center">
     <div class="row align-items-stretch">
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="D BELL VSR 10 WOOD DESIGN.jpg" class="card-img-top img-fluid" alt="The D BELL VSR 10 WOOD DESIGN" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">D BELL VSR 10</h5>
@@ -777,19 +605,19 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-D BELL VSR 10 WOOD DESIGN" style="margin-left: 5px;">0</span>
+                            <span id="stock-count-d-bell-vsr-10-wood-design" style="margin-left: 5px;">0</span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('The D BELL VSR 10 WOOD DESIGN', 15, 'D BELL VSR 10 WOOD DESIGN.jpg'); modifyStock('D BELL VSR 10 WOOD DESIGN', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="The D BELL VSR 10 WOOD DESIGN" data-price="15" data-image="D BELL VSR 10 WOOD DESIGN.jpg" onclick="addDBuy('The D BELL VSR 10 WOOD DESIGN', 1, 15);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('The D BELL VSR 10 WOOD DESIGN', 15, 'D BELL VSR 10 WOOD DESIGN.jpg'); modifyStock('D BELL VSR 10 WOOD DESIGN', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="The D BELL VSR 10 WOOD DESIGN" data-price="15" data-image="D BELL VSR 10 WOOD DESIGN.jpg" onclick="addDBuy('The D BELL VSR 10 WOOD DESIGN', 1, 15);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="DBELL VSR10 BLACK.jpg" class="card-img-top img-fluid" alt="DBELL VSR10 BLACK" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">DBELL VSR10</h5>
@@ -801,19 +629,19 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-DBELL VSR10 BLACK" style="margin-left: 5px;">0</span>
+                            <span id="stock-count-dbell-vsr10-black" style="margin-left: 5px;">0</span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('DBELL VSR10 BLACK', 15, 'DBELL VSR10 BLACK.jpg'); modifyStock('DBELL VSR10 BLACK', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="DBELL VSR10 BLACK" data-price="15" data-image="DBELL VSR10 BLACK.jpg" onclick="addDBuy('DBELL VSR10 BLACK', 1, 15);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('DBELL VSR10 BLACK', 15, 'DBELL VSR10 BLACK.jpg'); modifyStock('DBELL VSR10 BLACK', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="DBELL VSR10 BLACK" data-price="15" data-image="DBELL VSR10 BLACK.jpg" onclick="addDBuy('DBELL VSR10 BLACK', 1, 15);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="MOD 24 SSG GSPEC.jpg" class="card-img-top img-fluid" alt="MOD 24 SSG GSPEC" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">MOD 24 SSG</h5>
@@ -825,19 +653,19 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-MOD 24 SSG GSPEC" style="margin-left: 5px;">0</span>
+                            <span id="stock-count-mod-24-ssg-gspec" style="margin-left: 5px;">0</span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('MOD 24 SSG GSPEC', 15, 'MOD 24 SSG GSPEC.jpg'); modifyStock('MOD 24 SSG GSPEC', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="MOD 24 SSG GSPEC" data-price="15" data-image="MOD 24 SSG GSPEC.jpg" onclick="addDBuy('MOD 24 SSG GSPEC', 1, 15);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('MOD 24 SSG GSPEC', 15, 'MOD 24 SSG GSPEC.jpg'); modifyStock('MOD 24 SSG GSPEC', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="MOD 24 SSG GSPEC" data-price="15" data-image="MOD 24 SSG GSPEC.jpg" onclick="addDBuy('MOD 24 SSG GSPEC', 1, 15);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="LT-28AB LANCER TACTICAL M24.jpg" class="card-img-top img-fluid" alt="LT-28AB LANCER TACTICAL M24" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">LT-28AB</h5>
@@ -849,19 +677,19 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-LT-28AB LANCER TACTICAL M24" style="margin-left: 5px;">0</span>
+                            <span id="stock-count-lt-28ab-lancer-tactical-m24" style="margin-left: 5px;">0</span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('LT-28AB LANCER TACTICAL M24', 15, 'LT-28AB LANCER TACTICAL M24.jpg'); modifyStock('LT-28AB LANCER TACTICAL M24', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="LT-28AB LANCER TACTICAL M24" data-price="15" data-image="LT-28AB LANCER TACTICAL M24.jpg" onclick="addDBuy('LT-28AB LANCER TACTICAL M24', 1, 15);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('LT-28AB LANCER TACTICAL M24', 15, 'LT-28AB LANCER TACTICAL M24.jpg'); modifyStock('LT-28AB LANCER TACTICAL M24', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="LT-28AB LANCER TACTICAL M24" data-price="15" data-image="LT-28AB LANCER TACTICAL M24.jpg" onclick="addDBuy('LT-28AB LANCER TACTICAL M24', 1, 15);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="EC 501C L96 BLACK.jpg" class="card-img-top img-fluid" alt="EC 501C L96 BLACK" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">EC 501C L96</h5>
@@ -873,12 +701,12 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-EC 501C L96 BLACK" style="margin-left: 5px;">0</span>
+                            <span id="stock-count-ec-501c-l96-black" style="margin-left: 5px;">0</span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('EC 501C L96 BLACK', 15, 'EC 501C L96 BLACK.jpg'); modifyStock('EC 501C L96 BLACK', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="EC 501C L96 BLACK" data-price="15" data-image="EC 501C L96 BLACK.jpg" onclick="addDBuy('EC 501C L96 BLACK', 1, 15);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('EC 501C L96 BLACK', 15, 'EC 501C L96 BLACK.jpg'); modifyStock('EC 501C L96 BLACK', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="EC 501C L96 BLACK" data-price="15" data-image="EC 501C L96 BLACK.jpg" onclick="addDBuy('EC 501C L96 BLACK', 1, 15);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -891,7 +719,7 @@ include "connection.php";
 <div class="container text-center">
     <div class="row align-items-stretch">
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="Heckler & Koch - HK416.jpg" class="card-img-top img-fluid" alt="Heckler & Koch - HK416" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">Heckler & Koch</h5>
@@ -903,19 +731,19 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-Heckler & Koch - HK416" style="margin-left: 5px;"><?php echo isset($products['Heckler & Koch - HK416']) ? $products['Heckler & Koch - HK416'] : 0; ?></span>
+                            <span id="stock-count-heckler-&-koch---hk416" style="margin-left: 5px;"><?php echo isset($products['Heckler & Koch - HK416']) ? $products['Heckler & Koch - HK416'] : 0; ?></span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Heckler & Koch - HK416', 19, 'Heckler & Koch - HK416.jpg'); modifyStock('Heckler & Koch - HK416', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Heckler & Koch - HK416" data-price="19" data-image="Heckler & Koch - HK416.jpg" onclick="addDBuy('Heckler & Koch - HK416', 1, 19);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Heckler & Koch - HK416', 19, 'Heckler & Koch - HK416.jpg'); modifyStock('Heckler & Koch - HK416', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="Heckler & Koch - HK416" data-price="19" data-image="Heckler & Koch - HK416.jpg" onclick="addDBuy('Heckler & Koch - HK416', 1, 19);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="Tokyo Marui VSR-10.jpg" class="card-img-top img-fluid" alt="Tokyo Marui VSR-10" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h6 class="feature-title" style="color: white;">Tokyo Marui VSR-10</h6>
@@ -927,19 +755,19 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-Tokyo Marui VSR-10" style="margin-left: 5px;"><?php echo isset($products['Tokyo Marui VSR-10']) ? $products['Tokyo Marui VSR-10'] : 8; ?></span>
+                            <span id="stock-count-tokyo-marui-vsr-10" style="margin-left: 5px;"><?php echo isset($products['Tokyo Marui VSR-10']) ? $products['Tokyo Marui VSR-10'] : 0; ?></span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Tokyo Marui VSR-10', 20, 'Tokyo Marui VSR-10l.jpg'); modifyStock('Tokyo Marui VSR-10', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="Tokyo Marui VSR-10" data-price="20" data-image="Tokyo Marui VSR-10.jpg" onclick="addDBuy('Tokyo Marui VSR-10', 1, 20);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Tokyo Marui VSR-10', 20, 'Tokyo Marui VSR-10l.jpg'); modifyStock('Tokyo Marui VSR-10', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="Tokyo Marui VSR-10" data-price="20" data-image="Tokyo Marui VSR-10.jpg" onclick="addDBuy('Tokyo Marui VSR-10', 1, 20);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="AK74 SERIES.jpg" class="card-img-top img-fluid" alt="AK74 SERIES" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">AK74 SERIES</h5>
@@ -951,19 +779,19 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-AK74 SERIES" style="margin-left: 5px;"><?php echo isset($products['AK74 SERIES']) ? $products['AK74 SERIES'] : 0; ?></span>
+                            <span id="stock-count-ak74-series" style="margin-left: 5px;"><?php echo isset($products['AK74 SERIES']) ? $products['AK74 SERIES'] : 0; ?></span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('AK74 SERIES', 20, 'AK74 SERIES.jpg'); modifyStock('AK74 SERIES', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="AK74 SERIES" data-price="20" data-image="AK74 SERIES.jpg" onclick="addDBuy('AK74 SERIES', 1, 20);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('AK74 SERIES', 20, 'AK74 SERIES.jpg'); modifyStock('AK74 SERIES', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="AK74 SERIES" data-price="20" data-image="AK74 SERIES.jpg" onclick="addDBuy('AK74 SERIES', 1, 20);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="M4A1 SERIES.jpg" class="card-img-top img-fluid" alt="M4A1 SERIES" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">M4A1 SERIES</h5>
@@ -975,19 +803,19 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-M4A1 SERIES" style="margin-left: 5px;"><?php echo isset($products['M4A1 SERIES']) ? $products['M4A1 SERIES'] : 0; ?></span>
+                            <span id="stock-count-m4a1-series" style="margin-left: 5px;"><?php echo isset($products['M4A1 SERIES']) ? $products['M4A1 SERIES'] : 0; ?></span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('M4A1 SERIES', 20, 'M4A1 SERIES.jpg');modifyStock('M4A1 SERIES', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="M4A1 SERIES" data-price="20" data-image="M4A1 SERIES.jpg" onclick="addDBuy('M4A1 SERIES', 1, 20);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('M4A1 SERIES', 20, 'M4A1 SERIES.jpg');modifyStock('M4A1 SERIES', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="M4A1 SERIES" data-price="20" data-image="M4A1 SERIES.jpg" onclick="addDBuy('M4A1 SERIES', 1, 20);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="col">
-            <div class="card" style="height: 400px; background-color: #2962ff;">
+            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="FN SCAR.jpg" class="card-img-top img-fluid" alt="FN SCAR" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">FN SCAR</h5>
@@ -999,12 +827,12 @@ include "connection.php";
                     <div class="mt-2" style="color: white; text-align: center;">
                         <div style="display: inline-flex; align-items: center;">
                             In stock: 
-                            <span id="stock-count-FN SCAR" style="margin-left: 5px;"><?php echo isset($products['FN SCAR']) ? $products['FN SCAR'] : 10; ?></span>
+                            <span id="stock-count-fn-scar" style="margin-left: 5px;"><?php echo isset($products['FN SCAR']) ? $products['FN SCAR'] : 0; ?></span>
                         </div>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-success buy-now" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('FN SCAR', 20, 'FN SCAR.jpg');modifyStock('FN SCAR', -1)">Buy Now</button>
-                        <button class="btn btn-light add-to-cart" style="font-size: 0.8em; white-space: nowrap;" data-name="FN SCAR" data-price="20" data-image="FN SCAR.jpg" onclick="addDBuy('FN SCAR', 1, 20);alert('Added to cart')">Add to Cart</button>
+                    <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('FN SCAR', 20, 'FN SCAR.jpg');modifyStock('FN SCAR', -1)">Buy Now</button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="FN SCAR" data-price="20" data-image="FN SCAR.jpg" onclick="addDBuy('FN SCAR', 1, 20);alert('Added to cart')">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -1019,67 +847,69 @@ include "connection.php";
       </div>
       </div>
     <br><br><br>
-
-    <div class="container-fluid bg-primary py-5">
-        <div class="container mt-5">
-          <div class="row">
-            <div class="col-md-3 dk-store">
-              <h5 class="text-warning mb-3">SOTERIA'S GAME ARCHIVE</h5>
-              <ul class="list-unstyled">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Repair Center</a></li>
-                <li><a href="#">Deals and Coupons</a></li>
-                <li><a href="#">Rewards</a></li>
-                <li><a href="#">Blog</a></li>
-              </ul>
-            </div>
-            <div class="col-md-3 company">
-              <h5 class="text-warning mb-3">COMPANY</h5>
-              <ul class="list-unstyled">
-                <li><a href="#">Shipping & Returns</a></li>
-                <li><a href="#">Refurbish & Inspection Process</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">California Privacy</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">FAQs</a></li>
-              </ul>
-            </div>
-            <div class="col-md-3 account">
-              <h5 class="text-warning mb-3">ACCOUNT</h5>
-              <ul class="list-unstyled">
-                <li><a href="#">Track My Order</a></li>
-                <li><a href="#">My Account</a></li>
-                <li><a href="#">Shopping Cart</a></li>
-                <li><a href="#">Accessibility</a></li>
-                <li><a href="#">Terms and Conditions</a></li>
-                <li><a href="#">Secure Shopping</a></li>
-                <li><a href="#">Sitemap</a></li>
-              </ul>
-            </div>
-            <div class="col-md-3 get-social">
-              <h5 class="text-warning mb-3">GET SOCIAL</h5>
-              <ul class="list-unstyled d-flex">
-                <li class="mr-3"><a href="#"><img src="facebook.png" alt="Facebook" width="24" height="24"></a></li>
-                <li class="mr-3"><a href="#"><img src="twitter.png" alt="Twitter" width="24" height="24"></a></li>
-                <li class="mr-3"><a href="#"><img src="youtube.png" alt="YouTube" width="24" height="24"></a></li>
-                <li class="mr-3"><a href="#"><img src="instagram.png" alt="Instagram" width="24" height="24"></a></li>
-                <li class="mr-3"><a href="#"><img src="tiktok.png" alt="TikTok" width="24" height="24"></a></li>
-              </ul>
-              <p style="color: white;">Soteria's Game Archive.com<br>
-                938 Aurora Boulevard, Cubao<br>
-                Quezon City, Philippines 1100</p>    
-            </div>
-          </div>
-        </div>
+<!-- FOOTER SECTION -->
+<div class="container-fluid py-5" style="background-color: #000;">
+  <div class="container mt-5 text-white">
+    <div class="row">
+      <div class="col-md-3 dk-store">
+        <h5 style="color: #fdd835;" class="mb-3">SOTERIA'S GAME ARCHIVE</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white footer-link">About Us</a></li>
+          <li><a href="#" class="text-white footer-link">Repair Center</a></li>
+          <li><a href="#" class="text-white footer-link">Deals and Coupons</a></li>
+          <li><a href="#" class="text-white footer-link">Rewards</a></li>
+          <li><a href="#" class="text-white footer-link">Blog</a></li>
+        </ul>
       </div>
-
+      <div class="col-md-3 company">
+        <h5 style="color: #fdd835;" class="mb-3">COMPANY</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white footer-link">Shipping & Returns</a></li>
+          <li><a href="#" class="text-white footer-link">Refurbish & Inspection Process</a></li>
+          <li><a href="#" class="text-white footer-link">Contact Us</a></li>
+          <li><a href="#" class="text-white footer-link">Privacy</a></li>
+          <li><a href="#" class="text-white footer-link">California Privacy</a></li>
+          <li><a href="#" class="text-white footer-link">Testimonials</a></li>
+          <li><a href="#" class="text-white footer-link">FAQs</a></li>
+        </ul>
       </div>
-    <footer>
-    <p style="color: white;">1 YEAR WARRANTY that nobody can beat!</p>
-    </footer>
-    
-   
+      <div class="col-md-3 account">
+        <h5 style="color: #fdd835;" class="mb-3">ACCOUNT</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white footer-link">Track My Order</a></li>
+          <li><a href="#" class="text-white footer-link">My Account</a></li>
+          <li><a href="#" class="text-white footer-link">Shopping Cart</a></li>
+          <li><a href="#" class="text-white footer-link">Accessibility</a></li>
+          <li><a href="#" class="text-white footer-link">Terms and Conditions</a></li>
+          <li><a href="#" class="text-white footer-link">Secure Shopping</a></li>
+          <li><a href="#" class="text-white footer-link">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 get-social">
+        <h5 style="color: #fdd835;" class="mb-3">GET SOCIAL</h5>
+        <ul class="list-unstyled d-flex">
+          <li class="mr-3"><a href="#"><img src="facebook.png" alt="Facebook" width="24" height="24"></a></li>
+          <li class="mr-3"><a href="#"><img src="twitter.png" alt="Twitter" width="24" height="24"></a></li>
+          <li class="mr-3"><a href="#"><img src="youtube.png" alt="YouTube" width="24" height="24"></a></li>
+          <li class="mr-3"><a href="#"><img src="instagram.png" alt="Instagram" width="24" height="24"></a></li>
+          <li class="mr-3"><a href="#"><img src="tiktok.png" alt="TikTok" width="24" height="24"></a></li>
+        </ul>
+        <p style="color: white; margin-top: 15px;">
+          Soteria's Game Archive.com<br>
+          938 Aurora Boulevard, Cubao<br>
+          Quezon City, Philippines 1100
+        </p>    
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM FOOTER BAR -->
+<footer style="background-color: #000; text-align: center; padding: 10px 0;">
+  <p style="color: white; margin: 0;">1 YEAR WARRANTY that nobody can beat!</p>
+</footer>
+
+
 <script>
 let cart = [];
 let discount = 0;
