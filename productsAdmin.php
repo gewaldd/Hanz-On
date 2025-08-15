@@ -1,6 +1,9 @@
 <?php
 include "connection.php";
 ?>
+<?php
+$products = json_decode(file_get_contents('products.json'), true);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -724,134 +727,138 @@ button:hover {
 </div>
 
 <br>
-
 <div class="container text-center">
-    <div class="row align-items-stretch">
-        <div class="col">
-            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
-                <img src="Heckler & Koch - HK416.jpg" class="card-img-top img-fluid" alt="Heckler & Koch - HK416" style="height: 180px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">Heckler & Koch</h5>
-                    <p style="color: white;">19$</p>
-                    <div class="d-flex align-items-center" style="color: gold;">
-                        <span class="star-rating">4.5 ★★★★☆</span>
-                        <span style="margin-left: 5px; color: white;">300 sold</span>
-                    </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Heckler & Koch - HK416', -1)">-</button>
-                            <span id="stock-count-heckler-&-koch---hk416"><?php echo isset($products['Heckler & Koch - HK416']) ? $products['Heckler & Koch - HK416'] : 0; ?></span>
-                        </div>
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('Heckler & Koch - HK416', 1)">+</button>
-                    </div>
-                    <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm"  style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Heckler & Koch - HK416', 19, 'Heckler & Koch - HK416.jpg'); modifyStock('Heckler & Koch - HK416', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="Heckler & Koch - HK416" data-price="19" data-image="Heckler & Koch - HK416.jpg" onclick="addDBuy('Heckler & Koch - HK416', 1, 19);alert('Added to cart')">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
+  <div class="row align-items-stretch">
+    <?php if (isset($products['Heckler & Koch - HK416'])): ?>
+    <div class="col mb-4">
+      <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
+        <img src="Heckler & Koch - HK416.jpg" class="card-img-top img-fluid" alt="Heckler & Koch - HK416" style="height: 180px; object-fit: cover;">
+        <div class="card-body d-flex flex-column">
+          <h5 class="feature-title" style="color: white;">Heckler & Koch</h5>
+          <p style="color: white;"><?= $products['Heckler & Koch - HK416']['price'] ?? '19' ?>$</p>
+          <div class="d-flex align-items-center" style="color: gold;">
+            <span class="star-rating"><?= $products['Heckler & Koch - HK416']['rating'] ?? '4.5' ?> ★★★★☆</span>
+            <span class="ml-2" style="color: white;"><?= $products['Heckler & Koch - HK416']['sold'] ?? '300' ?> sold</span>
+          </div>
+          <div class="d-flex align-items-center mt-2" style="color: white; margin-top: 5px;">
+            In stock:
+            <button class="btn btn-secondary btn-sm ml-2" onclick="modifyStock('Heckler & Koch - HK416', -1)">-</button>
+            <span id="stock-count-heckler-&-koch---hk416" class="mx-2"><?= $products['Heckler & Koch - HK416']['stock'] ?? 0 ?></span>
+            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Heckler & Koch - HK416', 1)">+</button>
+          </div>
+          <div class="button-container mt-auto d-flex justify-content-center">
+            <button class="btn btn-outline-danger btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="deleteProduct('Heckler & Koch - HK416')">Delete</button>
+          </div>
         </div>
-
-        <div class="col">
-            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
-                <img src="Tokyo Marui VSR-10.jpg" class="card-img-top img-fluid" alt="Tokyo Marui VSR-10" style="height: 180px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                    <h6 class="feature-title" style="color: white;">Tokyo Marui VSR-10</h6>
-                    <p style="color: white;">20$</p>
-                    <div class="d-flex align-items-center" style="color: gold;">
-                        <span class="star-rating">4.5 ★★★★☆</span>
-                        <span style="margin-left: 5px; color: white;">500 sold</span>
-                    </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Tokyo Marui VSR-10', -1)">-</button>
-                            <span id="stock-count-tokyo-marui-vsr-10"><?php echo isset($products['Tokyo Marui VSR-10']) ? $products['Tokyo Marui VSR-10'] : 0; ?></span>
-                        </div>
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('Tokyo Marui VSR-10', 1)">+</button>
-                    </div>
-                    <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm"  style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('Tokyo Marui VSR-10', 20, 'Tokyo Marui VSR-10.jpg'); modifyStock('Tokyo Marui VSR-10', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="Tokyo Marui VSR-10" data-price="20" data-image="Tokyo Marui VSR-10.jpg" onclick="addDBuy('Tokyo Marui VSR-10', 1, 20);alert('Added to cart')">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
-                <img src="AK74 SERIES.jpg" class="card-img-top img-fluid" alt="AK74 SERIES" style="height: 180px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">AK74 SERIES</h5>
-                    <p style="color: white;">20$</p>
-                    <div class="d-flex align-items-center" style="color: gold;">
-                        <span class="star-rating">4.2 ★★★★☆</span>
-                        <span style="margin-left: 5px; color: white;">350 sold</span>
-                    </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('AK74 SERIES', -1)">-</button>
-                            <span id="stock-count-ak74-series"><?php echo isset($products['AK74 SERIES']) ? $products['AK74 SERIES'] : 0; ?></span>
-                        </div>
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('AK74 SERIES', 1)">+</button>
-                    </div>
-                    <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm"  style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('AK74 SERIES', 20, 'AK74 SERIES.jpg'); modifyStock('AK74 SERIES', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="AK74 SERIES" data-price="20" data-image="AK74 SERIES.jpg" onclick="addDBuy('AK74 SERIES', 1, 20);alert('Added to cart')">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
-                <img src="M4A1 SERIES.jpg" class="card-img-top img-fluid" alt="M4A1 SERIES" style="height: 180px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">M4A1 SERIES</h5>
-                    <p style="color: white;">20$</p>
-                    <div class="d-flex align-items-center" style="color: gold;">
-                        <span class="star-rating">4.3 ★★★★☆</span>
-                        <span style="margin-left: 5px; color: white;">400 sold</span>
-                    </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('M4A1 SERIES', -1)">-</button>
-                            <span id="stock-count-m4a1-series"><?php echo isset($products['M4A1 SERIES']) ? $products['M4A1 SERIES'] : 0; ?></span>
-                        </div>
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('M4A1 SERIES', 1)">+</button>
-                    </div>
-                    <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm"  style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('M4A1 SERIES', 20, 'M4A1 SERIES.jpg');modifyStock('M4A1 SERIES', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="M4A1 SERIES" data-price="20" data-image="M4A1 SERIES.jpg" onclick="addDBuy('M4A1 SERIES', 1, 20);alert('Added to cart')">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
-                <img src="FN SCAR.jpg" class="card-img-top img-fluid" alt="FN SCAR" style="height: 180px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">FN SCAR</h5>
-                    <p style="color: white;">20$</p>
-                    <div class="d-flex align-items-center" style="color: gold;">
-                        <span class="star-rating">4.1 ★★★★☆</span>
-                        <span style="margin-left: 5px; color: white;">250 sold</span>
-                    </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('FN SCAR', -1)">-</button>
-                            <span id="stock-count-fn-scar"><?php echo isset($products['FN SCAR']) ? $products['FN SCAR'] : 0; ?></span>
-                        </div>
-                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('FN SCAR', 1)">+</button>
-                    </div>
-                    <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm"  style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('FN SCAR', 20, 'FN SCAR.jpg');modifyStock('FN SCAR', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="FN SCAR" data-price="20" data-image="FN SCAR.jpg" onclick="addDBuy('FN SCAR', 1, 20);alert('Added to cart')">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+    <?php endif; ?>
+
+    <?php if (isset($products['Tokyo Marui VSR-10'])): ?>
+    <div class="col mb-4">
+      <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
+        <img src="Tokyo Marui VSR-10.jpg" class="card-img-top img-fluid" alt="Tokyo Marui VSR-10" style="height: 180px; object-fit: cover;">
+        <div class="card-body d-flex flex-column">
+          <h5 class="feature-title" style="color: white;">Tokyo Marui VSR-10</h5>
+          <p style="color: white;"><?= $products['Tokyo Marui VSR-10']['price'] ?? '20' ?>$</p>
+          <div class="d-flex align-items-center" style="color: gold;">
+            <span class="star-rating"><?= $products['Tokyo Marui VSR-10']['rating'] ?? '4.5' ?> ★★★★☆</span>
+            <span class="ml-2" style="color: white;"><?= $products['Tokyo Marui VSR-10']['sold'] ?? '500' ?> sold</span>
+          </div>
+          <div class="d-flex align-items-center mt-2" style="color: white; margin-top: 5px;">
+            In stock:
+            <button class="btn btn-secondary btn-sm ml-2" onclick="modifyStock('Tokyo Marui VSR-10', -1)">-</button>
+            <span id="stock-count-tokyo-marui-vsr-10" class="mx-2"><?= $products['Tokyo Marui VSR-10']['stock'] ?? 0 ?></span>
+            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Tokyo Marui VSR-10', 1)">+</button>
+          </div>
+          <div class="button-container mt-auto d-flex justify-content-center">
+            <button class="btn btn-outline-danger btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="deleteProduct('Tokyo Marui VSR-10')">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php endif; ?>
+
+    <?php if (isset($products['AK74 SERIES'])): ?>
+    <div class="col mb-4">
+      <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
+        <img src="AK74 SERIES.jpg" class="card-img-top img-fluid" alt="AK74 SERIES" style="height: 180px; object-fit: cover;">
+        <div class="card-body d-flex flex-column">
+          <h5 class="feature-title" style="color: white;">AK74 SERIES</h5>
+          <p style="color: white;"><?= $products['AK74 SERIES']['price'] ?? '20' ?>$</p>
+          <div class="d-flex align-items-center" style="color: gold;">
+            <span class="star-rating"><?= $products['AK74 SERIES']['rating'] ?? '4.2' ?> ★★★★☆</span>
+            <span class="ml-2" style="color: white;"><?= $products['AK74 SERIES']['sold'] ?? '350' ?> sold</span>
+          </div>
+          <div class="d-flex align-items-center mt-2" style="color: white; margin-top: 5px;">
+            In stock:
+            <button class="btn btn-secondary btn-sm ml-2" onclick="modifyStock('AK74 SERIES', -1)">-</button>
+            <span id="stock-count-ak74-series" class="mx-2"><?= $products['AK74 SERIES']['stock'] ?? 0 ?></span>
+            <button class="btn btn-secondary btn-sm" onclick="modifyStock('AK74 SERIES', 1)">+</button>
+          </div>
+          <div class="button-container mt-auto d-flex justify-content-center">
+            <button class="btn btn-outline-danger btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="deleteProduct('AK74 SERIES')">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php endif; ?>
+
+    <?php if (isset($products['M4A1 SERIES'])): ?>
+    <div class="col mb-4">
+      <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
+        <img src="M4A1 SERIES.jpg" class="card-img-top img-fluid" alt="M4A1 SERIES" style="height: 180px; object-fit: cover;">
+        <div class="card-body d-flex flex-column">
+          <h5 class="feature-title" style="color: white;">M4A1 SERIES</h5>
+          <p style="color: white;"><?= $products['M4A1 SERIES']['price'] ?? '20' ?>$</p>
+          <div class="d-flex align-items-center" style="color: gold;">
+            <span class="star-rating"><?= $products['M4A1 SERIES']['rating'] ?? '4.3' ?> ★★★★☆</span>
+            <span class="ml-2" style="color: white;"><?= $products['M4A1 SERIES']['sold'] ?? '400' ?> sold</span>
+          </div>
+          <div class="d-flex align-items-center mt-2" style="color: white; margin-top: 5px;">
+            In stock: 
+            <button class="btn btn-secondary btn-sm ml-2" onclick="modifyStock('M4A1 SERIES', -1)">-</button>
+            <span id="stock-count-m4a1-series" class="mx-2"><?= $products['M4A1 SERIES']['stock'] ?? 0 ?></span>
+            <button class="btn btn-secondary btn-sm" onclick="modifyStock('M4A1 SERIES', 1)">+</button>
+          </div>
+          <div class="button-container mt-auto d-flex justify-content-center">
+            <button class="btn btn-outline-danger btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="deleteProduct('M4A1 SERIES')">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php endif; ?>
+
+    <?php if (isset($products['FN SCAR'])): ?>
+    <div class="col mb-4">
+      <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
+        <img src="FN SCAR.jpg" class="card-img-top img-fluid" alt="FN SCAR" style="height: 180px; object-fit: cover;">
+        <div class="card-body d-flex flex-column">
+          <h5 class="feature-title" style="color: white;">FN SCAR</h5>
+          <p style="color: white;"><?= $products['FN SCAR']['price'] ?? '20' ?>$</p>
+          <div class="d-flex align-items-center" style="color: gold;">
+            <span class="star-rating"><?= $products['FN SCAR']['rating'] ?? '4.1' ?> ★★★★☆</span>
+            <span class="ml-2" style="color: white;"><?= $products['FN SCAR']['sold'] ?? '250' ?> sold</span>
+          </div>
+          <div class="d-flex align-items-center mt-2" style="color: white; margin-top: 5px;">
+            In stock: 
+            <button class="btn btn-secondary btn-sm ml-2" onclick="modifyStock('FN SCAR', -1)">-</button>
+            <span id="stock-count-fn-scar"><?= $products['FN SCAR']['stock'] ?? 0 ?></span>
+            <button class="btn btn-secondary btn-sm" onclick="modifyStock('FN SCAR', 1)">+</button>
+          </div>
+          <div class="button-container mt-auto d-flex justify-content-center">
+            <button class="btn btn-outline-danger btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="deleteProduct('FN SCAR')">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php endif; ?>
+  </div>
+</div>
+
+</div>
+
+
 
 
     <br>
@@ -1286,6 +1293,25 @@ window.addEventListener('load', () => {
             alert('Error loading stock information.');
         });
 });
+
+        function deleteProduct(name) {
+            if (confirm("Are you sure you want to delete this product forever?")) {
+                const formData = new FormData();
+                formData.append('product', name);
+
+                fetch('delete_product.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                    location.reload();
+                });
+            }
+        }
+
+
     </script>
 </body>
 </html>
