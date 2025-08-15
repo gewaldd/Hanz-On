@@ -74,7 +74,11 @@ INSERT INTO `admin` (`ID`, `Name`, `Stock`) VALUES
 (58, 'M4A1 SERIES', 1),
 (59, 'FN SCAR', 2),
 (60, 'CZ P-10C C02 BLK', 2);
-
+(61, '762Ti Style QD Silencer', 2);
+(62, '14mm CCW Cerakote BK', 2);
+(63, '10.75 inch URX4 M-Lok Handguard', 2);
+(64, 'PTS Dead Air Sandman-S Tracer', 2);
+(65, 'Rovyvon GL4 Pro Rail Mounted Laser', 2);
 -- --------------------------------------------------------
 
 --
