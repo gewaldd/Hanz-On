@@ -138,5 +138,40 @@
         "rating": 4.1,
         "sold": 100,
         "stock": 0
+    },
+    "BOLT M4 MIDCAP MAGAZINE": {
+        "price": 12,
+        "image": "BOLT M4 MIDCAP MAGAZINE.jpg",
+        "rating": 4.0,
+        "sold": 100,
+        "stock": 0
+    },
+    "LT AK MAGS": {
+        "price": 12,
+        "image": "LT AK MAGS.jpg",
+        "rating": 4.0,
+        "sold": 100,
+        "stock": 0
+    },
+    "SRC HICAPA CO2 MAG": {
+        "price": 12,
+        "image": "SRC HICAPA CO2 MAG.jpg",
+        "rating": 4.0,
+        "sold": 100,
+        "stock": 0
+    },
+    "VFC M4 GBB MAG": {
+        "price": 12,
+        "image": "VFC M4 GBB MAG.jpg",
+        "rating": 4.0,
+        "sold": 100,
+        "stock": 0
+    },
+    "WE GLOCK 17 MAGS": {
+        "price": 16,
+        "image": "WE GLOCK 17 MAGS.jpg",
+        "rating": 4.1,
+        "sold": 100,
+        "stock": 0
     }
 }
