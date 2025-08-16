@@ -2,21 +2,14 @@
     "GLOCK 18": {
         "price": 29,
         "image": "GLOCK 18.jpg",
-        "rating": 5.0,
+        "rating": 4.9,
         "sold": 120,
-        "stock": 0
-    },
-    "CZ P-10C C02 BLK": {
-        "price": 29,
-        "image": "CZ P-10C C02 BLK.webp",
-        "rating": 5.0,
-        "sold": 150,
         "stock": 0
     },
     "KJW CZ TS2": {
         "price": 29,
         "image": "KJW CZ TS2.jpg",
-        "rating": 5.0,
+        "rating": 4.9,
         "sold": 200,
         "stock": 0
     },
@@ -51,7 +44,7 @@
     "MOD 24 SSG GSPEC": {
         "price": 15,
         "image": "MOD 24 SSG GSPEC.jpg",
-        "rating": 4.0,
+        "rating": 4.2,
         "sold": 180,
         "stock": 0
     },
@@ -102,41 +95,6 @@
         "image": "FN SCAR.jpg",
         "rating": 4.1,
         "sold": 250,
-        "stock": 0
-    },
-     "762Ti Style QD Silencer": {
-        "price": 12,
-        "image": "762Ti Style QD Silencer.jpg",
-        "rating": 4.3,
-        "sold": 150,
-        "stock": 0
-    },
-    "14mm CCW Cerakote BK": {
-        "price": 15,
-        "image": "14mm CCW_Cerakote BK.jpg",
-        "rating": 4.0,
-        "sold": 200,
-        "stock": 0
-    },
-    "10.75 inch URX4 M-Lok Handguard": {
-        "price": 16,
-        "image": "10.75 inch URX4 M-Lok Handguard.jpg",
-        "rating": 4.5,
-        "sold": 300,
-        "stock": 0
-    },
-    "PTS Dead Air Sandman-S Tracer": {
-        "price": 13,
-        "image": "PTS Dead Air Sandman-S Tracer.jpg",
-        "rating": 4.3,
-        "sold": 180,
-        "stock": 0
-    },
-    "Rovyvon GL4 Pro Rail Mounted Laser": {
-        "price": 16,
-        "image": "Rovyvon GL4 Pro Rail Mounted Laser.jpg",
-        "rating": 4.1,
-        "sold": 100,
         "stock": 0
     }
 }

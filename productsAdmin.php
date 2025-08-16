@@ -369,7 +369,7 @@ button:hover {
 
 <nav class="navbar navbar-expand-lg" style="background-color: #333; padding: 10px;">
     <a class="navbar-brand" href="Landing Page (Soteria's Game Archive).php">
-        <img src="Logo.png" height="60px" width="60px" alt="Logo" style="border-radius: 5px;">
+        <img src="Hanz-On1.png" height="60px" width="60px" alt="Logo" style="border-radius: 5px;">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" 
         aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -457,274 +457,267 @@ button:hover {
      
       <div class="container text-center">
     <div class="row align-items-stretch">
-        <!-- GLOCK 18 Card -->
-        <div class="col"> 
-            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
-                <a href="javascript:alert('This is where description and photo of game goes using bootstrap modal!');">
-                    <img src="GLOCK 18.jpg" class="card-img-top img-fluid" alt="GLOCK 18" style="height: 180px; object-fit: cover;">
-                </a>
-                <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">GLOCK 18</h5>
-                    <p style="color: white;">29$</p>
-                    <div class="d-flex align-items-center" style="color: gold;">
-                        <span>5.0 ★★★★★</span>
-                        <span style="margin-left: 5px; color: white;">120 sold</span>
-                    </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
+        <?php if (isset($products['GLOCK 18'])): ?>
+            <div class="col"> 
+                <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
+                    <a href="javascript:alert('This is where description and photo of game goes using bootstrap modal!');">
+                        <img src="GLOCK 18.jpg" class="card-img-top img-fluid" alt="GLOCK 18" style="height: 180px; object-fit: cover;">
+                    </a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="feature-title" style="color: white;">GLOCK 18</h5>
+                        <p style="color: white;"><?= $products['GLOCK 18']['price'] ?>$</p>
+                        <div class="d-flex align-items-center" style="color: gold;">
+                            <span style="font-weight: bold;"><?= $products['GLOCK 18']['rating'] ?> ★★★★★</span>
+                            <span style="margin-left: 5px; color: white;"><?= $products['GLOCK 18']['sold'] ?> sold</span>
+                        </div>
+                        <div class="d-flex align-items-center mt-2" style="color: white;">
+                            In stock: 
                             <button class="btn btn-secondary btn-sm" onclick="modifyStock('GLOCK 18', -1)">-</button>
-                            <span id="stock-count-glock-18">0</span>
+                            <span id="stock-count-glock-18"class="mx-2"><?= $products['GLOCK 18']['stock'] ?></span>
                             <button class="btn btn-secondary btn-sm" onclick="modifyStock('GLOCK 18', 1)">+</button>
                         </div>
-                    </div>
-                    <div class="button-container mt-auto d-flex justify-content-center">
-                    <button class="btn btn-outline-success buy-now btn-sm" 
-                                style="font-size: 0.8em; white-space: nowrap;" 
-                                onclick="confirmPurchase('GLOCK 18', 29, 'GLOCK 18.jpg'); modifyStock('GLOCK 18', -1)">
-                            Buy Now
-                        </button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="GLOCK 18" data-price="29" data-image="GLOCK 18.jpg" onclick="addDBuy('GLOCK 18', 1, 29);alert('Added to cart')">Add to Cart</button>
+                        <div class="button-container mt-auto d-flex justify-content-center">
+                            <button class="btn btn-outline-danger btn-sm" style="font-size: 0.8em;" onclick="deleteProduct('GLOCK 18')">Delete</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php endif; ?>
 
-        <!-- CZ P-10C C02 BLK Card -->
-        <div class="col">
-            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
-                <img src="CZ P-10C C02 BLK.webp" class="card-img-top img-fluid" alt="CZ P-10C C02 BLK" style="height: 180px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">CZ P-10C C02</h5>
-                    <p style="color: white;">29$</p>
-                    <div class="d-flex align-items-center" style="color: gold;">
-                        <span>5.0 ★★★★★</span>
-                        <span style="margin-left: 5px; color: white;">150 sold</span>
-                    </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('CZ P-10C C02 BLK', -1)">-</button>
-                            <span id="stock-count-cz-p-10c-c02-blk">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('CZ P-10C C02 BLK', 1)">+</button>
-                        </div>
-                    </div>
-                    <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('CZ P-10C C02 BLK', 29, 'CZ P-10C C02 BLK.webp'); modifyStock('CZ P-10C C02 BLK', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="CZ P-10C C02 BLK" data-price="29" data-image="CZ P-10C C02 BLK.webp" onclick="addDBuy('CZ P-10C C02 BLK', 1, 29);alert('Added to cart')">Add to Cart</button>
-                    </div>
+    <?php if (isset($products['CZ P-10C C02 BLK'])): ?>
+    <div class="col">
+        <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
+            <img src="CZ P-10C C02 BLK.webp" class="card-img-top img-fluid" alt="CZ P-10C C02 BLK" style="height: 180px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+                <h5 class="feature-title" style="color: white;">CZ P-10C C02</h5>
+                <p style="color: white;"><?= $products['CZ P-10C C02 BLK']['price'] ?>$</p>
+                <div class="d-flex align-items-center" style="color: gold;">
+                    <span style="font-weight: bold;"><?= $products['CZ P-10C C02 BLK']['rating'] ?> ★★★★★</span>
+                    <span style="margin-left: 5px; color: white;"><?= $products['CZ P-10C C02 BLK']['sold'] ?> sold</span>
                 </div>
-            </div>
-        </div>
-
-        <!-- KJW CZ TS2 Card -->
-        <div class="col">
-            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
-                <img src="KJW CZ TS2.jpg" class="card-img-top img-fluid" alt="KJW CZ TS2" style="height: 180px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">KJW CZ TS2</h5>
-                    <p style="color: white;">29$</p>
-                    <div class="d-flex align-items-center" style="color: gold;">
-                        <span>5.0 ★★★★★</span>
-                        <span style="margin-left: 5px; color: white;">200 sold</span>
-                    </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('KJW CZ TS2', -1)">-</button>
-                            <span id="stock-count-kjw-cz-ts2">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('KJW CZ TS2', 1)">+</button>
-                        </div>
-                    </div>
-                    <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('KJW CZ TS2', 29, 'KJW CZ TS2.jpg'); modifyStock('KJW CZ TS2', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="KJW CZ TS2" data-price="29" data-image="KJW CZ TS2.jpg" onclick="addDBuy('KJW CZ TS2', 1, 29);alert('Added to cart')">Add to Cart</button>
-                    </div>
+                <div class="d-flex align-items-center mt-2" style="color: white;">
+                    In stock: 
+                    <button class="btn btn-secondary btn-sm" onclick="modifyStock('CZ P-10C C02 BLK', -1)">-</button>
+                    <span id="stock-count-cz-p-10c-c02-blk"class="mx-2"><?= $products['CZ P-10C C02 BLK']['stock'] ?></span>
+                    <button class="btn btn-secondary btn-sm" onclick="modifyStock('CZ P-10C C02 BLK', 1)">+</button>
                 </div>
-            </div>
-        </div>
-
-        <!-- WG 701 BLK Card -->
-        <div class="col">
-            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
-                <img src="WG 701 BLK.jpg" class="card-img-top img-fluid" alt="WG 701 BLK" style="height: 180px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">WG 701 BLK</h5>
-                    <p style="color: white;">29$</p>
-                    <div class="d-flex align-items-center" style="color: gold;">
-                        <span>4.2 ★★★★☆</span>
-                        <span style="margin-left: 5px; color: white;">110 sold</span>
-                    </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('WG 701 BLK', -1)">-</button>
-                            <span id="stock-count-wg-701-blk">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('WG 701 BLK', 1)">+</button>
-                        </div>
-                    </div>
-                    <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('WG 701 BLK', 29, 'WG 701 BLK.jpg'); modifyStock('WG 701 BLK', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="WG 701 BLK" data-price="29" data-image="WG 701 BLK.jpg" onclick="addDBuy('WG 701 BLK', 1, 29);alert('Added to cart')">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- KJW KP-06 HICAPA Card -->
-        <div class="col">
-            <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
-                <img src="KJW KP-06 HICAPA.webp" class="card-img-top img-fluid" alt="KJW KP-06 HICAPA" style="height: 180px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="feature-title" style="color: white;">KJW KP-06</h5>
-                    <p style="color: white;">19$</p>
-                    <div class="d-flex align-items-center" style="color: gold;">
-                        <span class="star-rating">4.5 ★★★★☆</span>
-                        <span style="margin-left: 5px; color: white;">100 sold</span>
-                    </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('KJW KP-06 HICAPA', -1)">-</button>
-                            <span id="stock-count-kjw-kp-06-hicapa">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('KJW KP-06 HICAPA', 1)">+</button>
-                        </div>
-                    </div>
-                    <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('KJW KP-06 HICAPA', 19, 'pKJW KP-06 HICAPA.webp'); modifyStock('KJW KP-06 HICAPA', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="KJW KP-06 HICAPA" data-price="19" data-image="KJW KP-06 HICAPA.webp" onclick="addDBuy('KJW KP-06 HICAPA', 1, 19);alert('Added to cart')">Add to Cart</button>
-                    </div>
+                <div class="button-container mt-auto d-flex justify-content-center">
+                    <button class="btn btn-outline-danger btn-sm" onclick="deleteProduct('CZ P-10C C02 BLK')">Delete</button>
                 </div>
             </div>
         </div>
     </div>
+    <?php endif; ?>
+
+    <?php if (isset($products['KJW CZ TS2'])): ?>
+    <div class="col">
+        <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
+            <img src="KJW CZ TS2.jpg" class="card-img-top img-fluid" alt="KJW CZ TS2" style="height: 180px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+                <h5 class="feature-title" style="color: white;">KJW CZ TS2</h5>
+                <p style="color: white;"><?= $products['KJW CZ TS2']['price'] ?>$</p>
+                <div class="d-flex align-items-center" style="color: gold;">
+                    <span style="font-weight: bold;"><?= $products['KJW CZ TS2']['rating'] ?> ★★★★★</span>
+                    <span style="margin-left: 5px; color: white;"><?= $products['KJW CZ TS2']['sold'] ?> sold</span>
+                </div>
+                <div class="d-flex align-items-center mt-2" style="color: white;">
+                    In stock: 
+                    <button class="btn btn-secondary btn-sm" onclick="modifyStock('KJW CZ TS2', -1)">-</button>
+                    <span id="stock-count-kjw-cz-ts2"class="mx-2"><?= $products['KJW CZ TS2']['stock'] ?></span>
+                    <button class="btn btn-secondary btn-sm" onclick="modifyStock('KJW CZ TS2', 1)">+</button>
+                </div>
+                <div class="button-container mt-auto d-flex justify-content-center">
+                    <button class="btn btn-outline-danger btn-sm" onclick="deleteProduct('KJW CZ TS2')">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <?php if (isset($products['WG 701 BLK'])): ?>
+    <div class="col">
+        <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
+            <img src="WG 701 BLK.jpg" class="card-img-top img-fluid" alt="WG 701 BLK" style="height: 180px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+                <h5 class="feature-title" style="color: white;">WG 701 BLK</h5>
+                <p style="color: white;"><?= $products['WG 701 BLK']['price'] ?>$</p>
+                <div class="d-flex align-items-center" style="color: gold;">
+                    <span style="font-weight: bold;"><?= $products['WG 701 BLK']['rating'] ?> ★★★★☆</span>
+                    <span style="margin-left: 5px; color: white;"><?= $products['WG 701 BLK']['sold'] ?> sold</span>
+                </div>
+                <div class="d-flex align-items-center mt-2" style="color: white;">
+                    In stock: 
+                    <button class="btn btn-secondary btn-sm" onclick="modifyStock('WG 701 BLK', -1)">-</button>
+                    <span id="stock-count-wg-701-blk"class="mx-2"><?= $products['WG 701 BLK']['stock'] ?></span>
+                    <button class="btn btn-secondary btn-sm" onclick="modifyStock('WG 701 BLK', 1)">+</button>
+                </div>
+                <div class="button-container mt-auto d-flex justify-content-center">
+                    <button class="btn btn-outline-danger btn-sm" onclick="deleteProduct('WG 701 BLK')">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <?php if (isset($products['KJW KP-06 HICAPA'])): ?>
+    <div class="col">
+        <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
+            <img src="KJW KP-06 HICAPA.webp" class="card-img-top img-fluid" alt="KJW KP-06 HICAPA" style="height: 180px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+                <h5 class="feature-title" style="color: white;">KJW KP-06</h5>
+                <p style="color: white;"><?= $products['KJW KP-06 HICAPA']['price'] ?>$</p>
+                <div class="d-flex align-items-center" style="color: gold;">
+                    <span style="font-weight: bold;"><?= $products['KJW KP-06 HICAPA']['rating'] ?> ★★★★☆</span>
+                    <span style="margin-left: 5px; color: white;"><?= $products['KJW KP-06 HICAPA']['sold'] ?> sold</span>
+                </div>
+                <div class="d-flex align-items-center mt-2" style="color: white;">
+                    In stock: 
+                    <button class="btn btn-secondary btn-sm" onclick="modifyStock('KJW KP-06 HICAPA', -1)">-</button>
+                    <span id="stock-count-kjw-kp-06-hicapa"class="mx-2"><?= $products['KJW KP-06 HICAPA']['stock'] ?></span>
+                    <button class="btn btn-secondary btn-sm" onclick="modifyStock('KJW KP-06 HICAPA', 1)">+</button>
+                </div>
+                <div class="button-container mt-auto d-flex justify-content-center">
+                    <button class="btn btn-outline-danger btn-sm" onclick="deleteProduct('KJW KP-06 HICAPA')">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
 </div>
 
 <br>
 
 <div class="container text-center">
     <div class="row align-items-stretch">
+
+        <?php if (isset($products['D BELL VSR 10 WOOD DESIGN'])): ?>
         <div class="col">
             <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="D BELL VSR 10 WOOD DESIGN.jpg" class="card-img-top img-fluid" alt="D BELL VSR 10 WOOD DESIGN" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">D BELL VSR 10</h5>
-                    <p style="color: white;">15$</p>
+                    <p style="color: white;"><?= $products['D BELL VSR 10 WOOD DESIGN']['price'] ?? '15' ?>$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
-                        <span class="star-rating">4.3 ★★★★☆</span>
-                        <span style="margin-left: 5px; color: white;">300 sold</span>
+                        <span class="star-rating"><?= $products['D BELL VSR 10 WOOD DESIGN']['rating'] ?? '4.3' ?> ★★★★☆</span>
+                        <span style="margin-left: 5px; color: white;"><?= $products['D BELL VSR 10 WOOD DESIGN']['sold'] ?? '300' ?> sold</span>
                     </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('D BELL VSR 10 WOOD DESIGN', -1)">-</button>
-                            <span id="stock-count-d-bell-vsr-10-wood-design">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('D BELL VSR 10 WOOD DESIGN', 1)">+</button>
-                        </div>
+                    <div class="d-flex align-items-center mt-2" style="color: white; margin-top: 5px;">
+                        In stock: 
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('D BELL VSR 10 WOOD DESIGN', -1)">-</button>
+                        <span id="stock-count-d-bell-vsr-10-wood-design"class="mx-2"><?= $products['D BELL VSR 10 WOOD DESIGN']['stock'] ?? 0 ?></span>
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('D BELL VSR 10 WOOD DESIGN', 1)">+</button>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm"  style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('The D BELL VSR 10 WOOD DESIGN', 15, 'D BELL VSR 10 WOOD DESIGN.jpg'); modifyStock('D BELL VSR 10 WOOD DESIGN', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="The D BELL VSR 10 WOOD DESIGN" data-price="15" data-image="D BELL VSR 10 WOOD DESIGN.jpg" onclick="addDBuy('The D BELL VSR 10 WOOD DESIGN', 1, 15);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-outline-danger btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="deleteProduct('D BELL VSR 10 WOOD DESIGN')">Delete</button>
                     </div>
                 </div>
             </div>
         </div>
+        <?php endif; ?>
 
+        <?php if (isset($products['DBELL VSR10 BLACK'])): ?>
         <div class="col">
             <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="DBELL VSR10 BLACK.jpg" class="card-img-top img-fluid" alt="DBELL VSR10 BLACK" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">DBELL VSR10</h5>
-                    <p style="color: white;">15$</p>
+                    <p style="color: white;"><?= $products['DBELL VSR10 BLACK']['price'] ?? '15' ?>$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
-                        <span class="star-rating">4.5 ★★★★☆</span>
-                        <span style="margin-left: 5px; color: white;">250 sold</span>
+                        <span class="star-rating"><?= $products['DBELL VSR10 BLACK']['rating'] ?? '4.5' ?> ★★★★☆</span>
+                        <span style="margin-left: 5px; color: white;"><?= $products['DBELL VSR10 BLACK']['sold'] ?? '250' ?> sold</span>
                     </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('DBELL VSR10 BLACK', -1)">-</button>
-                            <span id="stock-count-dbell-vsr10-black">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('DBELL VSR10 BLACK', 1)">+</button>
-                        </div>
+                    <div class="d-flex align-items-center mt-2" style="color: white; margin-top: 5px;">
+                        In stock: 
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('DBELL VSR10 BLACK', -1)">-</button>
+                        <span id="stock-count-dbell-vsr10-black"class="mx-2"><?= $products['DBELL VSR10 BLACK']['stock'] ?? 0 ?></span>
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('DBELL VSR10 BLACK', 1)">+</button>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm"  style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('DBELL VSR10 BLACK', 15, 'DBELL VSR10 BLACK.jpg'); modifyStock('DBELL VSR10 BLACK', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="DBELL VSR10 BLACK" data-price="15" data-image="DBELL VSR10 BLACK.jpg" onclick="addDBuy('DBELL VSR10 BLACK', 1, 15);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-outline-danger btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="deleteProduct('DBELL VSR10 BLACK')">Delete</button>
                     </div>
                 </div>
             </div>
         </div>
+        <?php endif; ?>
 
+        <?php if (isset($products['MOD 24 SSG GSPEC'])): ?>
         <div class="col">
             <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="MOD 24 SSG GSPEC.jpg" class="card-img-top img-fluid" alt="MOD 24 SSG GSPEC" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">MOD 24 SSG</h5>
-                    <p style="color: white;">15$</p>
+                    <p style="color: white;"><?= $products['MOD 24 SSG GSPEC']['price'] ?? '15' ?>$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
-                        <span class="star-rating">4.0 ★★★★☆</span>
-                        <span style="margin-left: 5px; color: white;">180 sold</span>
+                        <span class="star-rating"><?= $products['MOD 24 SSG GSPEC']['rating'] ?? '4.0' ?> ★★★★☆</span>
+                        <span style="margin-left: 5px; color: white;"><?= $products['MOD 24 SSG GSPEC']['sold'] ?? '180' ?> sold</span>
                     </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('MOD 24 SSG GSPEC', -1)">-</button>
-                            <span id="stock-count-mod-24-ssg-gspec">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('MOD 24 SSG GSPEC', 1)">+</button>
-                        </div>
+                    <div class="d-flex align-items-center mt-2" style="color: white; margin-top: 5px;">
+                        In stock: 
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('MOD 24 SSG GSPEC', -1)">-</button>
+                        <span id="stock-count-mod-24-ssg-gspec"class="mx-2"><?= $products['MOD 24 SSG GSPEC']['stock'] ?? 0 ?></span>
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('MOD 24 SSG GSPEC', 1)">+</button>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm"  style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('MOD 24 SSG GSPEC', 15, 'MOD 24 SSG GSPEC.jpg'); modifyStock('MOD 24 SSG GSPEC', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="MOD 24 SSG GSPEC" data-price="15" data-image="MOD 24 SSG GSPEC.jpg" onclick="addDBuy('MOD 24 SSG GSPEC', 1, 15);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-outline-danger btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="deleteProduct('MOD 24 SSG GSPEC')">Delete</button>
                     </div>
                 </div>
             </div>
         </div>
+        <?php endif; ?>
 
+        <?php if (isset($products['LT-28AB LANCER TACTICAL M24'])): ?>
         <div class="col">
             <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="LT-28AB LANCER TACTICAL M24.jpg" class="card-img-top img-fluid" alt="LT-28AB LANCER TACTICAL M24" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">LT-28AB</h5>
-                    <p style="color: white;">15$</p>
+                    <p style="color: white;"><?= $products['LT-28AB LANCER TACTICAL M24']['price'] ?? '15' ?>$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
-                        <span class="star-rating">4.7 ★★★★★</span>
-                        <span style="margin-left: 5px; color: white;">220 sold</span>
+                        <span class="star-rating"><?= $products['LT-28AB LANCER TACTICAL M24']['rating'] ?? '4.7' ?> ★★★★★</span>
+                        <span style="margin-left: 5px; color: white;"><?= $products['LT-28AB LANCER TACTICAL M24']['sold'] ?? '220' ?> sold</span>
                     </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('LT-28AB LANCER TACTICAL M24', -1)">-</button>
-                            <span id="stock-count-lt-28ab-lancer-tactical-m24">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('LT-28AB LANCER TACTICAL M24', 1)">+</button>
-                        </div>
+                    <div class="d-flex align-items-center mt-2" style="color: white; margin-top: 5px;">
+                        In stock: 
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('LT-28AB LANCER TACTICAL M24', -1)">-</button>
+                        <span id="stock-count-lt-28ab-lancer-tactical-m24"class="mx-2"><?= $products['LT-28AB LANCER TACTICAL M24']['stock'] ?? 0 ?></span>
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('LT-28AB LANCER TACTICAL M24', 1)">+</button>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm"  style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('LT-28AB LANCER TACTICAL M24', 15, 'LT-28AB LANCER TACTICAL M24.jpg'); modifyStock('LT-28AB LANCER TACTICAL M24', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="LT-28AB LANCER TACTICAL M24" data-price="15" data-image="LT-28AB LANCER TACTICAL M24.jpg" onclick="addDBuy('LT-28AB LANCER TACTICAL M24', 1, 15);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-outline-danger btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="deleteProduct('LT-28AB LANCER TACTICAL M24')">Delete</button>
                     </div>
                 </div>
             </div>
         </div>
+        <?php endif; ?>
 
+        <?php if (isset($products['EC 501C L96 BLACK'])): ?>
         <div class="col">
             <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <img src="EC 501C L96 BLACK.jpg" class="card-img-top img-fluid" alt="EC 501C L96 BLACK" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">EC 501C L96</h5>
-                    <p style="color: white;">15$</p>
+                    <p style="color: white;"><?= $products['EC 501C L96 BLACK']['price'] ?? '15' ?>$</p>
                     <div class="d-flex align-items-center" style="color: gold;">
-                        <span class="star-rating">4.4 ★★★★☆</span>
-                        <span style="margin-left: 5px; color: white;">150 sold</span>
+                        <span class="star-rating"><?= $products['EC 501C L96 BLACK']['rating'] ?? '4.4' ?> ★★★★☆</span>
+                        <span style="margin-left: 5px; color: white;"><?= $products['EC 501C L96 BLACK']['sold'] ?? '150' ?> sold</span>
                     </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <div style="color: white; margin-top: 5px;">In stock: 
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('EC 501C L96 BLACK', -1)">-</button>
-                            <span id="stock-count-ec-501c-l96-black">0</span>
-                            <button class="btn btn-secondary btn-sm" onclick="modifyStock('EC 501C L96 BLACK', 1)">+</button>
-                        </div>
+                    <div class="d-flex align-items-center mt-2" style="color: white; margin-top: 5px;">
+                        In stock: 
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('EC 501C L96 BLACK', -1)">-</button>
+                        <span id="stock-count-ec-501c-l96-black"class="mx-2"><?= $products['EC 501C L96 BLACK']['stock'] ?? 0 ?></span>
+                        <button class="btn btn-secondary btn-sm" onclick="modifyStock('EC 501C L96 BLACK', 1)">+</button>
                     </div>
                     <div class="button-container mt-auto d-flex justify-content-center">
-                        <button class="btn btn-outline-success buy-now btn-sm"  style="font-size: 0.8em; white-space: nowrap;" onclick="confirmPurchase('EC 501C L96 BLACK', 15, 'EC 501C L96 BLACK.jpg'); modifyStock('EC 501C L96 BLACK', -1)">Buy Now</button>
-                        <button class="btn btn-outline-light add-to-cart btn-sm" style="font-size: 0.8em; white-space: nowrap;" data-name="EC 501C L96 BLACK" data-price="15" data-image="EC 501C L96 BLACK.jpg" onclick="addDBuy('EC 501C L96 BLACK', 1, 15);alert('Added to cart')">Add to Cart</button>
+                        <button class="btn btn-outline-danger btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="deleteProduct('EC 501C L96 BLACK')">Delete</button>
                     </div>
                 </div>
             </div>
         </div>
+        <?php endif; ?>
+
     </div>
 </div>
+
 
 <br>
 <div class="container text-center">
@@ -759,7 +752,7 @@ button:hover {
       <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
         <img src="Tokyo Marui VSR-10.jpg" class="card-img-top img-fluid" alt="Tokyo Marui VSR-10" style="height: 180px; object-fit: cover;">
         <div class="card-body d-flex flex-column">
-          <h5 class="feature-title" style="color: white;">Tokyo Marui VSR-10</h5>
+          <h6 class="feature-title" style="color: white;">Tokyo Marui VSR-10</h6>
           <p style="color: white;"><?= $products['Tokyo Marui VSR-10']['price'] ?? '20' ?>$</p>
           <div class="d-flex align-items-center" style="color: gold;">
             <span class="star-rating"><?= $products['Tokyo Marui VSR-10']['rating'] ?? '4.5' ?> ★★★★☆</span>
@@ -843,7 +836,7 @@ button:hover {
           <div class="d-flex align-items-center mt-2" style="color: white; margin-top: 5px;">
             In stock: 
             <button class="btn btn-secondary btn-sm ml-2" onclick="modifyStock('FN SCAR', -1)">-</button>
-            <span id="stock-count-fn-scar"><?= $products['FN SCAR']['stock'] ?? 0 ?></span>
+            <span id="stock-count-fn-scar" class="mx-2"><?= $products['FN SCAR']['stock'] ?? 0 ?></span>
             <button class="btn btn-secondary btn-sm" onclick="modifyStock('FN SCAR', 1)">+</button>
           </div>
           <div class="button-container mt-auto d-flex justify-content-center">
