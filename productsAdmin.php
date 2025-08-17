@@ -593,7 +593,7 @@ button:hover {
         <?php if (isset($products['D BELL VSR 10 WOOD DESIGN'])): ?>
         <div class="col">
             <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
-                <img src="D BELL VSR 10 WOOD DESIGN.jpg" class="card-img-top img-fluid" alt="D BELL VSR 10 WOOD DESIGN" style="height: 180px; object-fit: cover;">
+                <img src="D BELL VSR 10 WOOD DESIGN.png" class="card-img-top img-fluid" alt="D BELL VSR 10 WOOD DESIGN" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">D BELL VSR 10</h5>
                     <p style="color: white;"><?= $products['D BELL VSR 10 WOOD DESIGN']['price'] ?? '15' ?>$</p>
@@ -618,7 +618,7 @@ button:hover {
         <?php if (isset($products['DBELL VSR10 BLACK'])): ?>
         <div class="col">
             <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
-                <img src="DBELL VSR10 BLACK.jpg" class="card-img-top img-fluid" alt="DBELL VSR10 BLACK" style="height: 180px; object-fit: cover;">
+                <img src="DBELL VSR10 BLACK.png" class="card-img-top img-fluid" alt="DBELL VSR10 BLACK" style="height: 180px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">DBELL VSR10</h5>
                     <p style="color: white;"><?= $products['DBELL VSR10 BLACK']['price'] ?? '15' ?>$</p>
@@ -747,25 +747,25 @@ button:hover {
     </div>
     <?php endif; ?>
 
-    <?php if (isset($products['Tokyo Marui VSR-10'])): ?>
+    <?php if (isset($products['HK M110A1'])): ?>
     <div class="col mb-4">
       <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
-        <img src="Tokyo Marui VSR-10.jpg" class="card-img-top img-fluid" alt="Tokyo Marui VSR-10" style="height: 180px; object-fit: cover;">
+        <img src="HK M110A1.jpg" class="card-img-top img-fluid" alt="HK M110A1" style="height: 180px; object-fit: cover;">
         <div class="card-body d-flex flex-column">
-          <h6 class="feature-title" style="color: white;">Tokyo Marui VSR-10</h6>
-          <p style="color: white;"><?= $products['Tokyo Marui VSR-10']['price'] ?? '20' ?>$</p>
+          <h5 class="feature-title" style="color: white;">HK M110A1</h5>
+          <p style="color: white;"><?= $products['HK M110A1']['price'] ?? '20' ?>$</p>
           <div class="d-flex align-items-center" style="color: gold;">
-            <span class="star-rating"><?= $products['Tokyo Marui VSR-10']['rating'] ?? '4.5' ?> ★★★★☆</span>
-            <span class="ml-2" style="color: white;"><?= $products['Tokyo Marui VSR-10']['sold'] ?? '500' ?> sold</span>
+            <span class="star-rating"><?= $products['HK M110A1']['rating'] ?? '4.5' ?> ★★★★☆</span>
+            <span class="ml-2" style="color: white;"><?= $products['HK M110A1']['sold'] ?? '500' ?> sold</span>
           </div>
           <div class="d-flex align-items-center mt-2" style="color: white; margin-top: 5px;">
             In stock:
-            <button class="btn btn-secondary btn-sm ml-2" onclick="modifyStock('Tokyo Marui VSR-10', -1)">-</button>
-            <span id="stock-count-tokyo-marui-vsr-10" class="mx-2"><?= $products['Tokyo Marui VSR-10']['stock'] ?? 0 ?></span>
-            <button class="btn btn-secondary btn-sm" onclick="modifyStock('Tokyo Marui VSR-10', 1)">+</button>
+            <button class="btn btn-secondary btn-sm ml-2" onclick="modifyStock('HK M110A1', -1)">-</button>
+            <span id="stock-count-hk-m110a1" class="mx-2"><?= $products['HK M110A1']['stock'] ?? 0 ?></span>
+            <button class="btn btn-secondary btn-sm" onclick="modifyStock('HK M110A1', 1)">+</button>
           </div>
           <div class="button-container mt-auto d-flex justify-content-center">
-            <button class="btn btn-outline-danger btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="deleteProduct('Tokyo Marui VSR-10')">Delete</button>
+            <button class="btn btn-outline-danger btn-sm" style="font-size: 0.8em; white-space: nowrap;" onclick="deleteProduct('HK M110A1')">Delete</button>
           </div>
         </div>
       </div>

@@ -1,97 +1,104 @@
 {
     "GLOCK 18": {
-        "price": 29,
+        "price": 99,
         "image": "GLOCK 18.jpg",
         "rating": 4.9,
         "sold": 120,
         "stock": 0
     },
+    "CZ P-10C C02 BLK": {
+        "price": 99,
+        "image": "CZ P-10C C02.jpg",
+        "rating": 4.9,
+        "sold": 150,
+        "stock": 0
+    },
     "KJW CZ TS2": {
-        "price": 29,
+        "price": 89,
         "image": "KJW CZ TS2.jpg",
         "rating": 4.9,
         "sold": 200,
         "stock": 0
     },
     "WG 701 BLK": {
-        "price": 29,
+        "price": 99,
         "image": "WG 701 BLK.jpg",
         "rating": 4.2,
         "sold": 110,
         "stock": 0
     },
     "KJW KP-06 HICAPA": {
-        "price": 19,
+        "price": 89,
         "image": "KJW KP-06 HICAPA.webp",
         "rating": 4.5,
         "sold": 100,
         "stock": 0
     },
     "D BELL VSR 10 WOOD DESIGN": {
-        "price": 15,
+        "price": 159,
         "image": "D BELL VSR 10 WOOD DESIGN.jpg",
         "rating": 4.3,
         "sold": 300,
         "stock": 0
     },
     "DBELL VSR10 BLACK": {
-        "price": 15,
+        "price": 159,
         "image": "DBELL VSR10 BLACK.jpg",
         "rating": 4.5,
         "sold": 250,
         "stock": 0
     },
     "MOD 24 SSG GSPEC": {
-        "price": 15,
+        "price": 249,
         "image": "MOD 24 SSG GSPEC.jpg",
         "rating": 4.2,
         "sold": 180,
         "stock": 0
     },
     "LT-28AB LANCER TACTICAL M24": {
-        "price": 15,
+        "price": 169,
         "image": "LT-28AB LANCER TACTICAL M24.jpg",
         "rating": 4.7,
         "sold": 220,
         "stock": 0
     },
     "EC 501C L96 BLACK": {
-        "price": 15,
+        "price": 299,
         "image": "EC 501C L96 BLACK.jpg",
         "rating": 4.4,
         "sold": 150,
         "stock": 0
     },
     "Heckler & Koch - HK416": {
-        "price": 19,
+        "price": 199,
         "image": "Heckler & Koch - HK416.jpg",
         "rating": 4.5,
         "sold": 300,
         "stock": 0
     },
-    "Tokyo Marui VSR-10": {
-        "price": 20,
-        "image": "Tokyo Marui VSR-10.jpg",
+    "HK M110A1": {
+        "price": 199,
+        "image": "HK M110A1.jpg",
         "rating": 4.5,
         "sold": 500,
         "stock": 0
     },
     "AK74 SERIES": {
-        "price": 20,
+        "price": 299,
         "image": "AK74 SERIES.jpg",
         "rating": 4.2,
         "sold": 350,
         "stock": 0
     },
     "M4A1 SERIES": {
-        "price": 20,
+        "price": 299,
         "image": "M4A1 SERIES.jpg",
         "rating": 4.3,
         "sold": 400,
         "stock": 0
     },
     "FN SCAR": {
-        "price": 20,
+        "price": 199,
         "image": "FN SCAR.jpg",
         "rating": 4.1,
         "sold": 250,
