@@ -18,7 +18,6 @@ $products = json_decode(file_get_contents('products.json'), true);
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="updateData.js"> </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="products.css">
     <style>
 body {
     font-family: "Open Sans", Arial, sans-serif;
@@ -417,6 +416,53 @@ button:hover {
 .filter-button:hover {
   background-color: #e0a800;
 }
+.modal-content {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.modal-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+}
+
+.carousel-inner img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-inner img:hover {
+  transform: scale(1.02);
+}
+/* Black carousel arrow buttons */
+.custom-carousel-arrow {
+  width: 40px;
+  height: 40px;
+  background-color: #000; /* Solid black */
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* White icon */
+  font-size: 20px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease;
+}
+
+.carousel-control-prev.custom-carousel-arrow {
+  left: 10px;
+}
+
+.carousel-control-next.custom-carousel-arrow {
+  right: 10px;
+}
+
+.custom-carousel-arrow:hover {
+  background-color: #222; /* Slightly lighter on hover */
+}
 
 
     </style>
@@ -556,72 +602,92 @@ button:hover {
   </form>
 </div>
 
-<!-- Modal -->
 <div class="modal fade" id="productModalGlock18" tabindex="-1" role="dialog" aria-labelledby="productModalLabelGlock18" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content" style="background-color: #1e1e2f; color: white;">
-      <div class="modal-header">
-        <h5 class="modal-title" id="productModalLabelGlock18">GLOCK 18</h5>
-        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" style="z-index: 1050;">
-          <span aria-hidden="true">&times;</span>
+    <div class="modal-content" style="background-color: #1e1e2f; color: #fff; border-radius: 8px;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title font-weight-bold" id="productModalLabelGlock18">GLOCK 18</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" style="font-size: 1.5rem;">&times;</span>
         </button>
       </div>
-      <div class="modal-body row">
-        <div class="col-md-6">
-          <!-- Image Carousel -->
-          <div id="glockCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="GLOCK 18.jpg" class="d-block w-100" alt="GLOCK 18" style="height: 300px; object-fit: cover;">
-              </div>
-              <div class="carousel-item">
-                <img src="GLOCK 18 Side View.jpg" class="d-block w-100" alt="GLOCK 18 Side View" style="height: 300px; object-fit: cover;">
-              </div>
-              <div class="carousel-item">
-                <img src="GLOCK 18 Side View1.avif" class="d-block w-100" alt="GLOCK 18 Side View1" style="height: 300px; object-fit: cover;">
-              </div>
+
+      <div class="modal-body row no-gutters">
+        <!-- Left: Carousel -->
+        <div class="col-md-6 pr-3">
+        <div id="glockCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner rounded">
+                <div class="carousel-item active">
+                    <video class="d-block w-100 rounded" style="height: 300px; object-fit: cover;" controls>
+                        <source src="GLOCK 18.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <img src="GLOCK 18 Side View.jpg" class="d-block w-100 rounded" alt="GLOCK 18 Side View" style="height: 300px; object-fit: cover;">
+                </div>
+                <div class="carousel-item">
+                    <img src="GLOCK 18 Side View1.avif" class="d-block w-100 rounded" alt="GLOCK 18 Side View1" style="height: 300px; object-fit: cover;">
+                </div>
+                <div class="carousel-item">
+                    <img src="GLOCK 18.jpg" class="d-block w-100 rounded" alt="GLOCK 18" style="height: 300px; object-fit: cover;">
+                </div>
+                <div class="carousel-item">
+                    <img src="GLOCK 18 Side View2.jpg" class="d-block w-100 rounded" alt="GLOCK 18" style="height: 300px; object-fit: cover;">
+                </div>
             </div>
-            <a class="carousel-control-prev" href="#glockCarousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-              <span class="sr-only">Previous</span>
+
+            <a class="carousel-control-prev custom-carousel-arrow" href="#glockCarousel" role="button" data-slide="prev">
+            <span class="fa fa-chevron-left"></span>
             </a>
-            <a class="carousel-control-next" href="#glockCarousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-              <span class="sr-only">Next</span>
+            <a class="carousel-control-next custom-carousel-arrow" href="#glockCarousel" role="button" data-slide="next">
+            <span class="fa fa-chevron-right"></span>
             </a>
           </div>
         </div>
-        <div class="col-md-6">
-          <h4>Price: <?= $products['GLOCK 18']['price'] ?>$</h4>
-          <p><strong>Stock:</strong> <span id="stock-count-glock-18" style="margin-left: 5px;"></p>
-          <p><strong>Sold:</strong> <?= $products['GLOCK 18']['sold'] ?></p>
-          <p><strong>Rating:</strong> <?= $products['GLOCK 18']['rating'] ?> ★★★★★</p>
-          
-          <hr>
-          <h5>Description</h5>
-          <p>
-            The GLOCK 18 is a compact, gas-powered airsoft pistol known for its reliability and performance. Perfect for CQB engagements and training.
-          </p>
 
-          <h5>Specifications</h5>
-          <ul>
-            <li>Type: GBB (Gas Blowback)</li>
-            <li>Material: Polymer & Metal</li>
-            <li>Color: Black</li>
-            <li>Magazine Capacity: 25 rounds</li>
-            <li>FPS: ~300-320</li>
-          </ul>
+        <!-- Right: Product Info -->
+        <div class="col-md-6 pl-3 d-flex flex-column justify-content-between">
+          <div>
+            <h4 class="text-success font-weight-bold mb-3">Price: <?= $products['GLOCK 18']['price'] ?>$</h4>
+            <p><i class="fa fa-cogs text-warning mr-1"></i><strong>Mode:</strong> Semi/Full Auto</p>
+            <p><i class="fa fa-shopping-cart text-info mr-1"></i><strong>Sold:</strong> <?= $products['GLOCK 18']['sold'] ?></p>
+            <p><i class="fa fa-star text-success mr-1"></i><strong>Rating:</strong> <?= $products['GLOCK 18']['rating'] ?> ★★★★★</p>
 
-          <div class="d-flex gap-2 mt-3">
-            <button class="btn btn-outline-success"
-              onclick="confirmPurchase('GLOCK 18', <?= $products['GLOCK 18']['price'] ?>, 'GLOCK 18.jpg'); modifyStock('GLOCK 18', -1)">
-              Buy Now
-            </button>
-            <button class="btn btn-outline-light"
-              onclick="addToCart('GLOCK 18', <?= $products['GLOCK 18']['price'] ?>, 'GLOCK 18.jpg')">
-              Add to Cart
-            </button>
+            <hr style="border-color: #444;">
+
+
+            <h6 class="font-weight-bold">Description</h6>
+            <p class="small">
+              The GLOCK 18 is a compact, gas-powered airsoft pistol known for its reliability and performance. Perfect for CQB engagements and training.
+            </p>
+
+            <h6 class="font-weight-bold">Specifications</h6>
+            <ul class="small">
+              <li>Type: GBB (Gas Blowback)</li>
+              <li>Material: Polymer & Metal</li>
+              <li>Color: Black</li>
+              <li>Magazine Capacity: 25 rounds</li>
+              <li>FPS: ~300-320</li>
+            </ul>
           </div>
+          <!-- Buttons -->
+            <div class="d-flex justify-content-between mt-4">
+                <button class="btn btn-success d-flex align-items-center justify-content-center w-50 mr-2 py-2"
+                    style="font-size: 0.8em; white-space: nowrap;"
+                    onclick="confirmPurchase('GLOCK 18', <?= $products['GLOCK 18']['price'] ?>, 'GLOCK 18.jpg'); modifyStock('GLOCK 18', -1)">
+                    <i class="fa fa-credit-card mr-2"></i> Buy Now
+                </button>
+
+                <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
+                    style="font-size: 0.8em; white-space: nowrap;"
+                    data-name="GLOCK 18"
+                    data-price="<?= $products['GLOCK 18']['price'] ?>"
+                    data-image="GLOCK 18.jpg"
+                    onclick="addDBuy('GLOCK 18', 1, <?= $products['GLOCK 18']['price'] ?>); alert('Added to cart')">
+                    <i class="fa fa-shopping-cart mr-2"></i> Add to Cart
+                </button>
+            </div>
         </div>
       </div>
     </div>
@@ -630,10 +696,9 @@ button:hover {
 
 
     <br>  <h1> <center> Guns </center></h1> <br>
-      
+
 <div class="container text-center"> 
     <div class="row align-items-stretch">
-
         <?php if (isset($products['GLOCK 18'])): ?>
         <div class="col product-card" 
             data-name="GLOCK 18"
@@ -673,6 +738,7 @@ button:hover {
             </div>
         </div>
         <?php endif; ?>
+        
 
         <?php if (isset($products['CZ P-10C C02 BLK'])): ?>
         <div class="col product-card"
@@ -853,7 +919,6 @@ button:hover {
             data-price="<?= $products['D BELL VSR 10 WOOD DESIGN']['price'] ?>"
             data-color="Wood"
             data-size="Full-size">
-
             <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <a href="javascript:alert('This is where description and photo of game goes using bootstrap modal!');">
                     <img src="D BELL VSR 10 WOOD DESIGN.png" class="card-img-top img-fluid" alt="D BELL VSR 10 WOOD DESIGN" style="height: 180px; object-fit: cover;">
@@ -1002,6 +1067,7 @@ button:hover {
 </div>
 
 <br>
+
 <div class="container text-center">
     <div class="row align-items-stretch">
 
@@ -1162,10 +1228,7 @@ button:hover {
     </div>
 </div>
 
-
     <br>
-
-
 
 </div>
       </div>
