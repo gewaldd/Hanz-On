@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <title>Hanz On Airsoft Archives!</title>
+    <title>Hanz On Airsoft Supplies</title>
     <style>
         /* Base Styles */
         body {
@@ -472,10 +472,11 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="AboutUs.html">About Us</a>
+                <a class="nav-item nav-link" href="products.php">Products</a>  
                 <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#dealsModal">Deals and
                     Coupons</a>
                 <a class="nav-item nav-link" href="#">Account</a>
-                <a class="nav-item nav-link" href="SignIn.html">Sign In</a>
+                <a class="nav-item nav-link" href="login.php">Sign In</a>
                 <a class="nav-item nav-link" id="cart-btn" data-toggle="modal" data-target="#cartModal">Cart (<span
                         id="cart-count">0</span>)</a>
                 <div class="search-container">
@@ -594,31 +595,31 @@
             </div>
 
             <div class="product">
-                <a href="javascript:alert('Modal of the game');"><img src="hk416.jpg" alt="Resident Evil"></a>
-                <p>Resident Evil<br>4.5 ★★★★</p>
+                <a href="javascript:alert('Modal of the game');"><img src="hk416.jpg" alt="Heckler & Koch HK416"></a>
+                <p>Heckler & Koch HK416<br>4.5 ★★★★</p>
                 <div class="button-container">
                     <button class="btn btn-success buy-now"
-                        onclick="buyNow('Resident Evil', 29, 'ResidentEvil.jpg')">Buy Now</button>
+                        onclick="buyNow('HK416', 29, 'hk416.jpg')">Buy Now</button>
                     <button class="btn btn-light add-to-cart" data-name="Resident Evil" data-price="29"
-                        data-image="ResidentEvil.jpg">Add to Cart</button>
+                        data-image="hk416.jpg">Add to Cart</button>
                 </div>
                 <span class="sold-out-label" style="display: none; color: #ff0000;">Sold Out</span>
             </div>
 
             <div class="product">
-                <a href="javascript:alert('Modal of the game');"><img src="dbell.jpg" alt="Sonic The Hedgehog"></a>
-                <p>Sonic The Hedgehog<br>5.0 ★★★★★</p>
+                <a href="javascript:alert('Modal of the game');"><img src="dbell.jpg" alt="D BELL VSR 10 WOOD"></a>
+                <p>D BELL VSR 10 WOOD DESIGN<br>5.0 ★★★★★</p>
                 <div class="button-container">
-                    <button class="btn btn-success buy-now" onclick="buyNow('Sonic the Hedgehog', 19, 'Sonic.PNG')">Buy
+                    <button class="btn btn-success buy-now" onclick="buyNow('D BELL VSR 10 WOOD', 19, 'dbell.jpg')">Buy
                         Now</button>
-                    <button class="btn btn-light add-to-cart" data-name="Sonic the Hedgehog" data-price="19"
-                        data-image="Sonic.PNG">Add to Cart</button>
+                    <button class="btn btn-light add-to-cart" data-name="D BELL VSR 10 WOOD" data-price="19"
+                        data-image="dbell.jpg">Add to Cart</button>
                 </div>
                 <span class="sold-out-label" style="display: none; color: #ff0000;">Sold Out</span>
             </div>
         </div>
         <br>
-        <a href="products.html" class="btn btn-warning">Shop More Deals</a>
+        <a href="products.php" class="btn btn-warning">Shop More Deals</a>
     </div>
 
     <!-- Footer Sections -->

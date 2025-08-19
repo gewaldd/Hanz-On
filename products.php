@@ -18,7 +18,11 @@ $products = json_decode(file_get_contents('products.json'), true);
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="updateData.js"> </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Hanz On Airsoft Products</title>
     <style>
+    
+
+
 body {
     font-family: "Open Sans", Arial, sans-serif;
     margin: 0;
@@ -487,6 +491,7 @@ button:hover {
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <div class="navbar-nav ml-auto" style="display: flex; align-items: center; gap: 20px;">
             <a class="nav-item nav-link" href="AboutUs.html" id="navitemu" style="color: white;">About Us</a>
+            <a class="nav-item nav-link" href="products.php">Products</a>  
             <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#dealsModal" id="navitemu" style="color: white;">Deals and Coupons</a>
             <a class="nav-item nav-link" href="#" id="navitemu" style="color: white;">Account</a>
             <a class="nav-item nav-link" href="login.php" id="navitemu" style="color: white;">Sign In</a>

@@ -13,7 +13,7 @@ include('server.php');
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <title>Soteria's Game Archive</title>
+    <title>Hanz On Airsoft Supplies</title>
     <style>
        
         body {
@@ -59,14 +59,14 @@ include('server.php');
 
 
         header {
-            background-color: #0d47a1;
+            background-color: #232324ff;
             padding: 10px;
             text-align: center;
         }
 
 
         nav {
-            background-color: #1976d2;
+            background-color: #232324ff;
             padding: 10px;
             text-align: center;
         }
@@ -96,7 +96,7 @@ include('server.php');
         }
         body {
             font-family: Arial, sans-serif;
-            background-color: #2962ff;
+            background-color: #5c5c5cff;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -124,11 +124,11 @@ include('server.php');
             margin-bottom: 20px;
         }
         .panel p {
-            color: #777;
+            color: #252525ff;
             margin-bottom: 30px;
         }
         .panel button {
-            background-color: #007bff;
+            background-color: #252525ff;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -194,16 +194,17 @@ include('server.php');
             border-radius: 5px;
         }
         .modal-content button {
-            background-color: #007bff;
+            background-color: #252525ff;
             color: #fff;
             border: none;
             padding: 10px;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
             width: 100%;
+            margin-top: 30px;
         }
         .close {
-            color: #aaa;
+            color: #050505ff;
             float: right;
             font-size: 28px;
             font-weight: bold;
@@ -254,13 +255,13 @@ include('server.php');
 </div>
 <div class="alert error" id="alertBoxError" style="<?php echo !empty($errors) ? 'display:block;' : ''; ?>">
     <?php foreach ($errors as $error) {
-        echo "<div>$error</div>";
+        echo ($error);
     } ?>
 </div>
     <div class="container">
         <div class="panel left">
             <img src="Logo.png" alt="Logo" class="logo">
-            <h2>Welcome Back to Soteria Game Store!</h2>
+            <h2>Welcome Back to Hanz-On Airsoft Supplies</h2>
             <p>To keep connected with us please login with your personal info</p>
             <button onclick="openModal()">LOG IN</button>  
             
