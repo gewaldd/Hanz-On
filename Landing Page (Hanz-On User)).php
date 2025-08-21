@@ -100,7 +100,7 @@
             display: block;
             width: 100px;
             height: 3px;
-            background: #8fbc54;
+            background: #f2c94c;
             margin: 10px auto 0;
         }
 
@@ -112,14 +112,14 @@
 
         /* Header & Navigation */
         header {
-            background-color: #000000;
+            background-color: #1e1e2f;
             padding: 15px;
             text-align: center;
             border-bottom: 1px solid #333;
         }
 
         nav {
-            background-color: #000000;
+            background-color: #1e1e2f;
             padding: 10px;
             border-bottom: 1px solid #333;
         }
@@ -150,7 +150,7 @@
         }
 
         .nav-link:hover {
-            color: #8fbc54;
+            color: #f2c94c;
         }
 
         /* Content Sections */
@@ -274,8 +274,8 @@
         }
 
         .btn-warning {
-            background-color: #8fbc54;
-            border-color: #8fbc54;
+            background-color: #f2c94c;
+            border-color: #f2c94c;
             color: #000;
             font-weight: bold;
             text-transform: uppercase;
@@ -283,8 +283,8 @@
         }
 
         .btn-warning:hover {
-            background-color: #7aa641;
-            border-color: #7aa641;
+            background-color: #e0b93e;
+            border-color: #e0b93e;
             color: #000;
         }
 
@@ -361,7 +361,7 @@
         }
 
         .footer-section h5 {
-            color: #8fbc54;
+            color: #f2c94c;
             margin-bottom: 20px;
         }
 
@@ -381,7 +381,7 @@
         }
 
         .footer-section a:hover {
-            color: #8fbc54;
+            color: #f2c94c;
         }
 
         .social-icons {
@@ -507,12 +507,12 @@
 
 <body>
     <header>
-        <h1><span style="color: #ebee5dff;"><b>H</b></span>anzOn Airsoft Supplies.</h1>
+        <h1><span style="color: #f2c94c;"><b>H</b></span>anzOn Airsoft Supplies.</h1>
     </header>
 
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="#">
-            <img src="Logo.png" height="100px" width="100px" alt="Logo">
+            <img src="HO-logo.png" height="100px" width="100px" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
             aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
