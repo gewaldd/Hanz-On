@@ -647,7 +647,7 @@ button:hover {
 
             <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <a href="javascript:alert('This is where description and photo of game goes using bootstrap modal!');">
-                    <img src="CZ P-10C C02 BLK.webp" class="card-img-top img-fluid" alt="CZ P-10C C02 BLK" style="height: 180px; object-fit: cover;">
+                    <img src="CZ P-10C C02 BLK.jpg" class="card-img-top img-fluid" alt="CZ P-10C C02 BLK" style="height: 180px; object-fit: cover;">
                 </a>
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">CZ P-10C C02</h5>
@@ -680,7 +680,7 @@ button:hover {
 
             <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                 <a href="javascript:alert('This is where description and photo of game goes using bootstrap modal!');">
-                    <img src="KJW CZ TS2.jpg" class="card-img-top img-fluid" alt="KJW CZ TS2" style="height: 180px; object-fit: cover;">
+                    <img src="KJW CZ TS2.png" class="card-img-top img-fluid" alt="KJW CZ TS2" style="height: 180px; object-fit: cover;">
                 </a>
                 <div class="card-body d-flex flex-column">
                     <h5 class="feature-title" style="color: white;">KJW CZ TS2</h5>
