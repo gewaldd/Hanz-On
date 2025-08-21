@@ -814,7 +814,7 @@
 
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="#">
-            <img src="Logo.png" height="100px" width="100px" alt="Logo">
+            <img src="HO-logo.png" height="100px" width="100px" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
             aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
