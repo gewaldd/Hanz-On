@@ -814,7 +814,7 @@
 
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="#">
-            <img src="HO-logo.png" height="100px" width="100px" alt="Logo">
+            <img src="Logo.png" height="100px" width="100px" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
             aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -1090,14 +1090,14 @@
                             </div>
                             <div class="col-md-6">
                                 <img src="https://images.unsplash.com/photo-1576790372116-ba8821b13667?auto=format&fit=crop&w=600&q=80"
-                                    class="img-fluid rounded" alt="Customer testimonial">
+                                    class="img-fluid rounded" alt="Testimonial image">
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="row align-items-center">
                             <div class="col-md-6 p-5">
-                                <h6>Exceptional Quality</h6>
+                                <h6>Exceptional Service</h6>
                                 <div class="stars mb-3">
                                     <i class="fa fa-star text-warning"></i>
                                     <i class="fa fa-star text-warning"></i>
@@ -1105,14 +1105,14 @@
                                     <i class="fa fa-star text-warning"></i>
                                     <i class="fa fa-star text-warning"></i>
                                 </div>
-                                <p class="lead">"The D-Bell sniper rifle is a game changer. The wood finish is beautiful
-                                    and the precision is unmatched in its price range. HanzOn delivered exactly what
-                                    they promised."</p>
+                                <p class="lead">"When my scope arrived with a minor issue, HanzOn's customer service
+                                    team had a replacement shipped the same day. Now that's service you can count on!"
+                                </p>
                                 <div class="text-muted">— Sarah T., Competitive Player</div>
                             </div>
                             <div class="col-md-6">
-                                <img src="https://images.unsplash.com/photo-1629996528813-fc8c4e98cabd?auto=format&fit=crop&w=600&q=80"
-                                    class="img-fluid rounded" alt="Customer testimonial">
+                                <img src="https://images.unsplash.com/photo-1623071645586-23e0e2020d34?auto=format&fit=crop&w=600&q=80"
+                                    class="img-fluid rounded" alt="Testimonial image">
                             </div>
                         </div>
                     </div>
@@ -1131,7 +1131,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer class="footer-section">
         <div class="container">
             <div class="row">
@@ -1146,26 +1146,28 @@
                     </ul>
                 </div>
                 <div class="col-md-3 mb-4 mb-md-0">
-                    <h5>Company</h5>
-                    <ul>
-                        <li><a href="AboutUs.html">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-4 mb-md-0">
                     <h5>Support</h5>
                     <ul>
                         <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">FAQ</a></li>
                         <li><a href="#">Shipping & Returns</a></li>
                         <li><a href="#">Warranty</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Repairs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5>About</h5>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Responsibility</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h5>Stay Connected</h5>
-                    <p>Subscribe to our newsletter for the latest updates and offers</p>
+                    <p>Subscribe to our newsletter for the latest products and exclusive offers.</p>
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
                         <div class="input-group-append">
@@ -1173,16 +1175,16 @@
                         </div>
                     </div>
                     <div class="social-icons">
-                        <a href="#"><i class="fa fa-facebook text-white"></i></a>
-                        <a href="#"><i class="fa fa-twitter text-white"></i></a>
-                        <a href="#"><i class="fa fa-instagram text-white"></i></a>
-                        <a href="#"><i class="fa fa-youtube text-white"></i></a>
+                        <a href="#"><i class="fa fa-facebook fa-lg text-light"></i></a>
+                        <a href="#"><i class="fa fa-instagram fa-lg text-light"></i></a>
+                        <a href="#"><i class="fa fa-twitter fa-lg text-light"></i></a>
+                        <a href="#"><i class="fa fa-youtube fa-lg text-light"></i></a>
                     </div>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <p>&copy; 2023 HanzOn Airsoft Supplies. All rights reserved.</p>
+                    <p class="text-muted">© 2023 HanzOn Airsoft Supplies. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -1192,29 +1194,27 @@
     <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
+            <div class="modal-content custom-modal-dark">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="cartModalLabel">Your Shopping Cart</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+                    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div id="cart-items">
-                        <p class="text-center" id="empty-cart-message">Your cart is empty</p>
-                    </div>
-                    <div class="coupon-section mt-3">
-                        <input type="text" class="form-control" id="coupon-code" placeholder="Enter coupon code">
-                        <button class="btn btn-warning" id="apply-coupon">Apply</button>
-                    </div>
-                    <div id="coupon-message" class="mt-2"></div>
-                    <div class="d-flex justify-content-between mt-3">
-                        <h5>Total: <span id="cart-total">$0.00</span></h5>
-                    </div>
+                <div class="modal-body" id="cart-items">
+                    <p>Your cart is empty.</p>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
-                    <button type="button" class="btn btn-warning" id="checkout-btn">Checkout</button>
+                <div class="modal-footer flex-column align-items-start w-100">
+                    <div class="coupon-section w-100 d-flex align-items-center mb-2">
+                        <input type="text" id="coupon-code" class="form-control custom-input-dark"
+                            placeholder="Enter coupon code">
+                        <button class="btn btn-outline-success ml-2" id="apply-coupon">Apply Coupon</button>
+                    </div>
+                    <p id="coupon-message" class="w-100 text-danger mt-1"></p>
+                    <div class="d-flex justify-content-between w-100 mt-2">
+                        <button type="button" class="btn btn-secondary w-50 mr-2" data-dismiss="modal">Close</button>
+                        <button class="btn btn-warning w-50" id="checkout-btn">Checkout</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1223,26 +1223,38 @@
     <!-- Deals Modal -->
     <div class="modal fade" id="dealsModal" tabindex="-1" role="dialog" aria-labelledby="dealsModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="dealsModalLabel">Current Deals & Coupons</h5>
+                    <h5 class="modal-title" id="dealsModalLabel">Deals and Coupons</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="deal-item mb-3 p-3" style="background-color: #2a2a3b; border-radius: 5px;">
-                        <h6>SUMMER25</h6>
-                        <p>Get 25% off on all summer gear. Valid until August 31st.</p>
-                    </div>
-                    <div class="deal-item mb-3 p-3" style="background-color: #2a2a3b; border-radius: 5px;">
-                        <h6>WELCOME10</h6>
-                        <p>10% off your first order. Applies to all products.</p>
-                    </div>
-                    <div class="deal-item mb-3 p-3" style="background-color: #2a2a3b; border-radius: 5px;">
-                        <h6>FREESHIP</h6>
-                        <p>Free shipping on orders over $50. No code needed.</p>
+                    <p style="font-size: 1.1em; margin-bottom: 20px; color: black;">Check out our latest deals and
+                        coupons to save on your favorite games!</p>
+                    <div class="deal-list">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span style="color: black;">10% off on your first purchase with code
+                                    <strong>DISCOUNT10</strong></span>
+                                <button class="btn btn-info btn-sm" onclick="copyToClipboard('DISCOUNT10')">Copy
+                                    Code</button>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span style="color: black;">20% off on your first purchase with code
+                                    <strong>DISCOUNT20</strong></span>
+                                <button class="btn btn-info btn-sm" onclick="copyToClipboard('DISCOUNT20')">Copy
+                                    Code</button>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span style="color: black;">30% off on your first purchase with code
+                                    <strong>DISCOUNT30</strong></span>
+                                <button class="btn btn-info btn-sm" onclick="copyToClipboard('DISCOUNT30')">Copy
+                                    Code</button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1253,172 +1265,150 @@
     </div>
 
     <script>
-        // Cart functionality
         let cart = [];
-        let cartCount = 0;
+        let discount = 0;
 
-        // Sample products data
-        const products = [
-            { id: 1, name: "D-Bell VSR-10 Wood Design", price: 199, image: "dbell.jpg", category: "Sniper Rifle" },
-            { id: 2, name: "Glock-18", price: 89, image: "glock18.jpg", category: "Pistol" },
-            { id: 3, name: "HK416", price: 249, image: "hk416.jpg", category: "Assault Rifle" },
-            { id: 4, name: "Oni Mask", price: 29, image: "onimask.jpg", category: "Protective Gear" },
-            { id: 5, name: "Vortex Diamondback", price: 179, image: "Vortex Diamondback Tactical 4-16×44 .jpg", category: "Tactical Scope" }
-        ];
-
-        // Initialize cart from localStorage if available
-        function initCart() {
-            const savedCart = localStorage.getItem('hanzonCart');
-            if (savedCart) {
-                cart = JSON.parse(savedCart);
-                updateCartCount();
-                renderCartItems();
-            }
-        }
-
-        // Add to cart function
-        function addToCart(productId, quantity = 1) {
-            const product = products.find(p => p.id === productId);
-            if (!product) return;
-
-            const existingItem = cart.find(item => item.id === productId);
-
-            if (existingItem) {
-                existingItem.quantity += quantity;
-            } else {
-                cart.push({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    image: product.image,
-                    quantity: quantity
-                });
-            }
-
-            updateCartCount();
-            renderCartItems();
-            saveCartToStorage();
-
-            // Show notification
-            $('#cartModal').modal('show');
-        }
-
-        // Remove from cart function
-        function removeFromCart(productId) {
-            cart = cart.filter(item => item.id !== productId);
-            updateCartCount();
-            renderCartItems();
-            saveCartToStorage();
-        }
-
-        // Update quantity function
-        function updateQuantity(productId, change) {
-            const item = cart.find(item => item.id === productId);
-            if (item) {
-                item.quantity += change;
-                if (item.quantity <= 0) {
-                    removeFromCart(productId);
-                } else {
-                    updateCartCount();
-                    renderCartItems();
-                    saveCartToStorage();
-                }
-            }
-        }
-
-        // Update cart count display
-        function updateCartCount() {
-            cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-            $('#cart-count').text(cartCount);
-        }
-
-        // Render cart items in modal
-        function renderCartItems() {
-            const cartItemsContainer = $('#cart-items');
-            const emptyCartMessage = $('#empty-cart-message');
-            const cartTotal = $('#cart-total');
-
-            if (cart.length === 0) {
-                emptyCartMessage.show();
-                cartItemsContainer.html('<p class="text-center">Your cart is empty</p>');
-                cartTotal.text('$0.00');
-                return;
-            }
-
-            emptyCartMessage.hide();
-
-            let itemsHTML = '';
-            let total = 0;
-
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-
-                itemsHTML += `
-                    <div class="cart-item">
-                        <div class="d-flex align-items-center">
-                            <img src="${item.image}" alt="${item.name}" class="mr-3">
-                            <div>
-                                <h6 class="mb-0">${item.name}</h6>
-                                <p class="mb-0">$${item.price.toFixed(2)}</p>
-                            </div>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="btn btn-sm btn-light" onclick="updateQuantity(${item.id}, -1)">-</button>
-                            <span class="mx-2">${item.quantity}</span>
-                            <button class="btn btn-sm btn-light" onclick="updateQuantity(${item.id}, 1)">+</button>
-                            <button class="btn btn-sm btn-danger ml-2" onclick="removeFromCart(${item.id})">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                `;
+        $(document).ready(function () {
+            // Event listener for the cart button
+            $('#cart-btn').click(function () {
+                updateCart();
+                $('#cartModal').modal('show');
             });
 
-            cartItemsContainer.html(itemsHTML);
-            cartTotal.text('$' + total.toFixed(2));
-        }
+            // Event listener for applying coupon
+            $('#apply-coupon').click(function () {
+                let couponCode = $('#coupon-code').val().trim();
+                applyCoupon(couponCode);
+            });
 
-        // Apply coupon code
-        $('#apply-coupon').click(function () {
-            const couponCode = $('#coupon-code').val().toUpperCase();
-            const couponMessage = $('#coupon-message');
-
-            if (couponCode === 'SUMMER25') {
-                couponMessage.text('25% discount applied!').css('color', '#28a745');
-                // Apply discount logic here
-            } else if (couponCode === 'WELCOME10') {
-                couponMessage.text('10% discount applied!').css('color', '#28a745');
-                // Apply discount logic here
-            } else {
-                couponMessage.text('Invalid coupon code').css('color', '#dc3545');
-            }
+            // Event listener for checkout button
+            $('#checkout-btn').click(function () {
+                checkoutCart();
+            });
         });
 
-        // Save cart to localStorage
-        function saveCartToStorage() {
-            localStorage.setItem('hanzonCart', JSON.stringify(cart));
+        function updateCart() {
+            let cartItems = $('#cart-items');
+            cartItems.empty();
+
+            if (cart.length === 0) {
+                cartItems.append('<p>Your cart is empty.</p>');
+            } else {
+                let table = $('<table>').addClass('table');
+                table.append('<thead><tr><th>Image</th><th>Name</th><th>Quantity</th><th>Price</th><th>Action</th></tr></thead>');
+                let tbody = $('<tbody>');
+
+                cart.forEach((item, index) => {
+                    let row = $('<tr>');
+                    row.append(`<td><img src="${item.image}" alt="${item.name}" width="50"></td>`);
+                    row.append(`<td>${item.name}</td>`);
+                    row.append(`
+                        <td>
+                            <div class="quantity-controls" style="display: flex; align-items: center;">
+                                <button class="btn btn-sm btn-secondary minus-quantity" data-index="${index}">-</button>
+                                <span class="mx-2 quantity-value">${item.quantity}</span>
+                                <button class="btn btn-sm btn-secondary plus-quantity" data-index="${index}">+</button>
+                            </div>
+                        </td>
+                    `);
+                    row.append(`<td>$${(item.price * item.quantity).toFixed(2)}</td>`);
+                    row.append(`<td><button class="btn btn-danger btn-sm remove-item" data-index="${index}">Remove</button></td>`);
+                    tbody.append(row);
+                });
+
+                table.append(tbody);
+                cartItems.append(table);
+
+                let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+                let discountedTotal = total - (total * discount / 100);
+                cartItems.append(`<p><strong>Total: $${total.toFixed(2)}</strong></p>`);
+                if (discount > 0) {
+                    cartItems.append(`<p>Discount: ${discount}%</p>`);
+                    cartItems.append(`<p>Discounted Total: $${discountedTotal.toFixed(2)}</p>`);
+                }
+            }
+
+            $('#cart-count').text(cart.reduce((sum, item) => sum + item.quantity, 0));
+
+            // Remove previous event listeners before adding new ones
+            $('.plus-quantity').off();
+            $('.minus-quantity').off();
+            $('.remove-item').off();
+
+            // Increase Quantity
+            $('.plus-quantity').on('click', function () {
+                let index = $(this).data('index');
+                cart[index].quantity += 1;
+                updateCart();
+            });
+
+            // Decrease Quantity
+            $('.minus-quantity').on('click', function () {
+                let index = $(this).data('index');
+                if (cart[index].quantity > 1) {
+                    cart[index].quantity -= 1;
+                    updateCart();
+                } else {
+                    cart.splice(index, 1);
+                    updateCart();
+                }
+            });
+
+            // Remove Item
+            $('.remove-item').on('click', function () {
+                let index = $(this).data('index');
+                cart.splice(index, 1);
+                updateCart();
+            });
         }
 
-        // Initialize when document is ready
+        function applyCoupon(code) {
+            if (code === "DISCOUNT10") {
+                discount = 10;
+                $('#coupon-message').text("10% discount applied!");
+            } else if (code === "DISCOUNT20") {
+                discount = 20;
+                $('#coupon-message').text("20% discount applied!");
+            } else if (code === "DISCOUNT30") {
+                discount = 30;
+                $('#coupon-message').text("30% discount applied!");
+            } else {
+                discount = 0;
+                $('#coupon-message').text("Invalid coupon code.");
+            }
+            updateCart();
+        }
+
+        function checkoutCart() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+            } else {
+                let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+                if (discount > 0) {
+                    total = total * (1 - discount / 100);
+                }
+                alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
+
+                // Clear the cart
+                cart = [];
+                updateCart();
+
+                // Close the modal
+                $('#cartModal').modal('hide');
+            }
+        }
+
+        function copyToClipboard(code) {
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Coupon code ' + code + ' copied to clipboard!');
+            }, (err) => {
+                console.error('Could not copy text: ', err);
+            });
+        }
+
+        // Initialize carousels
         $(document).ready(function () {
-            initCart();
-
-            // Add event listeners for shop buttons
-            $('.btn-shop, .featured-btn, .banner-btn').click(function (e) {
-                e.preventDefault();
-                // Redirect to products page or show products
-                window.location.href = 'products.php';
-            });
-
-            // Initialize carousels
             $('.carousel').carousel();
-
-            // Category grid click handlers
-            $('.category-grid > div').click(function () {
-                const category = $(this).find('.category-label').text().trim();
-                window.location.href = `products.php?category=${encodeURIComponent(category)}`;
-            });
         });
     </script>
 </body>
