@@ -17,7 +17,7 @@
             font-family: Arial, "Open Sans", sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000000;
+            background-color: #0a0a0a;
             color: #ffffff;
         }
 
@@ -103,119 +103,463 @@
             color: #8fbc54;
         }
 
-        /* Content Sections */
-        .content {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: url("bgbg.jpg") no-repeat center center;
+            background-size: cover;
+            height: 90vh;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            max-width: 500px;
+            margin-left: 5%;
+            border-radius: 8px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+        }
+
+        .btn-shop {
+            background-color: #8fbc54;
+            color: black;
+            border: none;
+            padding: 10px 25px;
+            margin-top: 15px;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-shop:hover {
+            background: #7aa641;
+            color: #fff;
+        }
+
+        /* Category Grid */
+        .shop-category-title {
             text-align: center;
+            font-size: 1.5rem;
+            margin: 48px 0 32px 0;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
-        /* Carousel */
-        .carousel {
-            padding: 0 70px;
-            margin-bottom: 50px;
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+            max-width: 1140px;
+            margin-bottom: 2.5rem;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .carousel-indicators {
-            bottom: -50px;
-            /* Adjust this value as needed (e.g., 20px, 30px) */
+        .category-grid>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .carousel-item {
-            color: #999;
-            font-size: 14px;
+        .category-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.2s;
+        }
+
+        .category-label {
+            margin-top: 8px;
             text-align: center;
+            font-size: 1rem;
+            color: #ccc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .category-img:hover {
+            transform: scale(1.03);
+        }
+
+        .category-label:hover {
+            color: #8fbc54;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 991.98px) {
+            .category-grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 720px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 95vw;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+                max-width: 95vw;
+            }
+        }
+
+        /* Featured Grid */
+        .featured-grid {
+            margin: 56px 0 32px 0;
+        }
+
+        .featured-card {
+            position: relative;
             overflow: hidden;
-            min-height: 290px;
+            border-radius: 8px;
+            min-height: 340px;
+            background: #1a1a1a;
+            cursor: pointer;
+            transition: box-shadow 0.2s;
+            height: 100%;
         }
 
-        .carousel-item .img-box {
-            width: 300px;
-            height: 300px;
-            margin: 0 auto;
-            padding: 5px;
-            border: 1px solid #333;
-            border-radius: 10px;
-            background-color: #000;
-        }
-
-        .carousel-item img {
+        .featured-card img {
             width: 100%;
             height: 100%;
-            display: block;
             object-fit: cover;
-            border-radius: 10px;
+            filter: brightness(0.85);
+            transition: filter 0.3s;
         }
 
-        .testimonial {
-            color: #ffffff;
-            padding: 30px 0 10px;
+        .featured-card:hover img {
+            filter: brightness(0.7);
         }
 
-        .overview {
-            font-style: italic;
-            color: #ffffff;
+        .featured-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            background: rgba(34, 34, 34, 0.22);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+            padding: 24px;
         }
 
-        .overview b {
-            text-transform: uppercase;
-            color: #8fbc54;
+        .featured-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .featured-btn {
+            background: #8fbc54;
+            color: #000;
+            border-radius: 0;
+            font-weight: 600;
+            padding: 10px 28px;
+            border: none;
+            font-size: 1rem;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .featured-btn:hover {
+            background: #7aa641;
+            color: #fff;
+        }
+
+        @media (max-width: 991px) {
+            .featured-title {
+                font-size: 1.5rem;
+            }
+
+            .featured-card {
+                min-height: 220px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .featured-title {
+                font-size: 1.2rem;
+            }
+
+            .featured-card {
+                min-height: 160px;
+            }
+
+            .category-label {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Impact Banner */
+        .impact-banner {
+            min-height: 210px;
+            background: url("https://images.unsplash.com/photo-1600180758890-6b94519c8c49?auto=format&fit=crop&w=1500&q=80") center center/cover no-repeat;
+            border-radius: 0;
+            margin-top: 0;
+        }
+
+        .banner-content {
+            padding: 40px 0;
+        }
+
+        .banner-btn {
+            background: #8fbc54;
+            color: #000;
+            border-radius: 0;
+            font-weight: 600;
+            padding: 10px 38px;
+            border: none;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .banner-btn:hover {
+            background: #7aa641;
+            color: #fff;
+        }
+
+        @media (max-width: 991.98px) {
+            .impact-banner {
+                min-height: 120px;
+            }
+
+            .banner-content h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Product Cards */
+        .card-img-top {
+            object-fit: cover;
+            aspect-ratio: 3/4;
+            width: 100%;
+            border-radius: 0;
+            background: #1a1a1a;
         }
 
         .carousel-control-prev,
         .carousel-control-next {
-            width: 40px;
-            height: 40px;
-            margin-top: -20px;
-            top: 50%;
-            background: none;
+            width: 3%;
         }
 
-        .carousel-control-prev i,
-        .carousel-control-next i {
-            font-size: 68px;
-            line-height: 42px;
-            position: absolute;
-            display: inline-block;
-            color: rgba(255, 255, 255, 0.8);
-            text-shadow: 0 3px 3px #333, 0 0 0 #000;
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-size: 80% 80%;
         }
 
-        /* Products Grid */
-        .products-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+        @media (max-width: 767.98px) {
+            .card-img-top {
+                aspect-ratio: 7/8;
+            }
+        }
+
+        .carousel-indicators {
+            position: static;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1px;
+            padding: 0;
+        }
+
+        .carousel-indicators button.active {
+            background-color: #8fbc54;
+            transform: scale(1.2);
+        }
+
+        .carousel-control-prev-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%238fbc54' viewBox='0 0 16 16'%3E%3Cpath d='M11 2L5 8l6 6' stroke='%238fbc54' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+        }
+
+        .carousel-control-next-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%238fbc54' viewBox='0 0 16 16'%3E%3Cpath d='M5 2l6 6-6 6' stroke='%238fbc54' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+        }
+
+        .fixed-size-img {
             width: 100%;
-            margin-bottom: 30px;
+            max-width: 400px;
+            height: 600px;
+            object-fit: cover;
         }
 
-        .product {
-            background-color: #1e1e2f;
-            border-radius: 6px;
-            padding: 15px;
-            text-align: center;
+        .divider {
+            border-top: 1px solid #333;
+            margin: 2rem 0;
+        }
+
+        .image-card {
             transition: transform 0.3s;
         }
 
-        .product:hover {
-            transform: translateY(-5px);
+        .image-card:hover {
+            transform: scale(1.02);
         }
 
-        .product img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 10px;
+        .btn-link {
+            font-weight: bold;
+            text-decoration: underline;
+            color: #8fbc54;
         }
 
-        .button-container {
+        .subtitle {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .black-text {
+            color: white;
+        }
+
+        /* Cart icon overlay */
+        .cart-overlay {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #fff;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
             display: flex;
-            gap: 10px;
-            margin-top: 15px;
+            align-items: center;
             justify-content: center;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-overlay svg {
+            width: 22px;
+            height: 22px;
+            color: #222;
+        }
+
+        /* Fix for hidden inactive items */
+        #menCarousel .carousel-inner {
+            overflow: hidden;
+        }
+
+        #menCarousel .carousel-item {
+            display: none;
+            transition: transform 0.5s ease;
+        }
+
+        #menCarousel .carousel-item.active {
+            display: block;
+        }
+
+        #menCarousel .row {
+            margin: 0;
+            width: 100%;
+        }
+
+        #menCarousel .col {
+            padding: 0 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #menCarousel .card {
+            border: none;
+            background: none;
+            box-shadow: none;
+            position: relative;
+            width: 230px;
+            aspect-ratio: 1 / 1;
+            height: 230px;
+            overflow: hidden;
+        }
+
+        #menCarousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        /* Carousel controls positioned outside carousel images */
+        #menCarousel .carousel-control-prev,
+        #menCarousel .carousel-control-next {
+            width: 4vw;
+            min-width: 40px;
+            max-width: 60px;
+            opacity: 0.8;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #menCarousel .carousel-control-prev {
+            left: -2vw;
+        }
+
+        #menCarousel .carousel-control-next {
+            right: -2vw;
+        }
+
+        #menCarousel .carousel-control-prev-icon,
+        #menCarousel .carousel-control-next-icon {
+            background-size: 70% 70%;
+        }
+
+        /* Remove outline on control click */
+        #menCarousel .carousel-control-prev:focus,
+        #menCarousel .carousel-control-next:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        /* Search */
+        .search-container {
+            display: flex;
+            margin-left: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #555;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-container button {
+            background-color: #8fbc54;
+            color: #000;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #7aa641;
         }
 
         /* Buttons */
@@ -260,32 +604,40 @@
             color: #fff;
         }
 
-        /* Search */
-        .search-container {
+        /* Products Grid */
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .product {
+            background-color: #1e1e2f;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .button-container {
             display: flex;
-            margin-left: 20px;
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            width: 200px;
-            background-color: #333;
-            color: #fff;
-            border: 1px solid #555;
-            border-radius: 5px 0 0 5px;
-        }
-
-        .search-container button {
-            background-color: #8fbc54;
-            color: #000;
-            border: none;
-            border-radius: 0 5px 5px 0;
-            padding: 10px 15px;
-            cursor: pointer;
-        }
-
-        .search-container button:hover {
-            background-color: #7aa641;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: center;
         }
 
         /* Footer */
@@ -294,8 +646,7 @@
             padding: 15px;
             text-align: center;
             border-top: 1px solid #333;
-            position: fixed;
-            bottom: 0;
+            position: relative;
             width: 100%;
         }
 
@@ -472,7 +823,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="AboutUs.html">About Us</a>
-                <a class="nav-item nav-link" href="products.php">Products</a>  
+                <a class="nav-item nav-link" href="products.php">Products</a>
                 <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#dealsModal">Deals and
                     Coupons</a>
                 <a class="nav-item nav-link" href="#">Account</a>
@@ -487,234 +838,430 @@
         </div>
     </nav>
 
-    <div class="container-xl">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h2>Featured Items</h2>
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                        <li data-target="#myCarousel" data-slide-to="3"></li>
-                        <li data-target="#myCarousel" data-slide-to="4"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="img-box"><img src="dbell.jpg" alt="D-Bell VSR-10"></div>
-                            <p class="testimonial">The D-Bell VSR-10 Wood Design refers to a type of airsoft sniper
-                                rifle that is a part of the VSR-10 family, made by the brand D-Bell. The VSR-10 itself
-                                is one of the most popular bolt-action sniper rifles used in airsoft, originally
-                                designed by Tokyo Marui. The "Wood Design" typically refers to the aesthetic appearance
-                                of the gun, which mimics a wooden stock, giving it a more traditional and realistic
-                                look, as opposed to the more common plastic or synthetic materials used in other airsoft
-                                rifles.</p>
-                            <p class="overview"><b>D-Bell VSR-10 Wood Design</b></p>
+    <section class="hero">
+        <div class="hero-overlay text-white">
+            <h1>TOYZ FOR THE BIG BOYZ!</h1>
+            <p>Shop all our different equipments, with a free 1 year warranty and free domestic shipping on orders over
+                $10!</p>
+            <button class="btn btn-shop">Shop Now</button>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="shop-category-title">Shop by Category</div>
+        <div class="category-grid mb-5 mx-auto">
+            <div>
+                <img src="sniper rifles.jpg" class="category-img" alt="Sniper Rifles" />
+                <div class="category-label">SNIPER RIFLES</div>
+            </div>
+            <div>
+                <img src="assault rifles.jpg" class="category-img" alt="Assault Rifles" />
+                <div class="category-label">ASSAULT RIFLES</div>
+            </div>
+            <div>
+                <img src="pistols.jpg" class="category-img" alt="Pistols" />
+                <div class="category-label">PISTOLS</div>
+            </div>
+            <div>
+                <img src="Gears.jpg" class="category-img" alt="Gear" />
+                <div class="category-label">GEAR</div>
+            </div>
+            <div>
+                <img src="accesories.jpg" class="category-img" alt="Accessories" />
+                <div class="category-label">ACCESSORIES</div>
+            </div>
+        </div>
+
+        <!-- FEATURED GRID -->
+        <div class="row featured-grid justify-content-center">
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <div class="featured-card" onclick="window.location='#';">
+                    <img src="https://images.unsplash.com/photo-1576790372116-ba8821b13667?auto=format&fit=crop&w=600&q=80"
+                        alt="New Arrivals" />
+                    <div class="featured-overlay">
+                        <div class="featured-title">New Arrivals</div>
+                        <button class="btn featured-btn">SHOP THE LATEST</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <div class="featured-card" onclick="window.location='#';">
+                    <img src="https://images.unsplash.com/photo-1629996528813-fc8c4e98cabd?auto=format&fit=crop&w=600&q=80"
+                        alt="Best Sellers" />
+                    <div class="featured-overlay">
+                        <div class="featured-title">Best-Sellers</div>
+                        <button class="btn featured-btn">SHOP YOUR FAVORITES</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="featured-card" onclick="window.location='#';">
+                    <img src="https://images.unsplash.com/photo-1610998342129-4a4d7ef9cbb0?auto=format&fit=crop&w=600&q=80"
+                        alt="Special Offers" />
+                    <div class="featured-overlay">
+                        <div class="featured-title">Special Offers</div>
+                        <button class="btn featured-btn">SHOP DEALS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid my-5 px-0">
+        <div class="impact-banner d-flex align-items-center justify-content-center">
+            <div class="text-center w-100 banner-content">
+                <h2 class="text-white mb-3">
+                    We're Committed to Quality and Performance
+                </h2>
+                <div class="text-white mb-4 fs-5">
+                    All our products come with a 1-year warranty and free shipping on orders over $10.
+                </div>
+                <a href="#" class="btn banner-btn">LEARN MORE</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="text-center mb-2" style="font-size: 2rem; font-weight: 500">
+            HanzOn Favorites
+        </div>
+        <div class="text-center mb-4" style="font-size: 1.08rem; color: #ccc">
+            High Performance. Precision Engineered. Battle Ready.
+        </div>
+
+        <div id="favoritesCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <!-- First Carousel Item (Active) -->
+                <div class="carousel-item active">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+                        <div class="col">
+                            <div class="card border-0 h-100">
+                                <img src="dbell.jpg" class="card-img-top" alt="D-Bell VSR-10" />
+                                <div class="card-body p-2 pb-0">
+                                    <div class="fw-semibold small">
+                                        D-Bell VSR-10 Wood Design
+                                    </div>
+                                    <div class="text-muted small mb-1">Sniper Rifle</div>
+                                    <div class="fw-semibold">$199</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="img-box"><img src="glock18.jpg" alt="Glock-18"></div>
-                            <p class="testimonial">The Glock 18 Airsoft is a replica of the real-world Glock 18, a
-                                semi-automatic and fully-automatic handgun, but designed for airsoft use. Airsoft
-                                versions of the Glock 18 are typically gas blowback (GBB) or electric blowback (EBB)
-                                pistols, offering a mix of realism and performance.</p>
-                            <p class="overview"><b>Glock-18</b></p>
+                        <div class="col">
+                            <div class="card border-0 h-100">
+                                <img src="glock18.jpg" class="card-img-top" alt="Glock-18" />
+                                <div class="card-body p-2 pb-0">
+                                    <div class="fw-semibold small">
+                                        Glock-18
+                                    </div>
+                                    <div class="text-muted small mb-1">Pistol</div>
+                                    <div class="fw-semibold">$89</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="img-box"><img src="hk416.jpg" alt="HK416"></div>
-                            <p class="testimonial">The HK416 Airsoft is a replica of the Heckler & Koch HK416, a
-                                versatile and highly regarded assault rifle used by military and law enforcement around
-                                the world. In the airsoft world, the HK416 is known for its reliability, accuracy, and
-                                realistic performance, often favored by players who want a tactical, high-performance
-                                rifle for their airsoft skirmishes.</p>
-                            <p class="overview"><b>HK416</b></p>
+                        <div class="col">
+                            <div class="card border-0 h-100">
+                                <img src="hk416.jpg" class="card-img-top" alt="HK416" />
+                                <div class="card-body p-2 pb-0">
+                                    <div class="fw-semibold small">
+                                        HK416
+                                    </div>
+                                    <div class="text-muted small mb-1">Assault Rifle</div>
+                                    <div class="fw-semibold">$249</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="img-box"><img src="onimask.jpg" alt="Oni Mask"></div>
-                            <p class="testimonial">An Oni Mask for an airsoft helmet is a type of protective gear that
-                                is both functional and visually striking. The Oni mask design originates from Japanese
-                                mythology, where Oni are supernatural creatures, often depicted as large, horned demons.
-                                These masks, typically worn as part of traditional costumes or martial arts gear, have
-                                become popular in various subcultures, including airsoft, due to their intimidating look
-                                and cultural significance.</p>
-                            <p class="overview"><b>Oni Mask</b></p>
+                        <div class="col">
+                            <div class="card border-0 h-100">
+                                <img src="onimask.jpg" class="card-img-top" alt="Oni Mask" />
+                                <div class="card-body p-2 pb-0">
+                                    <div class="fw-semibold small">
+                                        Oni Mask
+                                    </div>
+                                    <div class="text-muted small mb-1">Protective Gear</div>
+                                    <div class="fw-semibold">$29</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="img-box"><img src="Vortex Diamondback Tactical 4-16×44 .jpg"
-                                    alt="Vortex Diamondback"></div>
-                            <p class="testimonial">The Vortex Diamondback Tactical 4-16×44 is a high-quality riflescope
-                                that's an excellent option for airsoft snipers or players looking for long-range
-                                precision. It's built to be durable, versatile, and accurate, with features that make it
-                                suitable for airsoft games, especially those that involve longer-range engagements.</p>
-                            <p class="overview"><b>Vortex Diamondback Tactical 4-16×44</b></p>
+                        <div class="col">
+                            <div class="card border-0 h-100">
+                                <img src="Vortex Diamondback Tactical 4-16×44 .jpg" class="card-img-top"
+                                    alt="Vortex Diamondback" />
+                                <div class="card-body p-2 pb-0">
+                                    <div class="fw-semibold small">Vortex Diamondback</div>
+                                    <div class="text-muted small mb-1">Tactical Scope</div>
+                                    <div class="fw-semibold">$179</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 </div>
+
+                <!-- Second Carousel Item -->
+                <div class="carousel-item">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+                        <div class="col">
+                            <div class="card border-0 h-100">
+                                <img src="EC.png" class="card-img-top" alt="EC 501C L96 BLACK" />
+                                <div class="card-body p-2 pb-0">
+                                    <div class="fw-semibold small">EC 501C L96 BLACK</div>
+                                    <div class="text-muted small mb-1">Sniper Rifle</div>
+                                    <div class="fw-semibold">$159</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-0 h-100">
+                                <img src="https://images.unsplash.com/photo-1594282382309-5c6c7262026c?auto=format&fit=crop&w=500&q=80"
+                                    class="card-img-top" alt="Desert Eagle" />
+                                <div class="card-body p-2 pb-0">
+                                    <div class="fw-semibold small">Desert Eagle</div>
+                                    <div class="text-muted small mb-1">Pistol</div>
+                                    <div class="fw-semibold">$99</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-0 h-100">
+                                <img src="https://images.unsplash.com/photo-1623071645586-23e0e2020d34?auto=format&fit=crop&w=500&q=80"
+                                    class="card-img-top" alt="Tactical Vest" />
+                                <div class="card-body p-2 pb-0">
+                                    <div class="fw-semibold small">Tactical Vest</div>
+                                    <div class="text-muted small mb-1">Gear</div>
+                                    <div class="fw-semibold">$79</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-0 h-100">
+                                <img src="https://images.unsplash.com/photo-1623071645586-23e0e2020d34?auto=format&fit=crop&w=500&q=80"
+                                    class="card-img-top" alt="Helmet" />
+                                <div class="card-body p-2 pb-0">
+                                    <div class="fw-semibold small">Tactical Helmet</div>
+                                    <div class="text-muted small mb-1">Protective Gear</div>
+                                    <div class="fw-semibold">$69</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-0 h-100">
+                                <img src="https://images.unsplash.com/photo-1610998342129-4a4d7ef9cbb0?auto=format&fit=crop&w=500&q=80"
+                                    class="card-img-top" alt="Red Dot Sight" />
+                                <div class="card-body p-2 pb-0">
+                                    <div class="fw-semibold small">Red Dot Sight</div>
+                                    <div class="text-muted small mb-1">Accessory</div>
+                                    <div class="fw-semibold">$49</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-target="#favoritesCarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-target="#favoritesCarousel" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </button>
+        </div>
+
+        <div class="container my-5">
+            <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 p-5">
+                                <h6>People Are Talking</h6>
+                                <div class="stars mb-3">
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                </div>
+                                <p class="lead">"The HK416 I purchased from HanzOn outperforms everything I've tried.
+                                    The build quality is exceptional and it's incredibly accurate right out of the box."
+                                </p>
+                                <div class="text-muted">— Marcus J., Airsoft Team Leader</div>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="https://images.unsplash.com/photo-1576790372116-ba8821b13667?auto=format&fit=crop&w=600&q=80"
+                                    class="img-fluid rounded" alt="Testimonial image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 p-5">
+                                <h6>Exceptional Service</h6>
+                                <div class="stars mb-3">
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                </div>
+                                <p class="lead">"When my scope arrived with a minor issue, HanzOn's customer service
+                                    team had a replacement shipped the same day. Now that's service you can count on!"
+                                </p>
+                                <div class="text-muted">— Sarah T., Competitive Player</div>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="https://images.unsplash.com/photo-1623071645586-23e0e2020d34?auto=format&fit=crop&w=600&q=80"
+                                    class="img-fluid rounded" alt="Testimonial image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-target="#testimonialCarousel"
+                    data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-target="#testimonialCarousel"
+                    data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </button>
             </div>
         </div>
     </div>
 
-    <div class="content">
-        <h3>HANZ ON AIRSOFT EQUIPMENTS!</h3>
-        <p>TOYZ FOR THE BIG BOYZ!
-            <br>Shop all our different equipments, with a free 1 year warranty and free domestic shipping on orders over
-            $10!
-        </p>
-    </div>
-
-    <div class="content">
-        <h3>Shop Latest Deals!</h3>
-        <div class="products-container">
-            <div class="product">
-                <a href="javascript:alert('Modal of the game');"><img src="onimask.jpg" alt="Oni Mask"></a>
-                <p>Oni Mask<br>★5.0 ★★★★</p>
-                <div class="button-container">
-                    <button class="btn btn-success buy-now" onclick="buyNow('Oni Mask', 29, 'onimask.jpg')">Buy
-                        Now</button>
-                    <button class="btn btn-light add-to-cart" data-name="Oni Mask" data-price="29"
-                        data-image="onimask.jpg">Add to Cart</button>
-                </div>
-                <span class="sold-out-label" style="display: none; color: #ff0000;">Sold Out</span>
-            </div>
-
-            <div class="product">
-                <a href="javascript:alert('Modal of the game');"><img src="EC.png" alt="EC 501C L96 BLACK"></a>
-                <p>EC 501C L96 BLACK<br>4.9 ★★★★★</p>
-                <div class="button-container">
-                    <button class="btn btn-success buy-now" onclick="buyNow('Pepsiman', 19, 'Pepsiman.jpg')">Buy
-                        Now</button>
-                    <button class="btn btn-light add-to-cart" data-name="EC 501C L96 BLACK" data-price="19"
-                        data-image="EC.png">Add to Cart</button>
-                </div>
-                <span class="sold-out-label" style="display: none; color: #ff0000;">Sold Out</span>
-            </div>
-
-            <div class="product">
-                <a href="javascript:alert('Modal of the game');"><img src="hk416.jpg" alt="Heckler & Koch HK416"></a>
-                <p>Heckler & Koch HK416<br>4.5 ★★★★</p>
-                <div class="button-container">
-                    <button class="btn btn-success buy-now"
-                        onclick="buyNow('HK416', 29, 'hk416.jpg')">Buy Now</button>
-                    <button class="btn btn-light add-to-cart" data-name="Resident Evil" data-price="29"
-                        data-image="hk416.jpg">Add to Cart</button>
-                </div>
-                <span class="sold-out-label" style="display: none; color: #ff0000;">Sold Out</span>
-            </div>
-
-            <div class="product">
-                <a href="javascript:alert('Modal of the game');"><img src="dbell.jpg" alt="D BELL VSR 10 WOOD"></a>
-                <p>D BELL VSR 10 WOOD DESIGN<br>5.0 ★★★★★</p>
-                <div class="button-container">
-                    <button class="btn btn-success buy-now" onclick="buyNow('D BELL VSR 10 WOOD', 19, 'dbell.jpg')">Buy
-                        Now</button>
-                    <button class="btn btn-light add-to-cart" data-name="D BELL VSR 10 WOOD" data-price="19"
-                        data-image="dbell.jpg">Add to Cart</button>
-                </div>
-                <span class="sold-out-label" style="display: none; color: #ff0000;">Sold Out</span>
-            </div>
-        </div>
-        <br>
-        <a href="products.php" class="btn btn-warning">Shop More Deals</a>
-    </div>
-
-    <!-- Footer Sections -->
-    <div class="footer-section">
+    <!-- Footer Section -->
+    <footer class="footer-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <h5>Hanz On Airsoft Archives!</h5>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5>Shop</h5>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Repair Center</a></li>
-                        <li><a href="#">Deals and Coupons</a></li>
-                        <li><a href="#">Rewards</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Sniper Rifles</a></li>
+                        <li><a href="#">Assault Rifles</a></li>
+                        <li><a href="#">Pistols</a></li>
+                        <li><a href="#">Gear</a></li>
+                        <li><a href="#">Accessories</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
-                    <h5>COMPANY</h5>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5>Support</h5>
                     <ul>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Refurbish & Inspection Process</a></li>
                         <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">California Privacy</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Repairs</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
-                    <h5>ACCOUNT</h5>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5>About</h5>
                     <ul>
-                        <li><a href="#">Track My Order</a></li>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Shopping Cart</a></li>
-                        <li><a href="#">Accessibility</a></li>
-                        <li><a href="#">Terms and Conditions</a></li>
-                        <li><a href="#">Secure Shopping</a></li>
-                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Responsibility</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h5>GET SOCIAL</h5>
-                    <div class="social-icons">
-                        <a href="#"><img src="facebook.png" alt="Facebook"></a>
-                        <a href="#"><img src="twitter.png" alt="Twitter"></a>
-                        <a href="#"><img src="youtube.png" alt="YouTube"></a>
-                        <a href="#"><img src="instagram.png" alt="Instagram"></a>
-                        <a href="#"><img src="tiktok.png" alt="TikTok"></a>
+                    <h5>Stay Connected</h5>
+                    <p>Subscribe to our newsletter for the latest products and exclusive offers.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
+                        <div class="input-group-append">
+                            <button class="btn btn-warning" type="button">Subscribe</button>
+                        </div>
                     </div>
-                    <p style="margin-top: 15px;">
-                        Hanz On Airsoft Archives.com<br>
-                        938 Aurora Boulevard, Cubao<br>
-                        Quezon City, Philippines 1100
-                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa fa-facebook fa-lg text-light"></i></a>
+                        <a href="#"><i class="fa fa-instagram fa-lg text-light"></i></a>
+                        <a href="#"><i class="fa fa-twitter fa-lg text-light"></i></a>
+                        <a href="#"><i class="fa fa-youtube fa-lg text-light"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <p class="text-muted">© 2023 HanzOn Airsoft Supplies. All rights reserved.</p>
                 </div>
             </div>
         </div>
-    </div>
-
-    <footer>
-        <p>1 YEAR WARRANTY that nobody can beat!</p>
     </footer>
 
-    <!-- Deals Modal -->
-    <div class="modal fade" id="dealsModal" tabindex="-1" role="dialog" aria-labelledby="dealsModalLabel"
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="dealsModalLabel">Deals and Coupons</h5>
+                    <h5 class="modal-title" id="cartModalLabel">Your Shopping Cart</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p style="font-size: 1.1em; margin-bottom: 20px;">Check out our latest deals and coupons to save on
-                        your favorite games!</p>
-                    <div class="deal-list">
-                        <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span>10% off on your first purchase with code <strong>DISCOUNT10</strong></span>
-                                <button class="btn btn-info btn-sm" onclick="copyToClipboard('DISCOUNT10')">Copy
-                                    Code</button>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span>20% off on your first purchase with code <strong>DISCOUNT20</strong></span>
-                                <button class="btn btn-info btn-sm" onclick="copyToClipboard('DISCOUNT20')">Copy
-                                    Code</button>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span>30% off on your first purchase with code <strong>DISCOUNT30</strong></span>
-                                <button class="btn btn-info btn-sm" onclick="copyToClipboard('DISCOUNT30')">Copy
-                                    Code</button>
-                            </li>
-                        </ul>
+                    <div id="cart-items">
+                        <p class="text-center py-4">Your cart is empty</p>
+                    </div>
+                    <div class="coupon-section mt-3">
+                        <input type="text" class="form-control" id="coupon-code" placeholder="Enter coupon code">
+                        <button class="btn btn-light" id="apply-coupon">Apply</button>
+                    </div>
+                    <div id="coupon-message" class="mt-2"></div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal">$0.00</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span>Shipping:</span>
+                        <span id="cart-shipping">$0.00</span>
+                    </div>
+                    <div class="d-flex justify-content-between font-weight-bold">
+                        <span>Total:</span>
+                        <span id="cart-total">$0.00</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Continue Shopping</button>
+                    <button type="button" class="btn btn-warning" id="checkout-btn">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deals Modal -->
+    <div class="modal fade" id="dealsModal" tabindex="-1" role="dialog" aria-labelledby="dealsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="dealsModalLabel">Current Deals & Coupons</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">WELCOME10</h5>
+                            <p class="card-text">Get 10% off your first order!</p>
+                            <small class="text-muted">Valid for new customers only.</small>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">FREESHIP</h5>
+                            <p class="card-text">Free shipping on all orders over $50.</p>
+                            <small class="text-muted">Valid until end of month.</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">GEARUP15</h5>
+                            <p class="card-text">15% off all tactical gear and accessories.</p>
+                            <small class="text-muted">Valid this week only.</small>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -724,217 +1271,43 @@
         </div>
     </div>
 
-    <!-- Cart Modal -->
-    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="cart-items">
-                    <p>Your cart is empty.</p>
-                </div>
-                <div class="modal-footer"
-                    style="display: flex; flex-direction: column; align-items: flex-start; width: 100%;">
-                    <div class="coupon-section" style="display: flex; align-items: center; width: 100%;">
-                        <input type="text" id="coupon-code" class="form-control" placeholder="Enter coupon code"
-                            style="flex: 1; margin-right: 10px;">
-                        <button class="btn btn-info" id="apply-coupon">Apply Coupon</button>
-                    </div>
-                    <p id="coupon-message" style="color: #ff6b6b; margin-top: 5px;"></p>
-                    <div style="display: flex; justify-content: space-between; width: 100%;">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                            style="flex: 1; margin-right: 10px;">Close</button>
-                        <button class="btn btn-primary" id="checkout-btn" style="flex: 1;">Checkout</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        let cart = [];
-        let discount = 0;
+        // Simple cart functionality
+        let cartCount = 0;
+        let cartItems = [];
 
-        $(document).ready(function () {
-            // Event listener for adding items to the cart
-            $('.add-to-cart').click(function () {
-                let name = $(this).data('name');
-                let price = parseFloat($(this).data('price'));
-                let image = $(this).data('image');
+        // Update cart count display
+        function updateCartCount() {
+            document.getElementById('cart-count').textContent = cartCount;
+        }
 
-                // Check if the item is already in the cart
-                let itemIndex = cart.findIndex(item => item.name === name);
+        // Add to cart functionality
+        document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+            button.addEventListener('click', function () {
+                cartCount++;
+                updateCartCount();
 
-                if (itemIndex > -1) {
-                    // If item exists, increase its quantity
-                    cart[itemIndex].quantity += 1;
-                } else {
-                    // If the item doesn't exist, add it to the cart
-                    let item = { name, price, image, quantity: 1 };
-                    cart.push(item);
-                }
-                updateCart(); // Update the cart display
-                updateCartCount(); // Update the cart count in the header
-            });
+                // Get product details (simplified)
+                const productCard = this.closest('.card');
+                const productName = productCard.querySelector('.fw-semibold').textContent;
+                const productPrice = productCard.querySelector('.fw-semibold:last-child').textContent;
 
-            // Event listener for the cart button
-            $('#cart-btn').click(function () {
-                updateCart();
-                $('#cartModal').modal('show');
-            });
+                // Add to cart items array
+                cartItems.push({
+                    name: productName,
+                    price: productPrice
+                });
 
-            // Event listener for applying coupon
-            $('#apply-coupon').click(function () {
-                let couponCode = $('#coupon-code').val().trim();
-                applyCoupon(couponCode);
-            });
-
-            // Event listener for checkout button
-            $('#checkout-btn').click(function () {
-                checkoutCart();
+                // Show confirmation
+                alert(`${productName} added to cart!`);
             });
         });
 
-        function updateCart() {
-            let cartItems = $('#cart-items');
-            cartItems.empty();
-
-            if (cart.length === 0) {
-                cartItems.append('<p>Your cart is empty.</p>');
-            } else {
-                let table = $('<table>').addClass('table');
-                table.append('<thead><tr><th>Image</th><th>Name</th><th>Quantity</th><th>Price</th><th>Action</th></tr></thead>');
-                let tbody = $('<tbody>');
-
-                cart.forEach((item, index) => {
-                    let row = $('<tr>');
-                    row.append(`<td><img src="${item.image}" alt="${item.name}" width="50"></td>`);
-                    row.append(`<td>${item.name}</td>`);
-                    // Modified quantity cell with plus and minus buttons
-                    row.append(`
-                <td>
-                    <div class="quantity-controls" style="display: flex; align-items: center;">
-                        <button class="btn btn-sm btn-secondary minus-quantity" data-index="${index}">-</button>
-                        <span class="mx-2">${item.quantity}</span>
-                        <button class="btn btn-sm btn-secondary plus-quantity" data-index="${index}">+</button>
-                    </div>
-                </td>
-            `);
-                    row.append(`<td>$${(item.price * item.quantity).toFixed(2)}</td>`);
-                    row.append(`<td><button class="btn btn-danger btn-sm remove-item" data-index="${index}">Remove</button></td>`);
-                    tbody.append(row);
-                });
-
-                table.append(tbody);
-                cartItems.append(table);
-
-                let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-                let discountedTotal = total - (total * discount / 100);
-                cartItems.append(`<p><strong>Total: $${total.toFixed(2)}</strong></p>`);
-                if (discount > 0) {
-                    cartItems.append(`<p>Discount: ${discount}%</p>`);
-                    cartItems.append(`<p>Discounted Total: $${discountedTotal.toFixed(2)}</p>`);
-                }
-
-                // Add event listeners for quantity buttons
-                $('.plus-quantity').click(function () {
-                    let index = $(this).data('index');
-                    cart[index].quantity += 1;
-                    updateCart();
-                });
-
-                $('.minus-quantity').click(function () {
-                    let index = $(this).data('index');
-                    if (cart[index].quantity > 1) {
-                        cart[index].quantity -= 1;
-                        updateCart();
-                    } else {
-                        // If quantity would go below 1, remove the item
-                        cart.splice(index, 1);
-                        updateCart();
-                        updateCartCount();
-                    }
-                });
-
-                // Add event listener for remove buttons
-                $('.remove-item').click(function () {
-                    let index = $(this).data('index');
-                    cart.splice(index, 1);
-                    updateCart();
-                    updateCartCount();
-                });
-            }
-
-            $('#cart-count').text(cart.length);
-        }
-
-        function updateCartCount() {
-            let cartItems = $('#cart-items');
-            cartItems.empty();
-            $('#cart-count').text(count);
-        }
-
-        function applyCoupon(code) {
-            if (code === "DISCOUNT10") {
-                discount = 10;
-                $('#coupon-message').text("10% discount applied!");
-            } else if (code === "DISCOUNT20") {
-                discount = 20;
-                $('#coupon-message').text("20% discount applied!");
-            } else if (code === "DISCOUNT30") {
-                discount = 30;
-                $('#coupon-message').text("30% discount applied!");
-            } else {
-                discount = 0;
-                $('#coupon-message').text("Invalid coupon code.");
-            }
-            updateCart();
-        }
-
-        function checkoutCart() {
-            if (cart.length === 0) {
-                alert('Your cart is empty!');
-            } else {
-                let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-                if (discount > 0) {
-                    total = total * (1 - discount / 100);
-                }
-                alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
-
-                // Clear the cart
-                cart = [];
-                updateCart();
-                updateCartCount();
-
-                // Close the modal
-                $('#cartModal').modal('hide');
-            }
-        }
-        function buyNow(name, price, image) {
-            // Here you can implement the "Buy Now" functionality
-            alert(`You bought ${name} for $${price}`);
-            // You can also add the item directly to the cart or handle payment here
-        }
-        function copyToClipboard(code) {
-            navigator.clipboard.writeText(code).then(() => {
-                alert('Coupon code ' + code + ' copied to clipboard!');
-            }, (err) => {
-                console.error('Could not copy text: ', err);
-            });
-        }
-
-        function viewDetails() {
-            // Implement the function to show more details about the deals
-            alert('More details coming soon!');
-        }
+        // Initialize carousels
+        $(document).ready(function () {
+            $('.carousel').carousel();
+        });
     </script>
-
 </body>
 
 </html>
