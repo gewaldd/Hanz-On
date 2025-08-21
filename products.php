@@ -679,6 +679,18 @@ button:hover {
                     <i class="fa fa-credit-card mr-2"></i> Buy Now
                 </button>
 
+                 <form method="POST" action="wishlist_action.php" class="w-50">
+                        <input type="hidden" name="product_name" value="GLOCK 18">
+                        <input type="hidden" name="product_price" value="<?= $products['GLOCK 18']['price'] ?>">
+                        <input type="hidden" name="product_image" value="GLOCK 18.jpg">
+                        <button type="submit" name="add_to_wishlist" 
+                          class="btn btn-outline-warning d-flex align-items-center justify-content-center w-100 py-2"
+                          style="font-size: 0.8em; white-space: nowrap;">
+                    <i class="fa fa-heart mr-2"></i> Add to Wishlist
+                  </button>
+                </form>
+
+
                 <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
                     style="font-size: 0.8em; white-space: nowrap;"
                     data-name="GLOCK 18"
@@ -864,6 +876,13 @@ button:hover {
               onclick="confirmPurchase('KJW CZ TS2', <?= $products['KJW CZ TS2']['price'] ?>, 'KJW CZ TS2.png'); modifyStock('KJW CZ TS2', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
+
+            <button class="btn btn-outline-warning d-flex align-items-center justify-content-center w-50 py-2"
+              style="font-size: 0.8em; white-space: nowrap;"
+              onclick="addToWishlist('KJW CZ TS2', <?= $products['KJW CZ TS2']['price'] ?>, 'KJW CZ TS2.png')">
+              <i class="fa fa-heart mr-2"></i> Add to Wishlist
+            </button>
+
             <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
               style="font-size: 0.8em; white-space: nowrap;"
               data-name="KJW CZ TS2"
@@ -1053,6 +1072,13 @@ button:hover {
               onclick="confirmPurchase('KJW KP-06 HICAPA', <?= $products['KJW KP-06 HICAPA']['price'] ?>, 'KJW KP-06 HICAPA.jpg'); modifyStock('KJW KP-06 HICAPA', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
+
+            <button class="btn btn-outline-warning d-flex align-items-center justify-content-center w-50 py-2"
+              style="font-size: 0.8em; white-space: nowrap;"
+              onclick="addToWishlist('KJW KP-06 HICAPA', <?= $products['KJW KP-06 HICAPA']['price'] ?>, 'KJW KP-06 HICAPA.jpg')">
+              <i class="fa fa-heart mr-2"></i> Add to Wishlist
+            </button>
+
             <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
               style="font-size: 0.8em; white-space: nowrap;"
               data-name="KJW KP-06 HICAPA"
@@ -1145,6 +1171,13 @@ button:hover {
               onclick="confirmPurchase('D BELL VSR 10 WOOD DESIGN', <?= $products['D BELL VSR 10 WOOD DESIGN']['price'] ?>, 'D BELL VSR 10 WOOD DESIGN.jpg'); modifyStock('D BELL VSR 10 WOOD DESIGN', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
+
+            <button class="btn btn-outline-warning d-flex align-items-center justify-content-center w-50 py-2"
+              style="font-size: 0.8em; white-space: nowrap;"
+              onclick="addToWishlist('D BELL VSR 10 WOOD DESIGN', <?= $products['D BELL VSR 10 WOOD DESIGN']['price'] ?>, 'D BELL VSR 10 WOOD DESIGN.jpg')">
+              <i class="fa fa-heart mr-2"></i> Add to Wishlist
+            </button>
+
             <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
               style="font-size: 0.8em; white-space: nowrap;"
               data-name="D BELL VSR 10 WOOD DESIGN"
@@ -1237,6 +1270,13 @@ button:hover {
               onclick="confirmPurchase('DBELL VSR10 BLACK', <?= $products['DBELL VSR10 BLACK']['price'] ?>, 'DBELL VSR10 BLACK.jpg'); modifyStock('DBELL VSR10 BLACK', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
+
+            <button class="btn btn-outline-warning d-flex align-items-center justify-content-center w-50 py-2"
+              style="font-size: 0.8em; white-space: nowrap;"
+              onclick="addToWishlist('DBELL VSR10 BLACK', <?= $products['DBELL VSR10 BLACK']['price'] ?>, 'DBELL VSR10 BLACK.jpg')">
+              <i class="fa fa-heart mr-2"></i> Add to Wishlist
+            </button>
+
             <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
               style="font-size: 0.8em; white-space: nowrap;"
               data-name="DBELL VSR10 BLACK"
@@ -1329,6 +1369,13 @@ button:hover {
               onclick="confirmPurchase('MOD 24 SSG GSPEC', <?= $products['MOD 24 SSG GSPEC']['price'] ?>, 'MOD 24 SSG GSPEC.jpg'); modifyStock('MOD 24 SSG GSPEC', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
+
+            <button class="btn btn-outline-warning d-flex align-items-center justify-content-center w-50 py-2"
+              style="font-size: 0.8em; white-space: nowrap;"
+              onclick="addToWishlist('MOD 24 SSG GSPEC', <?= $products['MOD 24 SSG GSPEC']['price'] ?>, 'MOD 24 SSG GSPEC.jpg')">
+              <i class="fa fa-heart mr-2"></i> Add to Wishlist
+            </button>
+
             <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
               style="font-size: 0.8em; white-space: nowrap;"
               data-name="MOD 24 SSG GSPEC"
@@ -1421,6 +1468,13 @@ button:hover {
               onclick="confirmPurchase('LT-28AB LANCER TACTICAL M24', <?= $products['LT-28AB LANCER TACTICAL M24']['price'] ?>, 'LT-28AB LANCER TACTICAL M24.jpg'); modifyStock('LT-28AB LANCER TACTICAL M24', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
+
+            <button class="btn btn-outline-warning d-flex align-items-center justify-content-center w-50 py-2"
+              style="font-size: 0.8em; white-space: nowrap;"
+              onclick="addToWishlist('LT-28AB LANCER TACTICAL M24', <?= $products['LT-28AB LANCER TACTICAL M24']['price'] ?>, 'LT-28AB LANCER TACTICAL M24.jpg')">
+              <i class="fa fa-heart mr-2"></i> Add to Wishlist
+            </button>
+
             <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
               style="font-size: 0.8em; white-space: nowrap;"
               data-name="LT-28AB LANCER TACTICAL M24"
@@ -1511,6 +1565,13 @@ button:hover {
               onclick="confirmPurchase('EC 501C L96 BLACK', <?= $products['EC 501C L96 BLACK']['price'] ?>, 'EC 501C L96 BLACK.jpg'); modifyStock('EC 501C L96 BLACK', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
+
+            <button class="btn btn-outline-warning d-flex align-items-center justify-content-center w-50 py-2"
+              style="font-size: 0.8em;"
+              onclick="addToWishlist('EC 501C L96 BLACK', <?= $products['EC 501C L96 BLACK']['price'] ?>, 'EC 501C L96 BLACK.jpg')">
+              <i class="fa fa-heart mr-2"></i> Add to Wishlist
+            </button>
+
             <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
               style="font-size: 0.8em;"
               data-name="EC 501C L96 BLACK"
@@ -1604,6 +1665,13 @@ button:hover {
               onclick="confirmPurchase('Heckler & Koch - HK416', <?= $products['Heckler & Koch - HK416']['price'] ?>, 'Heckler & Koch - HK416.jpg'); modifyStock('Heckler & Koch - HK416', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
+
+            <button class="btn btn-outline-warning d-flex align-items-center justify-content-center w-50 py-2"
+              style="font-size: 0.8em;"
+              onclick="addToWishlist('Heckler & Koch - HK416', <?= $products['Heckler & Koch - HK416']['price'] ?>, 'Heckler & Koch - HK416.jpg')">
+              <i class="fa fa-heart mr-2"></i> Add to Wishlist
+            </button>
+
             <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
               style="font-size: 0.8em;"
               data-name="Heckler & Koch - HK416"
@@ -1696,6 +1764,13 @@ button:hover {
               onclick="confirmPurchase('HK M110A1', <?= $products['HK M110A1']['price'] ?>, 'HK M110A1.jpg'); modifyStock('HK M110A1', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
+
+            <button class="btn btn-outline-warning d-flex align-items-center justify-content-center w-50 py-2"
+              style="font-size: 0.8em;"
+              onclick="addToWishlist('HK M110A1', <?= $products['HK M110A1']['price'] ?>, 'HK M110A1.jpg')">
+              <i class="fa fa-heart mr-2"></i> Add to Wishlist
+            </button>
+
             <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
               style="font-size: 0.8em;"
               data-name="HK M110A1"
@@ -1788,6 +1863,13 @@ button:hover {
               onclick="confirmPurchase('AK74 SERIES', <?= $products['AK74 SERIES']['price'] ?>, 'AK74 SERIES.jpg'); modifyStock('AK74 SERIES', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
+
+            <button class="btn btn-outline-warning d-flex align-items-center justify-content-center w-50 py-2"
+              style="font-size: 0.8em;"
+              onclick="addToWishlist('AK74 SERIES', <?= $products['AK74 SERIES']['price'] ?>, 'AK74 SERIES.jpg')">
+              <i class="fa fa-heart mr-2"></i> Add to Wishlist
+            </button>
+
             <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
               style="font-size: 0.8em;"
               data-name="AK74 SERIES"
@@ -1880,6 +1962,13 @@ button:hover {
               onclick="confirmPurchase('M4A1 SERIES', <?= $products['M4A1 SERIES']['price'] ?>, 'M4A1 SERIES.jpg'); modifyStock('M4A1 SERIES', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
+
+            <button class="btn btn-outline-warning d-flex align-items-center justify-content-center w-50 py-2"
+              style="font-size: 0.8em;"
+              onclick="addToWishlist('M4A1 SERIES', <?= $products['M4A1 SERIES']['price'] ?>, 'M4A1 SERIES.jpg')">
+              <i class="fa fa-heart mr-2"></i> Add to Wishlist
+            </button>
+
             <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
               style="font-size: 0.8em;"
               data-name="M4A1 SERIES"
@@ -1972,6 +2061,13 @@ button:hover {
               onclick="confirmPurchase('FN SCAR', <?= $products['FN SCAR']['price'] ?>, 'FN SCAR.jpg'); modifyStock('FN SCAR', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
+
+            <button class="btn btn-outline-warning d-flex align-items-center justify-content-center w-50 py-2"
+              style="font-size: 0.8em;"
+              onclick="addToWishlist('FN SCAR', <?= $products['FN SCAR']['price'] ?>, 'FN SCAR.jpg')">
+              <i class="fa fa-heart mr-2"></i> Add to Wishlist
+            </button>
+
             <button class="btn btn-outline-light add-to-cart btn-sm d-flex align-items-center justify-content-center w-50 py-2"
               style="font-size: 0.8em;"
               data-name="FN SCAR"
@@ -2017,6 +2113,18 @@ button:hover {
                             onclick="confirmPurchase('GLOCK 18', <?= $products['GLOCK 18']['price'] ?>, 'GLOCK 18.jpg'); modifyStock('GLOCK 18', -1)">
                             Buy Now
                         </button>
+
+                        <form method="POST" action="wishlist_action.php" class="w-50">
+                              <input type="hidden" name="product_name" value="GLOCK 18">
+                              <input type="hidden" name="product_price" value="<?= $products['GLOCK 18']['price'] ?>">
+                              <input type="hidden" name="product_image" value="GLOCK 18.jpg">
+                              <button type="submit" name="add_to_wishlist" 
+          class="btn btn-outline-warning d-flex align-items-center justify-content-center w-100 py-2"
+          style="font-size: 0.8em; white-space: nowrap;">
+      <i class="fa fa-heart mr-2"></i> Add to Wishlist
+  </button>
+</form>
+
                         <button class="btn btn-outline-light add-to-cart btn-sm"
                             style="font-size: 0.8em; white-space: nowrap;"
                             data-name="GLOCK 18"
@@ -2059,6 +2167,17 @@ button:hover {
                             onclick="confirmPurchase('CZ P-10C C02 BLK', <?= $products['CZ P-10C C02 BLK']['price'] ?>, 'CZ P-10C C02 BLK.jpg'); modifyStock('CZ P-10C C02 BLK', -1)">
                             Buy Now
                         </button>
+
+                        <form method="POST" action="wishlist_action.php" class="w-50">
+                            <input type="hidden" name="product_name" value="CZ P-10C C02 BLK">
+                            <input type="hidden" name="product_price" value="<?= $products['CZ P-10C C02 BLK']['price'] ?>">
+                            <input type="hidden" name="product_image" value="CZ P-10C C02 BLK.jpg">
+                            <button type="submit" name="add_to_wishlist"
+                                class="btn btn-outline-warning d-flex align-items-center justify-content-center w-100 py-2"
+                                style="font-size: 0.8em; white-space: nowrap;">
+                                <i class="fa fa-heart mr-2"></i> Add to Wishlist
+                            </button>
+              
                         <button class="btn btn-outline-light add-to-cart btn-sm"
                             style="font-size: 0.8em; white-space: nowrap;"
                             data-name="CZ P-10C C02 BLK"
@@ -2100,6 +2219,17 @@ button:hover {
                             onclick="confirmPurchase('KJW CZ TS2', <?= $products['KJW CZ TS2']['price'] ?>, 'KJW CZ TS2.png'); modifyStock('KJW CZ TS2', -1)">
                             Buy Now
                         </button>
+
+                        <form method="POST" action="wishlist_action.php" class="w-50">
+                            <input type="hidden" name="product_name" value="KJW CZ TS2">
+                            <input type="hidden" name="product_price" value="<?= $products['KJW CZ TS2']['price'] ?>">
+                            <input type="hidden" name="product_image" value="KJW CZ TS2.png">
+                            <button type="submit" name="add_to_wishlist"
+                                class="btn btn-outline-warning d-flex align-items-center justify-content-center w-100 py-2"
+                                style="font-size: 0.8em; white-space: nowrap;">
+                                <i class="fa fa-heart mr-2"></i> Add to Wishlist
+                            </button>
+
                         <button class="btn btn-outline-light add-to-cart btn-sm"
                             style="font-size: 0.8em; white-space: nowrap;"
                             data-name="KJW CZ TS2"
@@ -2141,6 +2271,17 @@ button:hover {
                             onclick="confirmPurchase('WG 701 BLK', <?= $products['WG 701 BLK']['price'] ?>, 'WG 701 BLK.jpg'); modifyStock('WG 701 BLK', -1)">
                             Buy Now
                         </button>
+
+                        <form method="POST" action="wishlist_action.php" class="w-50">
+                            <input type="hidden" name="product_name" value="WG 701 BLK">
+                            <input type="hidden" name="product_price" value="<?= $products['WG 701 BLK']['price'] ?>">
+                            <input type="hidden" name="product_image" value="WG 701 BLK.jpg">
+                            <button type="submit" name="add_to_wishlist"
+                                class="btn btn-outline-warning d-flex align-items-center justify-content-center w-100 py-2"
+                                style="font-size: 0.8em; white-space: nowrap;">
+                                <i class="fa fa-heart mr-2"></i> Add to Wishlist
+                            </button>
+
                         <button class="btn btn-outline-light add-to-cart btn-sm"
                             style="font-size: 0.8em; white-space: nowrap;"
                             data-name="WG 701 BLK"
@@ -2182,6 +2323,17 @@ button:hover {
                             onclick="confirmPurchase('KJW KP-06 HICAPA', <?= $products['KJW KP-06 HICAPA']['price'] ?>, 'KJW KP-06 HICAPA.jpg'); modifyStock('KJW KP-06 HICAPA', -1)">
                             Buy Now
                         </button>
+
+                        <form method="POST" action="wishlist_action.php" class="w-50">
+                            <input type="hidden" name="product_name" value="KJW KP-06 HICAPA">
+                            <input type="hidden" name="product_price" value="<?= $products['KJW KP-06 HICAPA']['price'] ?>">
+                            <input type="hidden" name="product_image" value="KJW KP-06 HICAPA.webp">
+                            <button type="submit" name="add_to_wishlist"
+                                class="btn btn-outline-warning d-flex align-items-center justify-content-center w-100 py-2"
+                                style="font-size: 0.8em; white-space: nowrap;">
+                                <i class="fa fa-heart mr-2"></i> Add to Wishlist
+                            </button>
+                            
                         <button class="btn btn-outline-light add-to-cart btn-sm" 
                             style="font-size: 0.8em; white-space: nowrap;"
                             data-name="KJW KP-06 HICAPA"

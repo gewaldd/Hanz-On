@@ -1,7 +1,72 @@
 <?php
-include('server.php');
+include('db.php');
 
 ?>
+
+<?php
+session_start();
+include('db.php'); // your database connection file
+
+$errors = [];
+$success = "";
+
+// REGISTER
+if (isset($_POST['register'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirm = $_POST['confirm_password'];
+
+    if ($password !== $confirm) {
+        $errors[] = "Passwords do not match.";
+    } else {
+        $hashed = password_hash($password, PASSWORD_DEFAULT);
+
+        $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, 'user')");
+        $stmt->bind_param("sss", $username, $email, $hashed);
+
+        if ($stmt->execute()) {
+            $success = "Account created! You can now log in.";
+        } else {
+            $errors[] = "Error: " . $conn->error;
+        }
+    }
+}
+
+// LOGIN
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $login_type = $_POST['login_type']; // member or admin
+
+    $stmt = $conn->prepare("SELECT id, name, password, role FROM users WHERE name = ? AND role = ?");
+    $stmt->bind_param("ss", $username, $login_type);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 1) {
+        $user = $result->fetch_assoc();
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_name'] = $user['name'];
+            $_SESSION['role'] = $user['role'];
+
+            if ($user['role'] === 'admin') {
+                header("Location: admin/index.php");
+            } else {
+                header("Location: index.php");
+            }
+            exit();
+        } else {
+            $errors[] = "Invalid password.";
+        }
+    } else {
+        $errors[] = "User not found or role mismatch.";
+    }
+}
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -330,5 +395,14 @@ include('server.php');
             }
         }
     </script>
+
+<form method="POST" action="">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+    <button type="submit" name="register">SIGN UP</button>
+</form>
+
 </body>
 </html>

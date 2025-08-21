@@ -1,3 +1,5 @@
+    <?php include "db.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +13,55 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <title>Hanz On Airsoft Supplies</title>
-    <style>
+
+ <!-- NAVBAR START -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.php">Home</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="features.php">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.php">Pricing</a></li>
+
+        <?php if (isset($_SESSION['user_id'])): ?>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.php">
+              Account (<?php echo htmlspecialchars($_SESSION['user_name']); ?>)
+            </a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="wishlist.php">Wishlist</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications.php">Notifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+        <?php else: ?>
+          <li class="nav-item"><a class="nav-link" href="login.php">Sign In</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>
+        <?php endif; ?>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" 
+             data-toggle="dropdown" aria-expanded="false">
+            Dropdown link
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- NAVBAR END -->
+
+    <style> 
         /* Base Styles */
         body {
             font-family: Arial, "Open Sans", sans-serif;
