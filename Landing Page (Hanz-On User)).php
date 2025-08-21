@@ -17,8 +17,8 @@
             font-family: Arial, "Open Sans", sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0a0a0a;
-            color: #ffffff;
+            background-color: #121218;
+            color: #e0e0e0;
         }
 
         /* Typography */
@@ -50,7 +50,7 @@
             display: block;
             width: 100px;
             height: 3px;
-            background: #8fbc54;
+            background: #f2c94c;
             margin: 10px auto 0;
         }
 
@@ -62,14 +62,14 @@
 
         /* Header & Navigation */
         header {
-            background-color: #000000;
+            background-color: #1e1e2f;
             padding: 15px;
             text-align: center;
             border-bottom: 1px solid #333;
         }
 
         nav {
-            background-color: #000000;
+            background-color: #1e1e2f;
             padding: 10px;
             border-bottom: 1px solid #333;
         }
@@ -100,7 +100,7 @@
         }
 
         .nav-link:hover {
-            color: #8fbc54;
+            color: #f2c94c;
         }
 
         /* Hero Section */
@@ -115,7 +115,7 @@
         }
 
         .hero-overlay {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(30, 30, 47, 0.8);
             padding: 40px;
             max-width: 500px;
             margin-left: 5%;
@@ -132,7 +132,7 @@
         }
 
         .btn-shop {
-            background-color: #8fbc54;
+            background-color: #f2c94c;
             color: black;
             border: none;
             padding: 10px 25px;
@@ -143,7 +143,7 @@
         }
 
         .btn-shop:hover {
-            background: #7aa641;
+            background: #e0b93e;
             color: #fff;
         }
 
@@ -154,6 +154,7 @@
             margin: 48px 0 32px 0;
             font-weight: 500;
             letter-spacing: 0.5px;
+            color: #f2f2f2;
         }
 
         .category-grid {
@@ -197,7 +198,7 @@
         }
 
         .category-label:hover {
-            color: #8fbc54;
+            color: #f2c94c;
             text-decoration: underline;
         }
 
@@ -273,7 +274,7 @@
         }
 
         .featured-btn {
-            background: #8fbc54;
+            background: #f2c94c;
             color: #000;
             border-radius: 0;
             font-weight: 600;
@@ -284,7 +285,7 @@
         }
 
         .featured-btn:hover {
-            background: #7aa641;
+            background: #e0b93e;
             color: #fff;
         }
 
@@ -325,7 +326,7 @@
         }
 
         .banner-btn {
-            background: #8fbc54;
+            background: #f2c94c;
             color: #000;
             border-radius: 0;
             font-weight: 600;
@@ -337,7 +338,7 @@
         }
 
         .banner-btn:hover {
-            background: #7aa641;
+            background: #e0b93e;
             color: #fff;
         }
 
@@ -387,16 +388,16 @@
         }
 
         .carousel-indicators button.active {
-            background-color: #8fbc54;
+            background-color: #f2c94c;
             transform: scale(1.2);
         }
 
         .carousel-control-prev-icon {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%238fbc54' viewBox='0 0 16 16'%3E%3Cpath d='M11 2L5 8l6 6' stroke='%238fbc54' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f2c94c' viewBox='0 0 16 16'%3E%3Cpath d='M11 2L5 8l6 6' stroke='%23f2c94c' stroke-width='2' fill='none'/%3E%3C/svg%3E");
         }
 
         .carousel-control-next-icon {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%238fbc54' viewBox='0 0 16 16'%3E%3Cpath d='M5 2l6 6-6 6' stroke='%238fbc54' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f2c94c' viewBox='0 0 16 16'%3E%3Cpath d='M5 2l6 6-6 6' stroke='%23f2c94c' stroke-width='2' fill='none'/%3E%3C/svg%3E");
         }
 
         .fixed-size-img {
@@ -422,7 +423,7 @@
         .btn-link {
             font-weight: bold;
             text-decoration: underline;
-            color: #8fbc54;
+            color: #f2c94c;
         }
 
         .subtitle {
@@ -550,7 +551,7 @@
         }
 
         .search-container button {
-            background-color: #8fbc54;
+            background-color: #f2c94c;
             color: #000;
             border: none;
             border-radius: 0 5px 5px 0;
@@ -559,7 +560,7 @@
         }
 
         .search-container button:hover {
-            background-color: #7aa641;
+            background-color: #e0b93e;
         }
 
         /* Buttons */
@@ -568,8 +569,8 @@
         }
 
         .btn-warning {
-            background-color: #8fbc54;
-            border-color: #8fbc54;
+            background-color: #f2c94c;
+            border-color: #f2c94c;
             color: #000;
             font-weight: bold;
             text-transform: uppercase;
@@ -577,8 +578,8 @@
         }
 
         .btn-warning:hover {
-            background-color: #7aa641;
-            border-color: #7aa641;
+            background-color: #e0b93e;
+            border-color: #e0b93e;
             color: #000;
         }
 
@@ -662,7 +663,7 @@
         }
 
         .footer-section h5 {
-            color: #8fbc54;
+            color: #f2c94c;
             margin-bottom: 20px;
         }
 
@@ -682,7 +683,7 @@
         }
 
         .footer-section a:hover {
-            color: #8fbc54;
+            color: #f2c94c;
         }
 
         .social-icons {
@@ -808,12 +809,12 @@
 
 <body>
     <header>
-        <h1><span style="color: #ebee5dff;"><b>H</b></span>anzOn Airsoft Supplies.</h1>
+        <h1><span style="color: #f2c94c;"><b>H</b></span>anzOn Airsoft Supplies.</h1>
     </header>
 
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="#">
-            <img src="Logo.png" height="100px" width="100px" alt="Logo">
+            <img src="HO-logo.png" height="100px" width="100px" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
             aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -1089,14 +1090,14 @@
                             </div>
                             <div class="col-md-6">
                                 <img src="https://images.unsplash.com/photo-1576790372116-ba8821b13667?auto=format&fit=crop&w=600&q=80"
-                                    class="img-fluid rounded" alt="Testimonial image">
+                                    class="img-fluid rounded" alt="Customer testimonial">
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="row align-items-center">
                             <div class="col-md-6 p-5">
-                                <h6>Exceptional Service</h6>
+                                <h6>Exceptional Quality</h6>
                                 <div class="stars mb-3">
                                     <i class="fa fa-star text-warning"></i>
                                     <i class="fa fa-star text-warning"></i>
@@ -1104,14 +1105,14 @@
                                     <i class="fa fa-star text-warning"></i>
                                     <i class="fa fa-star text-warning"></i>
                                 </div>
-                                <p class="lead">"When my scope arrived with a minor issue, HanzOn's customer service
-                                    team had a replacement shipped the same day. Now that's service you can count on!"
-                                </p>
+                                <p class="lead">"The D-Bell sniper rifle is a game changer. The wood finish is beautiful
+                                    and the precision is unmatched in its price range. HanzOn delivered exactly what
+                                    they promised."</p>
                                 <div class="text-muted">— Sarah T., Competitive Player</div>
                             </div>
                             <div class="col-md-6">
-                                <img src="https://images.unsplash.com/photo-1623071645586-23e0e2020d34?auto=format&fit=crop&w=600&q=80"
-                                    class="img-fluid rounded" alt="Testimonial image">
+                                <img src="https://images.unsplash.com/photo-1629996528813-fc8c4e98cabd?auto=format&fit=crop&w=600&q=80"
+                                    class="img-fluid rounded" alt="Customer testimonial">
                             </div>
                         </div>
                     </div>
@@ -1130,7 +1131,7 @@
         </div>
     </div>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer class="footer-section">
         <div class="container">
             <div class="row">
@@ -1145,28 +1146,26 @@
                     </ul>
                 </div>
                 <div class="col-md-3 mb-4 mb-md-0">
-                    <h5>Support</h5>
+                    <h5>Company</h5>
                     <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Warranty</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Repairs</a></li>
+                        <li><a href="AboutUs.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mb-4 mb-md-0">
-                    <h5>About</h5>
+                    <h5>Support</h5>
                     <ul>
-                        <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Responsibility</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Warranty</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h5>Stay Connected</h5>
-                    <p>Subscribe to our newsletter for the latest products and exclusive offers.</p>
+                    <p>Subscribe to our newsletter for the latest updates and offers</p>
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
                         <div class="input-group-append">
@@ -1174,16 +1173,16 @@
                         </div>
                     </div>
                     <div class="social-icons">
-                        <a href="#"><i class="fa fa-facebook fa-lg text-light"></i></a>
-                        <a href="#"><i class="fa fa-instagram fa-lg text-light"></i></a>
-                        <a href="#"><i class="fa fa-twitter fa-lg text-light"></i></a>
-                        <a href="#"><i class="fa fa-youtube fa-lg text-light"></i></a>
+                        <a href="#"><i class="fa fa-facebook text-white"></i></a>
+                        <a href="#"><i class="fa fa-twitter text-white"></i></a>
+                        <a href="#"><i class="fa fa-instagram text-white"></i></a>
+                        <a href="#"><i class="fa fa-youtube text-white"></i></a>
                     </div>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <p class="text-muted">© 2023 HanzOn Airsoft Supplies. All rights reserved.</p>
+                    <p>&copy; 2023 HanzOn Airsoft Supplies. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -1202,28 +1201,19 @@
                 </div>
                 <div class="modal-body">
                     <div id="cart-items">
-                        <p class="text-center py-4">Your cart is empty</p>
+                        <p class="text-center" id="empty-cart-message">Your cart is empty</p>
                     </div>
                     <div class="coupon-section mt-3">
                         <input type="text" class="form-control" id="coupon-code" placeholder="Enter coupon code">
-                        <button class="btn btn-light" id="apply-coupon">Apply</button>
+                        <button class="btn btn-warning" id="apply-coupon">Apply</button>
                     </div>
                     <div id="coupon-message" class="mt-2"></div>
                     <div class="d-flex justify-content-between mt-3">
-                        <span>Subtotal:</span>
-                        <span id="cart-subtotal">$0.00</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <span>Shipping:</span>
-                        <span id="cart-shipping">$0.00</span>
-                    </div>
-                    <div class="d-flex justify-content-between font-weight-bold">
-                        <span>Total:</span>
-                        <span id="cart-total">$0.00</span>
+                        <h5>Total: <span id="cart-total">$0.00</span></h5>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Continue Shopping</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
                     <button type="button" class="btn btn-warning" id="checkout-btn">Checkout</button>
                 </div>
             </div>
@@ -1242,26 +1232,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">WELCOME10</h5>
-                            <p class="card-text">Get 10% off your first order!</p>
-                            <small class="text-muted">Valid for new customers only.</small>
-                        </div>
+                    <div class="deal-item mb-3 p-3" style="background-color: #2a2a3b; border-radius: 5px;">
+                        <h6>SUMMER25</h6>
+                        <p>Get 25% off on all summer gear. Valid until August 31st.</p>
                     </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">FREESHIP</h5>
-                            <p class="card-text">Free shipping on all orders over $50.</p>
-                            <small class="text-muted">Valid until end of month.</small>
-                        </div>
+                    <div class="deal-item mb-3 p-3" style="background-color: #2a2a3b; border-radius: 5px;">
+                        <h6>WELCOME10</h6>
+                        <p>10% off your first order. Applies to all products.</p>
                     </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">GEARUP15</h5>
-                            <p class="card-text">15% off all tactical gear and accessories.</p>
-                            <small class="text-muted">Valid this week only.</small>
-                        </div>
+                    <div class="deal-item mb-3 p-3" style="background-color: #2a2a3b; border-radius: 5px;">
+                        <h6>FREESHIP</h6>
+                        <p>Free shipping on orders over $50. No code needed.</p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1272,40 +1253,172 @@
     </div>
 
     <script>
-        // Simple cart functionality
+        // Cart functionality
+        let cart = [];
         let cartCount = 0;
-        let cartItems = [];
+
+        // Sample products data
+        const products = [
+            { id: 1, name: "D-Bell VSR-10 Wood Design", price: 199, image: "dbell.jpg", category: "Sniper Rifle" },
+            { id: 2, name: "Glock-18", price: 89, image: "glock18.jpg", category: "Pistol" },
+            { id: 3, name: "HK416", price: 249, image: "hk416.jpg", category: "Assault Rifle" },
+            { id: 4, name: "Oni Mask", price: 29, image: "onimask.jpg", category: "Protective Gear" },
+            { id: 5, name: "Vortex Diamondback", price: 179, image: "Vortex Diamondback Tactical 4-16×44 .jpg", category: "Tactical Scope" }
+        ];
+
+        // Initialize cart from localStorage if available
+        function initCart() {
+            const savedCart = localStorage.getItem('hanzonCart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                updateCartCount();
+                renderCartItems();
+            }
+        }
+
+        // Add to cart function
+        function addToCart(productId, quantity = 1) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: quantity
+                });
+            }
+
+            updateCartCount();
+            renderCartItems();
+            saveCartToStorage();
+
+            // Show notification
+            $('#cartModal').modal('show');
+        }
+
+        // Remove from cart function
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartCount();
+            renderCartItems();
+            saveCartToStorage();
+        }
+
+        // Update quantity function
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCartCount();
+                    renderCartItems();
+                    saveCartToStorage();
+                }
+            }
+        }
 
         // Update cart count display
         function updateCartCount() {
-            document.getElementById('cart-count').textContent = cartCount;
+            cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            $('#cart-count').text(cartCount);
         }
 
-        // Add to cart functionality
-        document.querySelectorAll('.btn-add-to-cart').forEach(button => {
-            button.addEventListener('click', function () {
-                cartCount++;
-                updateCartCount();
+        // Render cart items in modal
+        function renderCartItems() {
+            const cartItemsContainer = $('#cart-items');
+            const emptyCartMessage = $('#empty-cart-message');
+            const cartTotal = $('#cart-total');
 
-                // Get product details (simplified)
-                const productCard = this.closest('.card');
-                const productName = productCard.querySelector('.fw-semibold').textContent;
-                const productPrice = productCard.querySelector('.fw-semibold:last-child').textContent;
+            if (cart.length === 0) {
+                emptyCartMessage.show();
+                cartItemsContainer.html('<p class="text-center">Your cart is empty</p>');
+                cartTotal.text('$0.00');
+                return;
+            }
 
-                // Add to cart items array
-                cartItems.push({
-                    name: productName,
-                    price: productPrice
-                });
+            emptyCartMessage.hide();
 
-                // Show confirmation
-                alert(`${productName} added to cart!`);
+            let itemsHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                itemsHTML += `
+                    <div class="cart-item">
+                        <div class="d-flex align-items-center">
+                            <img src="${item.image}" alt="${item.name}" class="mr-3">
+                            <div>
+                                <h6 class="mb-0">${item.name}</h6>
+                                <p class="mb-0">$${item.price.toFixed(2)}</p>
+                            </div>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="btn btn-sm btn-light" onclick="updateQuantity(${item.id}, -1)">-</button>
+                            <span class="mx-2">${item.quantity}</span>
+                            <button class="btn btn-sm btn-light" onclick="updateQuantity(${item.id}, 1)">+</button>
+                            <button class="btn btn-sm btn-danger ml-2" onclick="removeFromCart(${item.id})">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
             });
+
+            cartItemsContainer.html(itemsHTML);
+            cartTotal.text('$' + total.toFixed(2));
+        }
+
+        // Apply coupon code
+        $('#apply-coupon').click(function () {
+            const couponCode = $('#coupon-code').val().toUpperCase();
+            const couponMessage = $('#coupon-message');
+
+            if (couponCode === 'SUMMER25') {
+                couponMessage.text('25% discount applied!').css('color', '#28a745');
+                // Apply discount logic here
+            } else if (couponCode === 'WELCOME10') {
+                couponMessage.text('10% discount applied!').css('color', '#28a745');
+                // Apply discount logic here
+            } else {
+                couponMessage.text('Invalid coupon code').css('color', '#dc3545');
+            }
         });
 
-        // Initialize carousels
+        // Save cart to localStorage
+        function saveCartToStorage() {
+            localStorage.setItem('hanzonCart', JSON.stringify(cart));
+        }
+
+        // Initialize when document is ready
         $(document).ready(function () {
+            initCart();
+
+            // Add event listeners for shop buttons
+            $('.btn-shop, .featured-btn, .banner-btn').click(function (e) {
+                e.preventDefault();
+                // Redirect to products page or show products
+                window.location.href = 'products.php';
+            });
+
+            // Initialize carousels
             $('.carousel').carousel();
+
+            // Category grid click handlers
+            $('.category-grid > div').click(function () {
+                const category = $(this).find('.category-label').text().trim();
+                window.location.href = `products.php?category=${encodeURIComponent(category)}`;
+            });
         });
     </script>
 </body>
