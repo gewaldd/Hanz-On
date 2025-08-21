@@ -103,5 +103,111 @@
         "rating": 4.1,
         "sold": 250,
         "stock": 0
+    },
+        "Cyberpunk Oni Mask": {
+        "price": 99,
+        "image": "Cyberpunk Oni Mask.jpg",
+        "rating": 4.8,
+        "sold": 320,
+        "stock": 0
+    },
+        "NINJA MASK BLK": {
+        "price": 89,
+        "image": "NINJA MASK BLK.jpg",
+        "rating": 4.7,
+        "sold": 420,
+        "stock": 0
+    },
+        "KRAKEN MASK": {
+        "price": 99,
+        "image": "KRAKEN MASK.jpg",
+        "rating": 4.9,
+        "sold": 500,
+        "stock": 0
+    },
+        "TACTICAL HELMET BLK": {
+        "price": 79,
+        "image": "TACTICAL HELMET BLK.jpg",
+        "rating": 4.7,
+        "sold": 450,
+        "stock": 0
+    },
+        "JW MASK BLACK": {
+        "price": 99,
+        "image": "JW MASK BLACK.jpg",
+        "rating": 4.9,
+        "sold": 550,
+        "stock": 0
+    },
+        "Rothco Tactical Molle Plate Carrier Vest": {
+        "price": 199,
+        "image": "Rothco Tactical Molle Plate Carrier Vest.jpg",
+        "rating": 4.9,
+        "sold": 600,
+        "stock": 0
+    },
+        "Elite Survival Systems Commandant Tactical Vest": {
+        "price": 219,
+        "image": "Elite Survival Systems Commandant Tactical Vest.jpg",
+        "rating": 4.8,
+        "sold": 500,
+        "stock": 0
+    },
+        "Elbeco BodyShield External Vest Carrier V4": {
+        "price": 199,
+        "image": "Elbeco BodyShield External Vest Carrier V4.jpg",
+        "rating": 4.8,
+        "sold": 200,
+        "stock": 0
+    },
+        "Blackhawk Omega Elite Cross Draw Vest": {
+        "price": 229,
+        "image": "Blackhawk Omega Elite Cross Draw Vest.jpg",
+        "rating": 4.9,
+        "sold": 300,
+        "stock": 0
+    },
+        "Tasmanian Tiger Vest Base Plus MKII": {
+        "price": 179,
+        "image": "Tasmanian Tiger Vest Base Plus MKII.jpg",
+        "rating": 4.7,
+        "sold": 600,
+        "stock": 0
+    },
+        "Oakley Light Assault 3 Boots": {
+        "price": 189,
+        "image": "Oakley Light Assault 3 Boots.jpg",
+        "rating": 4.8,
+        "sold": 400,
+        "stock": 0
+    },
+        "Under Armour Charged Loadout Boots": {
+        "price": 199,
+        "image": "Under Armour Charged Loadout Boots.jpg",
+        "rating": 4.9,
+        "sold": 750,
+        "stock": 0
+    },
+        "Altama Maritime Assault Mid Boots": {
+        "price": 169,
+        "image": "Altama Maritime Assault Mid Boots.jpg",
+        "rating": 4.6,
+        "sold": 390,
+        "stock": 0
+    },
+        "NIKE 8 SFB B2 Leather Boots": {
+        "price": 199,
+        "image": "NIKE 8 SFB B2 Leather Boots.jpg",
+        "rating": 4.6,
+        "sold": 390,
+        "stock": 0
+    },
+        "Danner 8 Tachyon Boots": {
+        "price": 159,
+        "image": "Danner 8 Tachyon Boots.jpg",
+        "rating": 4.6,
+        "sold": 390,
+        "stock": 0
     }
+
 }
