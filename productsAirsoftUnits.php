@@ -2827,70 +2827,51 @@ function checkoutCart() {
 $('#checkout-btn').click(function() {
     if (cart.length === 0) {
         alert('Your cart is empty!');
-        return; // Prevent further execution
+        return;
     }
 
-    // Confirmation alert
     let confirmation = confirm("Are you sure you want to proceed to checkout?");
     if (!confirmation) {
-        return; // Stop the checkout process if the user cancels
+        return;
     }
 
-    // Calculate the original total
+    // Calculate totals
     let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    let discountValue = discount; // Get the current discount percentage
-    let discountedTotal = total; // Store the original total for calculation
+    let discountValue = discount;
+    let discountedTotal = discountValue > 0 ? total - (total * (discountValue / 100)) : total;
 
-    if (discountValue > 0) {
-        discountedTotal = total - (total * (discountValue / 100)); // Calculate discounted total
-    }
-
-    // Prepare data to send for checkout
-    let record = {
-        Total: total.toFixed(2), // Original total formatted to two decimal places
-        Discount: discountValue,
-        Discounted: discountedTotal.toFixed(2) // Final price after discount formatted to two decimal places
-    };
-
-    // Prepare cart data (product name and quantity) for stock update
+    // Prepare cart data for stock update
     let cartData = cart.map(item => ({
         name: item.name,
         quantity: item.quantity
     }));
 
-    // First, update the stock in real-time before proceeding with checkout
+    // 1. FIRST, CHECK/UPDATE STOCK
     $.ajax({
-        url: 'stocks.php', // Path to the stock update endpoint
+        url: 'stocks.php',
         type: 'POST',
-        data: {
-            cartData: JSON.stringify(cartData) // Send cart data as a JSON string
-        },
+        data: { cartData: JSON.stringify(cartData) },
         success: function(response) {
             let res = JSON.parse(response);
             if (res.success) {
-                // After successful stock update, proceed with the checkout
-                $.ajax({
-                    url: 'checkout.php', // Path to the checkout processing endpoint
-                    type: 'POST',
-                    data: { record: JSON.stringify(record) },
-                    success: function(response) {
-                        alert(response); // Display checkout success message
-                        $('#cartModal').modal('hide');
-                        cart = []; // Clear cart after successful checkout
-                        updateCart(); // Update the cart UI
-                        updateCartCount(); // Update the cart count UI
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        alert('Error during checkout: ' + textStatus);
-                    }
-                });
+                // 2. AFTER STOCK IS CONFIRMED, REDIRECT TO THE NEW CHECKOUT PAGE
+                let checkoutData = {
+                    items: cart, // The full cart array with names, prices, images, quantities
+                    discount: discount,
+                    subtotal: total,
+                    total: discountedTotal
+                };
+                // Convert the data to a URL-safe string
+                let checkoutDataString = encodeURIComponent(JSON.stringify(checkoutData));
+                // REDIRECT the user
+                window.location.href = `checkout.php?data=${checkoutDataString}`;
+
             } else {
-                // If stock update fails (e.g., insufficient stock), show the error
-                alert(res.error);
+                alert(res.error); // Show stock error
             }
         },
-        error: function(jqXHR, textStatus, errorThrown) {
-            alert('Error during stock update: ' + textStatus);
+        error: function() {
+            alert('Error during stock update.');
         }
     });
 });
