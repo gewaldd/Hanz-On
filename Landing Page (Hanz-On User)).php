@@ -984,65 +984,71 @@
     </div>
     </div>
 
-    <!-- Footer Section -->
-    <footer class="footer-section">
-        <div class="container">
+    <!-- FOOTER SECTION -->
+    <div class="container-fluid py-5" style="background-color: #000;">
+        <div class="container mt-5 text-white">
             <div class="row">
-                <div class="col-md-3 mb-4 mb-md-0">
-                    <h5>Shop</h5>
-                    <ul>
-                        <li><a href="#">Sniper Rifles</a></li>
-                        <li><a href="#">Assault Rifles</a></li>
-                        <li><a href="#">Pistols</a></li>
-                        <li><a href="#">Gear</a></li>
-                        <li><a href="#">Accessories</a></li>
+                <div class="col-md-3 dk-store">
+                    <h5 style="color: #fdd835;" class="mb-3">SOTERIA'S GAME ARCHIVE</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white footer-link">About Us</a></li>
+                        <li><a href="#" class="text-white footer-link">Repair Center</a></li>
+                        <li><a href="#" class="text-white footer-link">Deals and Coupons</a></li>
+                        <li><a href="#" class="text-white footer-link">Rewards</a></li>
+                        <li><a href="#" class="text-white footer-link">Blog</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 mb-4 mb-md-0">
-                    <h5>Support</h5>
-                    <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Warranty</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Repairs</a></li>
+                <div class="col-md-3 company">
+                    <h5 style="color: #fdd835;" class="mb-3">COMPANY</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white footer-link">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-white footer-link">Refurbish & Inspection Process</a></li>
+                        <li><a href="#" class="text-white footer-link">Contact Us</a></li>
+                        <li><a href="#" class="text-white footer-link">Privacy</a></li>
+                        <li><a href="#" class="text-white footer-link">California Privacy</a></li>
+                        <li><a href="#" class="text-white footer-link">Testimonials</a></li>
+                        <li><a href="#" class="text-white footer-link">FAQs</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 mb-4 mb-md-0">
-                    <h5>About</h5>
-                    <ul>
-                        <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Responsibility</a></li>
+                <div class="col-md-3 account">
+                    <h5 style="color: #fdd835;" class="mb-3">ACCOUNT</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white footer-link">Track My Order</a></li>
+                        <li><a href="#" class="text-white footer-link">My Account</a></li>
+                        <li><a href="#" class="text-white footer-link">Shopping Cart</a></li>
+                        <li><a href="#" class="text-white footer-link">Accessibility</a></li>
+                        <li><a href="#" class="text-white footer-link">Terms and Conditions</a></li>
+                        <li><a href="#" class="text-white footer-link">Secure Shopping</a></li>
+                        <li><a href="#" class="text-white footer-link">Sitemap</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
-                    <h5>Stay Connected</h5>
-                    <p>Subscribe to our newsletter for the latest products and exclusive offers.</p>
-                    <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
-                        <div class="input-group-append">
-                            <button class="btn btn-warning" type="button">Subscribe</button>
-                        </div>
-                    </div>
-                    <div class="social-icons">
-                        <a href="#"><i class="fa fa-facebook fa-lg text-light"></i></a>
-                        <a href="#"><i class="fa fa-instagram fa-lg text-light"></i></a>
-                        <a href="#"><i class="fa fa-twitter fa-lg text-light"></i></a>
-                        <a href="#"><i class="fa fa-youtube fa-lg text-light"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-12 text-center">
-                    <p class="text-muted">© 2023 HanzOn Airsoft Supplies. All rights reserved.</p>
+                <div class="col-md-3 get-social">
+                    <h5 style="color: #fdd835;" class="mb-3">GET SOCIAL</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li class="mr-3"><a href="#"><img src="facebook.png" alt="Facebook" width="24" height="24"></a>
+                        </li>
+                        <li class="mr-3"><a href="#"><img src="twitter.png" alt="Twitter" width="24" height="24"></a>
+                        </li>
+                        <li class="mr-3"><a href="#"><img src="youtube.png" alt="YouTube" width="24" height="24"></a>
+                        </li>
+                        <li class="mr-3"><a href="#"><img src="instagram.png" alt="Instagram" width="24"
+                                    height="24"></a></li>
+                        <li class="mr-3"><a href="#"><img src="tiktok.png" alt="TikTok" width="24" height="24"></a></li>
+                    </ul>
+                    <p style="color: white; margin-top: 15px;">
+                        Soteria's Game Archive.com<br>
+                        938 Aurora Boulevard, Cubao<br>
+                        Quezon City, Philippines 1100
+                    </p>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
 
+    <!-- BOTTOM FOOTER BAR -->
+    <footer style="background-color: #000; text-align: center; padding: 10px 0;">
+        <p style="color: white; margin: 0;">1 YEAR WARRANTY that nobody can beat!</p>
+    </footer>
     <!-- Cart Modal -->
     <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel"
         aria-hidden="true">
