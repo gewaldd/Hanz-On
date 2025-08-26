@@ -150,7 +150,7 @@
         /* Category Grid */
         .shop-category-title {
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin: 48px 0 32px 0;
             font-weight: 500;
             letter-spacing: 0.5px;
@@ -158,43 +158,49 @@
         }
 
         .category-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 18px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
             max-width: 1140px;
             margin-bottom: 2.5rem;
             margin-left: auto;
             margin-right: auto;
+            flex-wrap: wrap;
         }
 
         .category-grid>div {
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 220px;
+            /* Fixed width for consistent sizing */
         }
 
         .category-img {
             width: 100%;
-            aspect-ratio: 1/1;
+            height: 220px;
+            /* Fixed height for consistent sizing */
             object-fit: cover;
-            border-radius: 6px;
-            transition: transform 0.2s;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .category-label {
-            margin-top: 8px;
+            margin-top: 12px;
             text-align: center;
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #ccc;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 500;
             cursor: pointer;
-            transition: color 0.2s;
+            transition: color 0.3s ease;
         }
 
         .category-img:hover {
-            transform: scale(1.03);
+            transform: scale(1.08);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         .category-label:hover {
@@ -204,24 +210,47 @@
 
         @media (max-width: 991.98px) {
             .category-grid {
-                grid-template-columns: repeat(3, 1fr);
-                max-width: 720px;
+                gap: 20px;
+            }
+
+            .category-grid>div {
+                width: 200px;
+            }
+
+            .category-img {
+                height: 200px;
             }
         }
 
         @media (max-width: 767.98px) {
             .category-grid {
-                grid-template-columns: repeat(2, 1fr);
-                max-width: 95vw;
+                gap: 15px;
+            }
+
+            .category-grid>div {
+                width: 180px;
+            }
+
+            .category-img {
+                height: 180px;
             }
         }
 
         @media (max-width: 575.98px) {
             .category-grid {
-                grid-template-columns: 1fr;
-                max-width: 95vw;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .category-grid>div {
+                width: 250px;
+            }
+
+            .category-img {
+                height: 250px;
             }
         }
+
 
         /* Featured Grid */
         .featured-grid {
@@ -803,6 +832,7 @@
                 margin: 10px 0;
                 width: 100%;
             }
+
         }
     </style>
 </head>
@@ -852,20 +882,18 @@
         <div class="shop-category-title">Shop by Category</div>
         <div class="category-grid mb-5 mx-auto">
             <div>
-                <img src="sniper rifles.jpg" class="category-img" alt="Sniper Rifles" />
-                <div class="category-label">SNIPER RIFLES</div>
+                <a href="productsAirsoftUnits.php">
+                    <img src="sniper rifles.jpg" class="category-img" alt="Units" />
+                    <div class="category-label">Airsoft Units</div>
+                </a>
             </div>
+
+
             <div>
-                <img src="assault rifles.jpg" class="category-img" alt="Assault Rifles" />
-                <div class="category-label">ASSAULT RIFLES</div>
-            </div>
-            <div>
-                <img src="pistols.jpg" class="category-img" alt="Pistols" />
-                <div class="category-label">PISTOLS</div>
-            </div>
-            <div>
-                <img src="Gears.jpg" class="category-img" alt="Gear" />
-                <div class="category-label">GEAR</div>
+                <a href="productsGears.php">
+                    <img src="Gears.jpg" class="category-img" alt="Gear" />
+                    <div class="category-label">GEAR</div>
+                </a>
             </div>
             <div>
                 <img src="accesories.jpg" class="category-img" alt="Accessories" />
@@ -876,9 +904,8 @@
         <!-- FEATURED GRID -->
         <div class="row featured-grid justify-content-center">
             <div class="col-12 col-md-4 mb-4 mb-md-0">
-                <div class="featured-card" onclick="window.location='#';">
-                    <img src="https://images.unsplash.com/photo-1576790372116-ba8821b13667?auto=format&fit=crop&w=600&q=80"
-                        alt="New Arrivals" />
+                <div class="featured-card" onclick="window.location='products.php?category=new-arrivals';">
+                    <img src="newarrivals.jpg" alt="New Arrivals" />
                     <div class="featured-overlay">
                         <div class="featured-title">New Arrivals</div>
                         <button class="btn featured-btn">SHOP THE LATEST</button>
@@ -886,9 +913,8 @@
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-4 mb-md-0">
-                <div class="featured-card" onclick="window.location='#';">
-                    <img src="https://images.unsplash.com/photo-1629996528813-fc8c4e98cabd?auto=format&fit=crop&w=600&q=80"
-                        alt="Best Sellers" />
+                <div class="featured-card" onclick="window.location='products.php?category=bestsellers';">
+                    <img src="bestseller.jpg" alt="Best Sellers" />
                     <div class="featured-overlay">
                         <div class="featured-title">Best-Sellers</div>
                         <button class="btn featured-btn">SHOP YOUR FAVORITES</button>
@@ -896,9 +922,8 @@
                 </div>
             </div>
             <div class="col-12 col-md-4">
-                <div class="featured-card" onclick="window.location='#';">
-                    <img src="https://images.unsplash.com/photo-1610998342129-4a4d7ef9cbb0?auto=format&fit=crop&w=600&q=80"
-                        alt="Special Offers" />
+                <div class="featured-card" onclick="window.location='products.php?category=special-offers';">
+                    <img src="specialoffer.jpg" alt="Special Offers" />
                     <div class="featured-overlay">
                         <div class="featured-title">Special Offers</div>
                         <button class="btn featured-btn">SHOP DEALS</button>
@@ -906,82 +931,81 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container-fluid my-5 px-0">
-        <div class="impact-banner d-flex align-items-center justify-content-center">
-            <div class="text-center w-100 banner-content">
-                <h2 class="text-white mb-3">
-                    We're Committed to Quality and Performance
-                </h2>
-                <div class="text-white mb-4 fs-5">
-                    All our products come with a 1-year warranty and free shipping on orders over $10.
+        <div class="container-fluid my-5 px-0">
+            <div class="impact-banner d-flex align-items-center justify-content-center">
+                <div class="text-center w-100 banner-content">
+                    <h2 class="text-white mb-3">
+                        We're Committed to Quality and Performance
+                    </h2>
+                    <div class="text-white mb-4 fs-5">
+                        All our products come with a 1-year warranty and free shipping on orders over $10.
+                    </div>
+                    <a href="#" class="btn banner-btn">LEARN MORE</a>
                 </div>
-                <a href="#" class="btn banner-btn">LEARN MORE</a>
             </div>
         </div>
-    </div>
 
 
 
-    <div class="container my-5">
-        <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 p-5">
-                            <h6>People Are Talking</h6>
-                            <div class="stars mb-3">
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
+        <div class="container my-5">
+            <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 p-5">
+                                <h6>People Are Talking</h6>
+                                <div class="stars mb-3">
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                </div>
+                                <p class="lead">"The HK416 I purchased from HanzOn outperforms everything I've tried.
+                                    The build quality is exceptional and it's incredibly accurate right out of the box."
+                                </p>
+                                <div class="text-muted">— Marcus J., Airsoft Team Leader</div>
                             </div>
-                            <p class="lead">"The HK416 I purchased from HanzOn outperforms everything I've tried.
-                                The build quality is exceptional and it's incredibly accurate right out of the box."
-                            </p>
-                            <div class="text-muted">— Marcus J., Airsoft Team Leader</div>
+                            <div class="col-md-6">
+                                <img src="hk416fb.png" class="img-fluid rounded" alt="Testimonial image">
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <img src="https://images.unsplash.com/photo-1576790372116-ba8821b13667?auto=format&fit=crop&w=600&q=80"
-                                class="img-fluid rounded" alt="Testimonial image">
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 p-5">
+                                <h6>Exceptional Service</h6>
+                                <div class="stars mb-3">
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                </div>
+                                <p class="lead">"When my scope arrived with a minor issue, HanzOn's customer service
+                                    team had a replacement shipped the same day. Now that's service you can count on!"
+                                </p>
+                                <div class="text-muted">— Sarah T., Competitive Player</div>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="scopefb.jpg" class="img-fluid rounded" alt="Testimonial image">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 p-5">
-                            <h6>Exceptional Service</h6>
-                            <div class="stars mb-3">
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                            </div>
-                            <p class="lead">"When my scope arrived with a minor issue, HanzOn's customer service
-                                team had a replacement shipped the same day. Now that's service you can count on!"
-                            </p>
-                            <div class="text-muted">— Sarah T., Competitive Player</div>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="https://images.unsplash.com/photo-1623071645586-23e0e2020d34?auto=format&fit=crop&w=600&q=80"
-                                class="img-fluid rounded" alt="Testimonial image">
-                        </div>
-                    </div>
-                </div>
+                <button class="carousel-control-prev" type="button" data-target="#testimonialCarousel"
+                    data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-target="#testimonialCarousel"
+                    data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-target="#testimonialCarousel" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#testimonialCarousel" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </button>
         </div>
-    </div>
     </div>
 
     <!-- FOOTER SECTION -->
