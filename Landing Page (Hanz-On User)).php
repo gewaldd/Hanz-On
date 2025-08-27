@@ -857,7 +857,7 @@
                 <a class="nav-item nav-link" href="products.php">Products</a>
                 <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#dealsModal">Deals and
                     Coupons</a>
-                <a class="nav-item nav-link" href="#">Account</a>
+                <a class="nav-item nav-link" href="userprofile.php">Account</a>
                 <a class="nav-item nav-link" href="login.php">Sign In</a>
                 <a class="nav-item nav-link" id="cart-btn" data-toggle="modal" data-target="#cartModal">Cart (<span
                         id="cart-count">0</span>)</a>
