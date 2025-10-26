@@ -4,7 +4,6 @@ include "connection.php";
 <?php
 $products = json_decode(file_get_contents('products.json'), true);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,454 +17,8 @@ $products = json_decode(file_get_contents('products.json'), true);
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="updateData.js"> </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-body {
-    font-family: "Open Sans", Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121218;
-    color: #e0e0e0;
-}
-
-header, footer {
-    background-color: #1e1e2f;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-
-nav {
-    background-color: #1e1e2f;
-    padding: 10px;
-    text-align: center;
-}
-
-nav a {
-    color: #f2f2f2;
-    text-decoration: none;
-    padding: 10px;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #f2c94c;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar-nav {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-.nav-item {
-    margin: 0 15px;
-}
-
-.banner {
-    text-align: center;
-    padding: 20px;
-}
-
-.banner img {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border-radius: 8px;
-}
-
-h2, h3 {
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    color: #f2f2f2;
-    margin: 30px 0 30px;
-}
-
-h2::after, h3::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background: #f2c94c;
-    margin: 10px auto 0;
-}
-
-.content {
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-    background-color: #1b1b27;
-    border-radius: 8px;
-}
-
-footer p {
-    margin: 0;
-    color: #ccc;
-}
-
-input[type="text"] {
-    padding: 8px;
-    width: 200px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    background-color: #2c2c3d;
-    color: #fff;
-}
-
-button {
-    background-color: #f2c94c;
-    color: #111;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #e0b93e;
-}
-
-.product-container, .products-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.product {
-    width: 220px;
-    background-color: #1e1e2f;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    padding: 10px;
-    text-align: center;
-}
-
-.product img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.checkout-section {
-    background-color: #1e1e2f;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    color: white;
-}
-
-.btn-warning {
-    background-color: #f2c94c;
-    color: black;
-    border: none;
-    font-weight: bold;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
-}
-
-.btn-warning:hover {
-    background-color: #e0b93e;
-}
-
-.quantity-controls button {
-    padding: 4px 8px;
-    font-size: 14px;
-    background-color: #2c2c3d;
-    border: 1px solid #555;
-    color: #f2f2f2;
-}
-
-.modal-header {
-    background-color: #1e1e2f;
-    color: #f2f2f2;
-}
-
-#cart-items {
-    max-height: 500px;
-    overflow-y: auto;
-    background-color: #181824;
-    padding: 10px;
-    border: 1px solid #333;
-    color: white;
-}
-
-#navitemu, #cart-btn {
-    color: #ffffff;
-    transition: color 0.3s;
-}
-
-#navitemu:hover, #cart-btn:hover {
-    color: #f2c94c;
-}
-
-.card {
-    background-color: #1e1e2f !important;
-    border-radius: 8px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-}
-
-.card-body {
-    color: white;
-}
-
-.card h5, .card h6 {
-    color: #ffffff;
-}
-
-.card p {
-    color: #cccccc;
-}
-
-.star-rating {
-    color: gold;
-    font-weight: bold;
-}
-
-.btn-outline-success {
-    color: #00c853;
-    border-color: #00c853;
-}
-
-.btn-outline-light {
-    color: #ffffff;
-    border-color: #ffffff;
-}
-
-.btn-outline-success:hover,
-.btn-outline-light:hover {
-    background-color: #00c853;
-    color: white;
-    border-color: #00c853;
-}
-/* Cart modal text and layout fixes */
-#cart-items {
-    color: #ffffff;
-    background-color: #181824;
-    padding: 10px;
-    border: 1px solid #2a2a3a;
-}
-
-#cart-items p,
-#cart-items span,
-#cart-items .item-name,
-#cart-items .item-qty,
-#cart-items .item-price,
-#cart-items .item-total {
-    color: #ffffff !important;
-}
-
-/* Quantity button colors */
-#cart-items .btn {
-    color: #ffffff;
-    background-color: #333;
-    border: 1px solid #555;
-}
-
-#cart-items .btn:hover {
-    background-color: #555;
-}
-
-/* Make sure the image is visible and styled */
-#cart-items img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 4px;
-}
-
-/* Table-style row enhancements */
-.cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-    padding: 10px 0;
-    border-bottom: 1px solid #333;
-}
-
-.cart-item span,
-.cart-item div {
-    color: #ddd;
-}
-
-.cart-item .remove-btn {
-    background-color: #e74c3c;
-    border: none;
-    padding: 4px 10px;
-    color: white;
-    border-radius: 4px;
-}
-#cart-items table {
-    width: 100%;
-    border-collapse: collapse;
-    color: #fff;
-    background-color: transparent;
-}
-
-#cart-items th,
-#cart-items td {
-    padding: 10px;
-    text-align: center;
-    color: #e0e0e0;
-    border-bottom: 1px solid #333;
-}
-.modal-footer {
-    background-color: #2e2e2e; /* dark grey background */
-    color: #fff; /* white text */
-    border-top: 1px solid #444; /* subtle border on top */
-}
-
-.modal-footer .btn {
-    color: #fff; /* ensure buttons have white text */
-}
-
-/* Optional: specifically style the coupon message text color */
-#coupon-message {
-    color: #ff6b6b; /* or keep your existing text-danger style */
-}
-#coupon-code {
-    background-color: #f0f0f0; /* light grey background */
-    color: #333; /* dark text for readability */
-    border: 1px solid #ccc; /* subtle border */
-    padding: 6px 10px; /* add some padding for comfort */
-    border-radius: 4px;
-    transition: border-color 0.3s ease;
-}
-
-#coupon-code:focus {
-    border-color: #28a745; /* green border on focus (matching apply button) */
-    outline: none;
-    box-shadow: 0 0 5px #28a745;
-}
-.row.align-items-stretch {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* or start */
-  gap: 7px; /* space between cards */
-}
-
-@media (min-width: 992px) {
-  .product-card {
-    flex: 0 0 calc(20.5% - 12px);
-    max-width: calc(20.5% - 12px);
-  }
-}
-/* Filter container matches navbar width and styling */
-.filter-container {
-  width: 100%;
-  background-color: #2c2f33;
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-}
-
-/* Inner form is centered and responsive */
-.filter-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  max-width: 1300px;
-}
-
-/* Shared input/select styling */
-.filter-input,
-.filter-select {
-  flex: 1 1 120px;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  background-color: #40444b;
-  color: white;
-  font-weight: 600;
-  min-width: 100px;
-}
-
-/* Button styling */
-.filter-button {
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: 700;
-  background-color: #ffc107;
-  color: black;
-  border: none;
-  box-shadow: 0 3px 8px rgba(255, 193, 7, 0.6);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.filter-button:hover {
-  background-color: #e0a800;
-}
-.modal-content {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  font-family: 'Open Sans', sans-serif;
-}
-
-.modal-title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.4rem;
-}
-
-.carousel-inner img {
-  transition: transform 0.3s ease-in-out;
-}
-
-.carousel-inner img:hover {
-  transform: scale(1.02);
-}
-/* Black carousel arrow buttons */
-.custom-carousel-arrow {
-  width: 40px;
-  height: 40px;
-  background-color: #000; /* Solid black */
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff; /* White icon */
-  font-size: 20px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-  transition: background-color 0.2s ease;
-}
-
-.carousel-control-prev.custom-carousel-arrow {
-  left: 10px;
-}
-
-.carousel-control-next.custom-carousel-arrow {
-  right: 10px;
-}
-
-.custom-carousel-arrow:hover {
-  background-color: #222; /* Slightly lighter on hover */
-}
-
-
-    </style>
+    <link rel="stylesheet" href="products.css">
+    <script src="products.js"></script>
 </head>
 <body>
     
@@ -1828,7 +1381,7 @@ button:hover {
           <div class="d-flex justify-content-between mt-4">
             <button class="btn btn-success d-flex align-items-center justify-content-center w-50 mr-2 py-2"
               style="font-size: 0.8em; white-space: nowrap;"
-              onclick="confirmPurchase('NIKE 8 SFB B2 Leather Boots', <?= $products['NIKE 8 SFB B2 Leather Boots']['price'] ?>, 'NIKE 8 SFB B2 Leather Boots.jpg'); modifyStock('NIKE 8 SFB B2 Leather Boots', -1)">
+              onclick="confirmPurchase('NIKE 8 SFB B2 Leather Boots', <?= $products['NIKE 8 SFB B2 Leather Boots']['price'] ?>, 'NIKE 8 SFB B2 Leather Boots.png'); modifyStock('NIKE 8 SFB B2 Leather Boots', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
 
@@ -1836,7 +1389,7 @@ button:hover {
               style="font-size: 0.8em; white-space: nowrap;"
               data-name="NIKE 8 SFB B2 Leather Boots"
               data-price="<?= $products['NIKE 8 SFB B2 Leather Boots']['price'] ?>"
-              data-image="NIKE 8 SFB B2 Leather Boots.jpg"
+              data-image="NIKE 8 SFB B2 Leather Boots.png"
               onclick="addDBuy('NIKE 8 SFB B2 Leather Boots', 1, <?= $products['NIKE 8 SFB B2 Leather Boots']['price'] ?>); alert('Added to cart')">
               <i class="fa fa-shopping-cart mr-2"></i> Add to Cart
             </button>
@@ -1920,7 +1473,7 @@ button:hover {
           <div class="d-flex justify-content-between mt-4">
             <button class="btn btn-success d-flex align-items-center justify-content-center w-50 mr-2 py-2"
               style="font-size: 0.8em; white-space: nowrap;"
-              onclick="confirmPurchase('Danner 8 Tachyon Boots', <?= $products['Danner 8 Tachyon Boots']['price'] ?>, 'Danner 8 Tachyon Boots.jpg'); modifyStock('Danner 8 Tachyon Boots', -1)">
+              onclick="confirmPurchase('Danner 8 Tachyon Boots', <?= $products['Danner 8 Tachyon Boots']['price'] ?>, 'Danner 8 Tachyon Boots.png'); modifyStock('Danner 8 Tachyon Boots', -1)">
               <i class="fa fa-credit-card mr-2"></i> Buy Now
             </button>
 
@@ -1928,7 +1481,7 @@ button:hover {
               style="font-size: 0.8em; white-space: nowrap;"
               data-name="Danner 8 Tachyon Boots"
               data-price="<?= $products['Danner 8 Tachyon Boots']['price'] ?>"
-              data-image="Danner 8 Tachyon Boots.jpg"
+              data-image="Danner 8 Tachyon Boots.png"
               onclick="addDBuy('Danner 8 Tachyon Boots', 1, <?= $products['Danner 8 Tachyon Boots']['price'] ?>); alert('Added to cart')">
               <i class="fa fa-shopping-cart mr-2"></i> Add to Cart
             </button>
@@ -1962,7 +1515,7 @@ button:hover {
                             <span style="margin-left: 5px; color: white;"><?= $products['Cyberpunk Oni Mask']['sold'] ?> sold</span>
                         </div>
                         <div class="mt-2" style="color: white; text-align: center;">
-                            In stock: <span id="stock-count-oni-mask" style="margin-left: 5px;"><?= $products['Cyberpunk Oni Mask']['stock'] ?></span>
+                            In stock: <span id="stock-count-cyberpunk-oni-mask" style="margin-left: 5px;"><?= $products['Cyberpunk Oni Mask']['stock'] ?></span>
                         </div>
                         <div class="button-container mt-auto d-flex justify-content-center">
                             <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;"
@@ -2150,7 +1703,6 @@ button:hover {
 
 <br>
 
-
 <div class="container text-center">
     <div class="row align-items-stretch">
 
@@ -2173,7 +1725,7 @@ button:hover {
                             <span style="margin-left: 5px; color: white;"><?= $products['Rothco Tactical Molle Plate Carrier Vest']['sold'] ?> sold</span>
                         </div>
                         <div class="mt-2" style="color: white; text-align: center;">
-                            In stock: <span id="stock-count-rothco-vest" style="margin-left: 5px;"><?= $products['Rothco Tactical Molle Plate Carrier Vest']['stock'] ?></span>
+                            In stock: <span id="stock-count-rothco-tactical-molle-plate-carrier-vest" style="margin-left: 5px;"><?= $products['Rothco Tactical Molle Plate Carrier Vest']['stock'] ?></span>
                         </div>
                         <div class="button-container mt-auto d-flex justify-content-center">
                             <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;"
@@ -2213,7 +1765,7 @@ button:hover {
                             <span style="margin-left: 5px; color: white;"><?= $products['Elite Survival Systems Commandant Tactical Vest']['sold'] ?> sold</span>
                         </div>
                         <div class="mt-2" style="color: white; text-align: center;">
-                            In stock: <span id="stock-count-elite-commandant-vest" style="margin-left: 5px;"><?= $products['Elite Survival Systems Commandant Tactical Vest']['stock'] ?></span>
+                            In stock: <span id="stock-count-elite-survival-systems-commandant-tactical-vest" style="margin-left: 5px;"><?= $products['Elite Survival Systems Commandant Tactical Vest']['stock'] ?></span>
                         </div>
                         <div class="button-container mt-auto d-flex justify-content-center">
                             <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;"
@@ -2253,7 +1805,7 @@ button:hover {
                     <span style="margin-left:5px; color:white;"><?= $products['Elbeco BodyShield External Vest Carrier V4']['sold'] ?> sold</span>
                 </div>
                 <div class="mt-2" style="color:white; text-align:center;">
-                    In stock: <span id="stock-count-elbeco-bodyshield-v4" style="margin-left:5px;"><?= $products['Elbeco BodyShield External Vest Carrier V4']['stock'] ?></span>
+                    In stock: <span id="stock-count-elbeco-bodyshield-external-vest-carrier-v4" style="margin-left:5px;"><?= $products['Elbeco BodyShield External Vest Carrier V4']['stock'] ?></span>
                 </div>
                 <div class="button-container mt-auto d-flex justify-content-center">
                     <button class="btn btn-outline-success buy-now btn-sm" style="font-size:0.8em; white-space:nowrap;"
@@ -2292,7 +1844,7 @@ button:hover {
                     <span style="margin-left:5px; color:white;"><?= $products['Blackhawk Omega Elite Cross Draw Vest']['sold'] ?> sold</span>
                 </div>
                 <div class="mt-2" style="color:white; text-align:center;">
-                    In stock: <span id="stock-count-blackhawk-omega-elite" style="margin-left:5px;"><?= $products['Blackhawk Omega Elite Cross Draw Vest']['stock'] ?></span>
+                    In stock: <span id="stock-count-blackhawk-omega-elite-cross-draw-vest" style="margin-left:5px;"><?= $products['Blackhawk Omega Elite Cross Draw Vest']['stock'] ?></span>
                 </div>
                 <div class="button-container mt-auto d-flex justify-content-center">
                     <button class="btn btn-outline-success buy-now btn-sm" style="font-size:0.8em; white-space:nowrap;"
@@ -2332,7 +1884,7 @@ button:hover {
                     <span style="margin-left:5px; color:white;"><?= $products['Tasmanian Tiger Vest Base Plus MKII']['sold'] ?> sold</span>
                 </div>
                 <div class="mt-2" style="color:white; text-align:center;">
-                    In stock: <span id="stock-count-tt-vest-base-plus-mkii" style="margin-left:5px;"><?= $products['Tasmanian Tiger Vest Base Plus MKII']['stock'] ?></span>
+                    In stock: <span id="stock-count-tasmanian-tiger-vest-base-plus-mkii" style="margin-left:5px;"><?= $products['Tasmanian Tiger Vest Base Plus MKII']['stock'] ?></span>
                 </div>
                 <div class="button-container mt-auto d-flex justify-content-center">
                     <button class="btn btn-outline-success buy-now btn-sm" style="font-size:0.8em; white-space:nowrap;"
@@ -2365,21 +1917,21 @@ button:hover {
                 data-name="Oakley Light Assault 3 Boots"
                 data-category="Boots"
                 data-price="<?= $products['Oakley Light Assault 3 Boots']['price'] ?>"
-                data-color="Brown"
+                data-color="Dessert Tan"
                 data-size="Multiple Sizes">
                 <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                     <a href="javascript:void(0);" data-toggle="modal" data-target="#productModalOakleyBoots">
                         <img src="Oakley Light Assault 3 Boots.png" class="card-img-top img-fluid" alt="Oakley Light Assault 3 Boots" style="height: 180px; object-fit: cover;">
                     </a>
                     <div class="card-body d-flex flex-column">
-                        <h6 class="feature-title" style="color: white;">Assault Boots</h6>
+                        <h5 class="feature-title" style="color: white;">Assault Boots</h5>
                         <p style="color: white;"><?= $products['Oakley Light Assault 3 Boots']['price'] ?>$</p>
                         <div class="d-flex align-items-center" style="color: gold;">
                             <span><?= $products['Oakley Light Assault 3 Boots']['rating'] ?> ★★★★★</span>
                             <span style="margin-left: 5px; color: white;"><?= $products['Oakley Light Assault 3 Boots']['sold'] ?> sold</span>
                         </div>
                         <div class="mt-2" style="color: white; text-align: center;">
-                            In stock: <span id="stock-count-oakley-boots" style="margin-left: 5px;"><?= $products['Oakley Light Assault 3 Boots']['stock'] ?></span>
+                            In stock: <span id="stock-count-oakley-light-assault-3-boots" style="margin-left: 5px;"><?= $products['Oakley Light Assault 3 Boots']['stock'] ?></span>
                         </div>
                         <div class="button-container mt-auto d-flex justify-content-center">
                             <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;"
@@ -2406,21 +1958,21 @@ button:hover {
                 data-name="Under Armour Charged Loadout Boots"
                 data-category="Boots"
                 data-price="<?= $products['Under Armour Charged Loadout Boots']['price'] ?>"
-                data-color="Black"
+                data-color="Dessert Tan"
                 data-size="Multiple Sizes">
                 <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                     <a href="javascript:void(0);" data-toggle="modal" data-target="#productModalUnderArmourBoots">
                         <img src="Under Armour Charged Loadout Boots.png" class="card-img-top img-fluid" alt="Under Armour Charged Loadout Boots" style="height: 180px; object-fit: cover;">
                     </a>
                     <div class="card-body d-flex flex-column">
-                        <h6 class="feature-title" style="color: white;">Loadout Boots</h6>
+                        <h5 class="feature-title" style="color: white;">Loadout Boots</h5>
                         <p style="color: white;"><?= $products['Under Armour Charged Loadout Boots']['price'] ?>$</p>
                         <div class="d-flex align-items-center" style="color: gold;">
                             <span><?= $products['Under Armour Charged Loadout Boots']['rating'] ?> ★★★★★</span>
                             <span style="margin-left: 5px; color: white;"><?= $products['Under Armour Charged Loadout Boots']['sold'] ?> sold</span>
                         </div>
                         <div class="mt-2" style="color: white; text-align: center;">
-                            In stock: <span id="stock-count-underarmour-boots" style="margin-left: 5px;"><?= $products['Under Armour Charged Loadout Boots']['stock'] ?></span>
+                            In stock: <span id="stock-count-under-armour-charged-loadout-boots" style="margin-left: 5px;"><?= $products['Under Armour Charged Loadout Boots']['stock'] ?></span>
                         </div>
                         <div class="button-container mt-auto d-flex justify-content-center">
                             <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;"
@@ -2454,14 +2006,14 @@ button:hover {
                         <img src="Altama Maritime Assault Mid Boots.jpg" class="card-img-top img-fluid" alt="Altama Maritime Assault Mid Boots" style="height: 180px; object-fit: cover;">
                     </a>
                     <div class="card-body d-flex flex-column">
-                        <h5 class="feature-title" style="color: white;">Altama Maritime Assault Mid Boots</h5>
+                        <h5 class="feature-title" style="color: white;">Altama Boots</h5>
                         <p style="color: white;"><?= $products['Altama Maritime Assault Mid Boots']['price'] ?>$</p>
                         <div class="d-flex align-items-center" style="color: gold;">
                             <span><?= $products['Altama Maritime Assault Mid Boots']['rating'] ?> ★★★★★</span>
                             <span style="margin-left: 5px; color: white;"><?= $products['Altama Maritime Assault Mid Boots']['sold'] ?> sold</span>
                         </div>
                         <div class="mt-2" style="color: white; text-align: center;">
-                            In stock: <span id="stock-count-altama-boots" style="margin-left: 5px;"><?= $products['Altama Maritime Assault Mid Boots']['stock'] ?></span>
+                            In stock: <span id="stock-count-altama-maritime-assault-mid-boots" style="margin-left: 5px;"><?= $products['Altama Maritime Assault Mid Boots']['stock'] ?></span>
                         </div>
                         <div class="button-container mt-auto d-flex justify-content-center">
                             <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;"
@@ -2488,32 +2040,32 @@ button:hover {
                 data-name="NIKE 8 SFB B2 Leather Boots"
                 data-category="Boots"
                 data-price="<?= $products['NIKE 8 SFB B2 Leather Boots']['price'] ?>"
-                data-color="Brown"
+                data-color="Black"
                 data-size="Multiple Sizes">
                 <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                     <a href="javascript:void(0);" data-toggle="modal" data-target="#productModalNikeBoots">
-                        <img src="NIKE 8 SFB B2 Leather Boots.jpg" class="card-img-top img-fluid" alt="NIKE 8 SFB B2 Leather Boots" style="height: 180px; object-fit: cover;">
+                        <img src="NIKE 8 SFB B2 Leather Boots.png" class="card-img-top img-fluid" alt="NIKE 8 SFB B2 Leather Boots" style="height: 180px; object-fit: cover;">
                     </a>
                     <div class="card-body d-flex flex-column">
-                        <h5 class="feature-title" style="color: white;">NIKE 8 SFB B2 Leather Boots</h5>
+                        <h5 class="feature-title" style="color: white;">NIKE 8 Boots</h5>
                         <p style="color: white;"><?= $products['NIKE 8 SFB B2 Leather Boots']['price'] ?>$</p>
                         <div class="d-flex align-items-center" style="color: gold;">
                             <span><?= $products['NIKE 8 SFB B2 Leather Boots']['rating'] ?> ★★★★★</span>
                             <span style="margin-left: 5px; color: white;"><?= $products['NIKE 8 SFB B2 Leather Boots']['sold'] ?> sold</span>
                         </div>
                         <div class="mt-2" style="color: white; text-align: center;">
-                            In stock: <span id="stock-count-nike-boots" style="margin-left: 5px;"><?= $products['NIKE 8 SFB B2 Leather Boots']['stock'] ?></span>
+                            In stock: <span id="stock-count-nike-8-sfb-b2-leather-boots" style="margin-left: 5px;"><?= $products['NIKE 8 SFB B2 Leather Boots']['stock'] ?></span>
                         </div>
                         <div class="button-container mt-auto d-flex justify-content-center">
                             <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;"
-                                onclick="confirmPurchase('NIKE 8 SFB B2 Leather Boots', <?= $products['NIKE 8 SFB B2 Leather Boots']['price'] ?>, 'NIKE 8 SFB B2 Leather Boots.jpg'); modifyStock('NIKE 8 SFB B2 Leather Boots', -1)">
+                                onclick="confirmPurchase('NIKE 8 SFB B2 Leather Boots', <?= $products['NIKE 8 SFB B2 Leather Boots']['price'] ?>, 'NIKE 8 SFB B2 Leather Boots.png'); modifyStock('NIKE 8 SFB B2 Leather Boots', -1)">
                                 Buy Now
                             </button>
                             <button class="btn btn-outline-light add-to-cart btn-sm"
                                 style="font-size: 0.8em; white-space: nowrap;"
                                 data-name="NIKE 8 SFB B2 Leather Boots"
                                 data-price="<?= $products['NIKE 8 SFB B2 Leather Boots']['price'] ?>"
-                                data-image="NIKE 8 SFB B2 Leather Boots.jpg"
+                                data-image="NIKE 8 SFB B2 Leather Boots.png"
                                 onclick="addDBuy('NIKE 8 SFB B2 Leather Boots', 1, <?= $products['NIKE 8 SFB B2 Leather Boots']['price'] ?>); alert('Added to cart')">
                                 Add to Cart
                             </button>
@@ -2526,34 +2078,34 @@ button:hover {
         <?php if (isset($products['Danner 8 Tachyon Boots'])): ?>
             <div class="col product-card" 
                 data-name="Danner 8 Tachyon Boots"
-                data-category="Footwear"
+                data-category="Boots"
                 data-price="<?= $products['Danner 8 Tachyon Boots']['price'] ?>"
-                data-color="Brown"
+                data-color="Black"
                 data-size="Multiple Sizes">
                 <div class="card" style="height: 400px; background-color: #1e1e2f; border: 1px solid #444;">
                     <a href="javascript:void(0);" data-toggle="modal" data-target="#productModalDannerBoots">
-                        <img src="Danner 8 Tachyon Boots.jpg" class="card-img-top img-fluid" alt="Danner 8 Tachyon Boots" style="height: 180px; object-fit: cover;">
+                        <img src="Danner 8 Tachyon Boots.png" class="card-img-top img-fluid" alt="Danner 8 Tachyon Boots" style="height: 180px; object-fit: cover;">
                     </a>
                     <div class="card-body d-flex flex-column">
-                        <h5 class="feature-title" style="color: white;">Danner 8 Tachyon Boots</h5>
+                        <h6 class="feature-title" style="color: white;">Danner 8 Tachyon</h6>
                         <p style="color: white;"><?= $products['Danner 8 Tachyon Boots']['price'] ?>$</p>
                         <div class="d-flex align-items-center" style="color: gold;">
                             <span><?= $products['Danner 8 Tachyon Boots']['rating'] ?> ★★★★★</span>
                             <span style="margin-left: 5px; color: white;"><?= $products['Danner 8 Tachyon Boots']['sold'] ?> sold</span>
                         </div>
                         <div class="mt-2" style="color: white; text-align: center;">
-                            In stock: <span id="stock-count-danner-boots" style="margin-left: 5px;"><?= $products['Danner 8 Tachyon Boots']['stock'] ?></span>
+                            In stock: <span id="stock-count-danner-8-tachyon-boots" style="margin-left: 5px;"><?= $products['Danner 8 Tachyon Boots']['stock'] ?></span>
                         </div>
                         <div class="button-container mt-auto d-flex justify-content-center">
                             <button class="btn btn-outline-success buy-now btn-sm" style="font-size: 0.8em; white-space: nowrap;"
-                                onclick="confirmPurchase('Danner 8 Tachyon Boots', <?= $products['Danner 8 Tachyon Boots']['price'] ?>, 'Danner 8 Tachyon Boots.jpg'); modifyStock('Danner 8 Tachyon Boots', -1)">
+                                onclick="confirmPurchase('Danner 8 Tachyon Boots', <?= $products['Danner 8 Tachyon Boots']['price'] ?>, 'Danner 8 Tachyon Boots.png'); modifyStock('Danner 8 Tachyon Boots', -1)">
                                 Buy Now
                             </button>
                             <button class="btn btn-outline-light add-to-cart btn-sm"
                                 style="font-size: 0.8em; white-space: nowrap;"
                                 data-name="Danner 8 Tachyon Boots"
                                 data-price="<?= $products['Danner 8 Tachyon Boots']['price'] ?>"
-                                data-image="Danner 8 Tachyon Boots.jpg"
+                                data-image="Danner 8 Tachyon Boots.png"
                                 onclick="addDBuy('Danner 8 Tachyon Boots', 1, <?= $products['Danner 8 Tachyon Boots']['price'] ?>); alert('Added to cart')">
                                 Add to Cart
                             </button>
@@ -2633,458 +2185,6 @@ button:hover {
 <footer style="background-color: #000; text-align: center; padding: 10px 0;">
   <p style="color: white; margin: 0;">1 YEAR WARRANTY that nobody can beat!</p>
 </footer>
-
-
-<script>
-let cart = [];
-let discount = 0;
-
-$(document).ready(function() {
-    // Event listener for adding items to the cart
-    $('.add-to-cart').click(function() {
-        let name = $(this).data('name');
-        let price = parseFloat($(this).data('price'));
-        let image = $(this).data('image');
-
-        // Check if the item is already in the cart
-        let itemIndex = cart.findIndex(item => item.name === name);
-
-        if (itemIndex > -1) {
-            // If item exists, increase its quantity
-            cart[itemIndex].quantity += 1;
-        } else {
-            // If the item doesn't exist, add it to the cart
-            let item = { name, price, image, quantity: 1 };
-            cart.push(item);
-        }
-        updateCart(); // Update the cart display
-        updateCartCount(); // Update the cart count in the header
-    });
-
-    // Event listener for the cart button
-    $('#cart-btn').click(function() {
-        updateCart();
-        $('#cartModal').modal('show');
-    });
-
-    // Event listener for applying coupon
-    $('#apply-coupon').click(function() {
-        let couponCode = $('#coupon-code').val().trim();
-        applyCoupon(couponCode);
-    });
-
-    // Event listener for checkout button
-    $('#checkout-btn').click(function() {
-        checkoutCart();
-        
-    });
-});
-
-function updateCart() {
-    let cartItems = $('#cart-items');
-    cartItems.empty();
-
-    if (cart.length === 0) {
-        cartItems.append('<p>Your cart is empty.</p>');
-    } else {
-        let table = $('<table>').addClass('table');
-        table.append('<thead><tr><th>Image</th><th>Name</th><th>Quantity</th><th>Price</th><th>Action</th></tr></thead>');
-        let tbody = $('<tbody>');
-
-        cart.forEach((item, index) => {
-            let row = $('<tr>');
-            row.append(`<td><img src="${item.image}" alt="${item.name}" width="50"></td>`);
-            row.append(`<td>${item.name}</td>`);
-            row.append(`
-                <td>
-                    <div class="quantity-controls" style="display: flex; align-items: center;">
-                        <button class="btn btn-sm btn-secondary minus-quantity" data-index="${index}">-</button>
-                        <span class="mx-2 quantity-value">${item.quantity}</span>
-                        <button class="btn btn-sm btn-secondary plus-quantity" data-index="${index}">+</button>
-                    </div>
-                </td>
-            `);
-            row.append(`<td>$${(item.price * item.quantity).toFixed(2)}</td>`);
-            row.append(`<td><button class="btn btn-danger btn-sm remove-item" data-index="${index}">Remove</button></td>`);
-            tbody.append(row);
-        });
-
-        table.append(tbody);
-        cartItems.append(table);
-
-        let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-        let discountedTotal = total - (total * discount / 100);
-        cartItems.append(`<p><strong>Total: $${total.toFixed(2)}</strong></p>`);
-        if (discount > 0) {
-            cartItems.append(`<p>Discount: ${discount}%</p>`);
-            cartItems.append(`<p>Discounted Total: $${discountedTotal.toFixed(2)}</p>`);
-        }
-    }
-
-    $('#cart-count').text(cart.reduce((sum, item) => sum + item.quantity, 0));
-
-    // Remove previous event listeners before adding new ones
-    $('.plus-quantity').off();
-    $('.minus-quantity').off();
-    $('.remove-item').off();
-
-    // Increase Quantity
-    $('.plus-quantity').on('click', function () {
-        let index = $(this).data('index');
-        let item = cart[index];
-
-        $.ajax({
-            url: 'stocks.php',
-            type: 'POST',
-            data: { productName: item.name },
-            dataType: 'json',
-            success: function (response) {
-                if (response && response.stock !== undefined) {
-                    let stock = parseInt(response.stock);
-                    if (item.quantity < stock) {
-                        cart[index].quantity += 1;
-                        addDBuy(item.name, cart[index].quantity, item.price); // Update the database as well
-                        updateCart();
-                    } else {
-                        alert(`Cannot add more. Only ${stock} items available for ${item.name}.`);
-                    }
-                } else {
-                    alert("Invalid stock response from server.");
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error("Error:", textStatus, errorThrown);
-                alert("Error checking stock. Please try again.");
-            }
-        });
-    });
-
-    // Decrease Quantity
-    $('.minus-quantity').on('click', function () {
-        let index = $(this).data('index');
-        let item = cart[index];
-
-        if (item.quantity > 1) {
-            cart[index].quantity--;
-            updateCart();
-            addDBuy(item.name, cart[index].quantity, item.price); // Update the database
-        } else {
-            cart.splice(index, 1); // Remove item if quantity is 1
-            removeData(item.name); // Remove from database as well
-            updateCart();
-        }
-    });
-
-    // Remove Item
-    $('.remove-item').on('click', function () {
-        let index = $(this).data('index');
-        let item = cart[index];
-        cart.splice(index, 1);
-        removeData(item.name); // Remove from database as well
-        updateCart();
-    });
-}
-
-function applyCoupon(code) {
-    if (code === "DISCOUNT10") {
-        discount = 10;
-        $('#coupon-message').text("10% discount applied!");
-    } else if (code === "DISCOUNT20") {
-        discount = 20;
-        $('#coupon-message').text("20% discount applied!");
-    } else if (code === "DISCOUNT30") {
-        discount = 30;
-        $('#coupon-message').text("30% discount applied!");
-    } else {
-        discount = 0;
-        $('#coupon-message').text("Invalid coupon code.");
-    }
-    updateCart();
-}
-
-function checkoutCart() {
-    if (cart.length === 0) {
-        alert('Your cart is empty!');
-    } else {
-        let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-        if (discount > 0) {
-            total = total * (1 - discount / 100);
-        }
-        alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
-        
-        // Clear the cart
-        cart = [];
-        updateCart();
-        updateCartCount();
-        
-        // Close the modal
-        $('#cartModal').modal('hide');
-    }
-}
-        function buyNow(name, price, image) {
-            // Here you can implement the "Buy Now" functionality
-            alert(`You bought ${name} for $${price}`);
-            // You can also add the item directly to the cart or handle payment here
-        }
-
-        function addDBuy(name, quantity, price) {
-        const data = `${name},${quantity},${price}`;
-        $.post("insert.php", { record: data }, function(response) {
-            alert(response);
-            updateCart();  // Re-update the cart after database change
-            updateCartCount();  // Update the cart count in the UI
-        });
-    }
-    
-    
-        function decrementData(data2) {
-            $.post("decrement.php", { rer: data2 }, function(response) {
-                alert(response);
-            });
-        }
-
-        function removeData(name) {
-    $.post("remove.php", { rero: name }, function(response) {
-        alert(response);
-    });
-}
-   
-        function copyToClipboard(code) {
-        navigator.clipboard.writeText(code).then(() => {
-            alert('Coupon code ' + code + ' copied to clipboard!');
-        }, (err) => {
-            console.error('Could not copy text: ', err);
-        });
-    }
-
-
-    function viewDetails() {
-        // Implement the function to show more details about the deals
-        alert('More details coming soon!');
-    }
-    function confirmPurchase(name, price, image) {
-    const confirmation = confirm(`Are you sure you want to buy ${name} for $${price}?`);
-    if (confirmation) {
-        buyNow(name, price, image);
-        addDBuy(`${name}, 1, ${price}`);
-    }
-}
-
-$('#checkout-btn').click(function() {
-    if (cart.length === 0) {
-        alert('Your cart is empty!');
-        return; // Prevent further execution
-    }
-
-    // Confirmation alert
-    let confirmation = confirm("Are you sure you want to proceed to checkout?");
-    if (!confirmation) {
-        return; // Stop the checkout process if the user cancels
-    }
-
-    // Calculate the original total
-    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    let discountValue = discount; // Get the current discount percentage
-    let discountedTotal = total; // Store the original total for calculation
-
-    if (discountValue > 0) {
-        discountedTotal = total - (total * (discountValue / 100)); // Calculate discounted total
-    }
-
-    // Prepare data to send for checkout
-    let record = {
-        Total: total.toFixed(2), // Original total formatted to two decimal places
-        Discount: discountValue,
-        Discounted: discountedTotal.toFixed(2) // Final price after discount formatted to two decimal places
-    };
-
-    // Prepare cart data (product name and quantity) for stock update
-    let cartData = cart.map(item => ({
-        name: item.name,
-        quantity: item.quantity
-    }));
-
-    // First, update the stock in real-time before proceeding with checkout
-    $.ajax({
-        url: 'stocks.php', // Path to the stock update endpoint
-        type: 'POST',
-        data: {
-            cartData: JSON.stringify(cartData) // Send cart data as a JSON string
-        },
-        success: function(response) {
-            let res = JSON.parse(response);
-            if (res.success) {
-                // After successful stock update, proceed with the checkout
-                $.ajax({
-                    url: 'checkout.php', // Path to the checkout processing endpoint
-                    type: 'POST',
-                    data: { record: JSON.stringify(record) },
-                    success: function(response) {
-                        alert(response); // Display checkout success message
-                        $('#cartModal').modal('hide');
-                        cart = []; // Clear cart after successful checkout
-                        updateCart(); // Update the cart UI
-                        updateCartCount(); // Update the cart count UI
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        alert('Error during checkout: ' + textStatus);
-                    }
-                });
-            } else {
-                // If stock update fails (e.g., insufficient stock), show the error
-                alert(res.error);
-            }
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            alert('Error during stock update: ' + textStatus);
-        }
-    });
-});
-
-
-function modifyStock(productName, change) {
-    const stockCountElement = document.getElementById(`stock-count-${productName.replace(/\s/g, '-').toLowerCase()}`);
-    let currentStock = parseInt(stockCountElement.innerText);
-
-    if (currentStock + change < 0) {
-        alert("No Stocks Available");
-        return;
-    }
-
-    currentStock += change;
-    stockCountElement.innerText = currentStock;
-
-    // Send update to the database
-    fetch('stocks.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: `Name=${encodeURIComponent(productName)}&Stocks=${currentStock}`
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return response.text();
-        })
-        .then(data => {
-            console.log(data);
-            alert(`Stock updated successfully for ${productName}. Current stock: ${currentStock}`);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert(`Error updating stock for ${productName}: ${error.message}`);
-        });
-}
-
-
-window.addEventListener('load', () => {
-    // Fetch stock data for real-time updates on page load
-    fetch('stocks.php')
-        .then(response => response.json())
-        .then(data => {
-            const products = Object.keys(data);
-            products.forEach(productName => {
-                const stockCountElement = document.getElementById(`stock-count-${productName.replace(/\s/g, '-').toLowerCase()}`);
-                const stock = data[productName] || 0; // Handle case where product isn't in DB
-                if (stockCountElement) {
-                    stockCountElement.innerText = stock;
-                }
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching stock data:', error);
-            alert('Error loading stock information.');
-        });
-});
-        function deleteProduct(name) {
-            if (confirm("Are you sure you want to delete this product forever?")) {
-                const formData = new FormData();
-                formData.append('product', name);
-
-                fetch('delete_product.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.text())
-                .then(data => {
-                    alert(data);
-                    location.reload();
-                });
-            }
-        }
-
-    function searchProducts() {
-        const input = document.getElementById('productSearch').value.toLowerCase();
-        const products = document.querySelectorAll('.product-card');
-
-        products.forEach(product => {
-            const productName = product.getAttribute('data-name').toLowerCase();
-            if (productName.includes(input)) {
-                product.style.display = 'block'; // show
-            } else {
-                product.style.display = 'none';  // hide
-            }
-        });
-    }
-
-function applyFilters() {
-  const category = document.getElementById('filterCategory').value;
-  const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
-  const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
-  const color = document.getElementById('filterColor').value;
-  const size = document.getElementById('filterSize').value;
-  const sortBy = document.getElementById('sortBy').value;
-
-  const productCards = Array.from(document.querySelectorAll('.product-card'));
-
-  productCards.forEach(card => {
-    const price = parseFloat(card.dataset.price);
-    const cardCategory = card.dataset.category;
-    const cardColor = card.dataset.color;
-    const cardSize = card.dataset.size;
-
-    const matchesCategory = !category || category === cardCategory;
-    const matchesPrice = price >= minPrice && price <= maxPrice;
-    const matchesColor = !color || color === cardColor;
-    const matchesSize = !size || size === cardSize;
-
-    if (matchesCategory && matchesPrice && matchesColor && matchesSize) {
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-
-  // Sort visible cards
-  const container = document.querySelector('.container .row');
-  const visibleCards = productCards.filter(card => card.style.display !== 'none');
-
-  visibleCards.sort((a, b) => {
-    switch (sortBy) {
-      case 'price-asc':
-        return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
-      case 'price-desc':
-        return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
-      case 'name-asc':
-        return a.dataset.name.localeCompare(b.dataset.name);
-      case 'name-desc':
-        return b.dataset.name.localeCompare(a.dataset.name);
-      case 'popularity':
-        return parseInt(b.querySelector('span:nth-of-type(2)').textContent) -
-               parseInt(a.querySelector('span:nth-of-type(2)').textContent);
-      case 'newness':
-        return 0; // Placeholder: Implement based on real "newness" logic if available
-      default:
-        return 0;
-    }
-  });
-
-  visibleCards.forEach(card => container.appendChild(card)); // Reorder DOM
-}
-
-    </script>
 </body>
 </html>
 

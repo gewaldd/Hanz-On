@@ -4,7 +4,6 @@ include "connection.php";
 <?php
 $products = json_decode(file_get_contents('products.json'), true);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,454 +17,8 @@ $products = json_decode(file_get_contents('products.json'), true);
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="updateData.js"> </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-body {
-    font-family: "Open Sans", Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121218;
-    color: #e0e0e0;
-}
-
-header, footer {
-    background-color: #1e1e2f;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-
-nav {
-    background-color: #1e1e2f;
-    padding: 10px;
-    text-align: center;
-}
-
-nav a {
-    color: #f2f2f2;
-    text-decoration: none;
-    padding: 10px;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #f2c94c;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar-nav {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-.nav-item {
-    margin: 0 15px;
-}
-
-.banner {
-    text-align: center;
-    padding: 20px;
-}
-
-.banner img {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border-radius: 8px;
-}
-
-h2, h3 {
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    color: #f2f2f2;
-    margin: 30px 0 30px;
-}
-
-h2::after, h3::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background: #f2c94c;
-    margin: 10px auto 0;
-}
-
-.content {
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-    background-color: #1b1b27;
-    border-radius: 8px;
-}
-
-footer p {
-    margin: 0;
-    color: #ccc;
-}
-
-input[type="text"] {
-    padding: 8px;
-    width: 200px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    background-color: #2c2c3d;
-    color: #fff;
-}
-
-button {
-    background-color: #f2c94c;
-    color: #111;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #e0b93e;
-}
-
-.product-container, .products-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.product {
-    width: 220px;
-    background-color: #1e1e2f;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    padding: 10px;
-    text-align: center;
-}
-
-.product img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.checkout-section {
-    background-color: #1e1e2f;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    color: white;
-}
-
-.btn-warning {
-    background-color: #f2c94c;
-    color: black;
-    border: none;
-    font-weight: bold;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
-}
-
-.btn-warning:hover {
-    background-color: #e0b93e;
-}
-
-.quantity-controls button {
-    padding: 4px 8px;
-    font-size: 14px;
-    background-color: #2c2c3d;
-    border: 1px solid #555;
-    color: #f2f2f2;
-}
-
-.modal-header {
-    background-color: #1e1e2f;
-    color: #f2f2f2;
-}
-
-#cart-items {
-    max-height: 500px;
-    overflow-y: auto;
-    background-color: #181824;
-    padding: 10px;
-    border: 1px solid #333;
-    color: white;
-}
-
-#navitemu, #cart-btn {
-    color: #ffffff;
-    transition: color 0.3s;
-}
-
-#navitemu:hover, #cart-btn:hover {
-    color: #f2c94c;
-}
-
-.card {
-    background-color: #1e1e2f !important;
-    border-radius: 8px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-}
-
-.card-body {
-    color: white;
-}
-
-.card h5, .card h6 {
-    color: #ffffff;
-}
-
-.card p {
-    color: #cccccc;
-}
-
-.star-rating {
-    color: gold;
-    font-weight: bold;
-}
-
-.btn-outline-success {
-    color: #00c853;
-    border-color: #00c853;
-}
-
-.btn-outline-light {
-    color: #ffffff;
-    border-color: #ffffff;
-}
-
-.btn-outline-success:hover,
-.btn-outline-light:hover {
-    background-color: #00c853;
-    color: white;
-    border-color: #00c853;
-}
-/* Cart modal text and layout fixes */
-#cart-items {
-    color: #ffffff;
-    background-color: #181824;
-    padding: 10px;
-    border: 1px solid #2a2a3a;
-}
-
-#cart-items p,
-#cart-items span,
-#cart-items .item-name,
-#cart-items .item-qty,
-#cart-items .item-price,
-#cart-items .item-total {
-    color: #ffffff !important;
-}
-
-/* Quantity button colors */
-#cart-items .btn {
-    color: #ffffff;
-    background-color: #333;
-    border: 1px solid #555;
-}
-
-#cart-items .btn:hover {
-    background-color: #555;
-}
-
-/* Make sure the image is visible and styled */
-#cart-items img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 4px;
-}
-
-/* Table-style row enhancements */
-.cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-    padding: 10px 0;
-    border-bottom: 1px solid #333;
-}
-
-.cart-item span,
-.cart-item div {
-    color: #ddd;
-}
-
-.cart-item .remove-btn {
-    background-color: #e74c3c;
-    border: none;
-    padding: 4px 10px;
-    color: white;
-    border-radius: 4px;
-}
-#cart-items table {
-    width: 100%;
-    border-collapse: collapse;
-    color: #fff;
-    background-color: transparent;
-}
-
-#cart-items th,
-#cart-items td {
-    padding: 10px;
-    text-align: center;
-    color: #e0e0e0;
-    border-bottom: 1px solid #333;
-}
-.modal-footer {
-    background-color: #2e2e2e; /* dark grey background */
-    color: #fff; /* white text */
-    border-top: 1px solid #444; /* subtle border on top */
-}
-
-.modal-footer .btn {
-    color: #fff; /* ensure buttons have white text */
-}
-
-/* Optional: specifically style the coupon message text color */
-#coupon-message {
-    color: #ff6b6b; /* or keep your existing text-danger style */
-}
-#coupon-code {
-    background-color: #f0f0f0; /* light grey background */
-    color: #333; /* dark text for readability */
-    border: 1px solid #ccc; /* subtle border */
-    padding: 6px 10px; /* add some padding for comfort */
-    border-radius: 4px;
-    transition: border-color 0.3s ease;
-}
-
-#coupon-code:focus {
-    border-color: #28a745; /* green border on focus (matching apply button) */
-    outline: none;
-    box-shadow: 0 0 5px #28a745;
-}
-.row.align-items-stretch {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* or start */
-  gap: 7px; /* space between cards */
-}
-
-@media (min-width: 992px) {
-  .product-card {
-    flex: 0 0 calc(20.5% - 12px);
-    max-width: calc(20.5% - 12px);
-  }
-}
-/* Filter container matches navbar width and styling */
-.filter-container {
-  width: 100%;
-  background-color: #2c2f33;
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-}
-
-/* Inner form is centered and responsive */
-.filter-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  max-width: 1300px;
-}
-
-/* Shared input/select styling */
-.filter-input,
-.filter-select {
-  flex: 1 1 120px;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  background-color: #40444b;
-  color: white;
-  font-weight: 600;
-  min-width: 100px;
-}
-
-/* Button styling */
-.filter-button {
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: 700;
-  background-color: #ffc107;
-  color: black;
-  border: none;
-  box-shadow: 0 3px 8px rgba(255, 193, 7, 0.6);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.filter-button:hover {
-  background-color: #e0a800;
-}
-.modal-content {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  font-family: 'Open Sans', sans-serif;
-}
-
-.modal-title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.4rem;
-}
-
-.carousel-inner img {
-  transition: transform 0.3s ease-in-out;
-}
-
-.carousel-inner img:hover {
-  transform: scale(1.02);
-}
-/* Black carousel arrow buttons */
-.custom-carousel-arrow {
-  width: 40px;
-  height: 40px;
-  background-color: #000; /* Solid black */
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff; /* White icon */
-  font-size: 20px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-  transition: background-color 0.2s ease;
-}
-
-.carousel-control-prev.custom-carousel-arrow {
-  left: 10px;
-}
-
-.carousel-control-next.custom-carousel-arrow {
-  right: 10px;
-}
-
-.custom-carousel-arrow:hover {
-  background-color: #222; /* Slightly lighter on hover */
-}
-
-
-    </style>
+    <link rel="stylesheet" href="products.css">
+    <script src="products.js"></script>
 </head>
 <body>
     
@@ -2519,8 +2072,75 @@ button:hover {
         <?php endif; ?>
     </div>
 </div>
-
     <br>
+<?php 
+$products = json_decode(file_get_contents('productsAdd.json'), true);
+$productCount = count($products);
+?>
+
+<div class="container text-center">
+    <div class="row justify-content-center align-items-stretch">
+        <?php
+        $counter = 0;
+        foreach ($products as $name => $product):
+            // New row every 5 cards
+            if ($counter % 5 === 0 && $counter !== 0) {
+                echo '</div><div class="row justify-content-center align-items-stretch">';
+            }
+
+            $safeName = htmlspecialchars($name);
+            $idSafe = strtolower(str_replace(' ', '-', $name));
+            $image = htmlspecialchars($product['image']);
+            $price = htmlspecialchars($product['price']);
+            $rating = htmlspecialchars($product['rating']);
+            $sold = htmlspecialchars($product['sold']);
+            $stock = htmlspecialchars($product['stock']);
+        ?>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center mb-4 product-card"
+            data-name="<?= $safeName ?>"
+            data-category="Rifle"
+            data-price="<?= $price ?>"
+            data-color="Unknown"
+            data-size="Full-size">
+
+            <div class="card" style="height: 400px; width: 100%; background-color: #1e1e2f; border: 1px solid #444;">
+                <a href="#" data-toggle="modal" data-target="#<?= $idSafe ?>Modal">
+                    <img src="<?= $image ?>" class="card-img-top img-fluid" alt="<?= $safeName ?>" style="height: 180px; object-fit: cover;">
+                </a>
+                <div class="card-body d-flex flex-column">
+                    <h5 class="feature-title text-white"><?= $safeName ?></h5>
+                    <p class="text-white"><?= $price ?>$</p>
+                    <div class="d-flex align-items-center" style="color: gold;">
+                        <span><?= $rating ?> ★★★★★</span>
+                        <span class="text-white ms-2"><?= $sold ?> sold</span>
+                    </div>
+                    <div class="mt-2 text-white text-center">
+                        In stock: <span id="stock-count-<?= $idSafe ?>" class="ms-2"><?= $stock ?></span>
+                    </div>
+                    <div class="button-container mt-auto d-flex justify-content-center">
+                        <button class="btn btn-outline-success buy-now btn-sm" 
+                            style="font-size: 0.8em; white-space: nowrap;"
+                            onclick="confirmPurchase('<?= $safeName ?>', <?= $price ?>, '<?= $image ?>'); modifyStock('<?= $safeName ?>', -1)">
+                            Buy Now
+                        </button>
+                        <button class="btn btn-outline-light add-to-cart btn-sm" 
+                            style="font-size: 0.8em; white-space: nowrap;" 
+                            data-name="<?= $safeName ?>" 
+                            data-price="<?= $price ?>" 
+                            data-image="<?= $image ?>"
+                            onclick="addDBuy('<?= $safeName ?>', 1, <?= $price ?>); alert('Added to cart')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+            $counter++;
+        endforeach;
+        ?>
+    </div>
+</div>
 
 </div>
       </div>
@@ -2827,70 +2447,51 @@ function checkoutCart() {
 $('#checkout-btn').click(function() {
     if (cart.length === 0) {
         alert('Your cart is empty!');
-        return; // Prevent further execution
+        return;
     }
 
-    // Confirmation alert
     let confirmation = confirm("Are you sure you want to proceed to checkout?");
     if (!confirmation) {
-        return; // Stop the checkout process if the user cancels
+        return;
     }
 
-    // Calculate the original total
+    // Calculate totals
     let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    let discountValue = discount; // Get the current discount percentage
-    let discountedTotal = total; // Store the original total for calculation
+    let discountValue = discount;
+    let discountedTotal = discountValue > 0 ? total - (total * (discountValue / 100)) : total;
 
-    if (discountValue > 0) {
-        discountedTotal = total - (total * (discountValue / 100)); // Calculate discounted total
-    }
-
-    // Prepare data to send for checkout
-    let record = {
-        Total: total.toFixed(2), // Original total formatted to two decimal places
-        Discount: discountValue,
-        Discounted: discountedTotal.toFixed(2) // Final price after discount formatted to two decimal places
-    };
-
-    // Prepare cart data (product name and quantity) for stock update
+    // Prepare cart data for stock update
     let cartData = cart.map(item => ({
         name: item.name,
         quantity: item.quantity
     }));
 
-    // First, update the stock in real-time before proceeding with checkout
+    // 1. FIRST, CHECK/UPDATE STOCK
     $.ajax({
-        url: 'stocks.php', // Path to the stock update endpoint
+        url: 'stocks.php',
         type: 'POST',
-        data: {
-            cartData: JSON.stringify(cartData) // Send cart data as a JSON string
-        },
+        data: { cartData: JSON.stringify(cartData) },
         success: function(response) {
             let res = JSON.parse(response);
             if (res.success) {
-                // After successful stock update, proceed with the checkout
-                $.ajax({
-                    url: 'checkout.php', // Path to the checkout processing endpoint
-                    type: 'POST',
-                    data: { record: JSON.stringify(record) },
-                    success: function(response) {
-                        alert(response); // Display checkout success message
-                        $('#cartModal').modal('hide');
-                        cart = []; // Clear cart after successful checkout
-                        updateCart(); // Update the cart UI
-                        updateCartCount(); // Update the cart count UI
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        alert('Error during checkout: ' + textStatus);
-                    }
-                });
+                // 2. AFTER STOCK IS CONFIRMED, REDIRECT TO THE NEW CHECKOUT PAGE
+                let checkoutData = {
+                    items: cart, // The full cart array with names, prices, images, quantities
+                    discount: discount,
+                    subtotal: total,
+                    total: discountedTotal
+                };
+                // Convert the data to a URL-safe string
+                let checkoutDataString = encodeURIComponent(JSON.stringify(checkoutData));
+                // REDIRECT the user
+                window.location.href = `checkout.php?data=${checkoutDataString}`;
+
             } else {
-                // If stock update fails (e.g., insufficient stock), show the error
-                alert(res.error);
+                alert(res.error); // Show stock error
             }
         },
-        error: function(jqXHR, textStatus, errorThrown) {
-            alert('Error during stock update: ' + textStatus);
+        error: function() {
+            alert('Error during stock update.');
         }
     });
 });

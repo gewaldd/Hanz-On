@@ -161,7 +161,7 @@
         "stock": 0
     },
         "Blackhawk Omega Elite Cross Draw Vest": {
-        "price": 229,
+        "price": 209,
         "image": "Blackhawk Omega Elite Cross Draw Vest.jpg",
         "rating": 4.9,
         "sold": 300,
@@ -182,7 +182,7 @@
         "stock": 0
     },
         "Under Armour Charged Loadout Boots": {
-        "price": 199,
+        "price": 159,
         "image": "Under Armour Charged Loadout Boots.jpg",
         "rating": 4.9,
         "sold": 750,
@@ -196,7 +196,7 @@
         "stock": 0
     },
         "NIKE 8 SFB B2 Leather Boots": {
-        "price": 199,
+        "price": 179,
         "image": "NIKE 8 SFB B2 Leather Boots.jpg",
         "rating": 4.6,
         "sold": 390,
@@ -208,6 +208,110 @@
         "rating": 4.6,
         "sold": 390,
         "stock": 0
+    },
+        "Vortex Diamondback Tactical": {
+        "price": 99,
+        "image": "Vortex Diamondback Tactical.jpg",
+        "rating": 4.9,
+        "sold": 100,
+        "stock": 0
+    },
+        "Primary Arms SLx 3-18x50mm": {
+        "price": 119,
+        "image": "Primary Arms SLx 3-18x50mm.jpg",
+        "rating": 4.8,
+        "sold": 190,
+        "stock": 0
+    },
+        "Athlon Talos BTR 4-14x44mm": {
+        "price": 129,
+        "image": "Athlon Talos BTR 4-14x44mm.jpg",
+        "rating": 4.9,
+        "sold": 190,
+        "stock": 0
+    },
+        "Blackhound Genesis 4-14×44 FFP MOA": {
+        "price": 129,
+        "image": "Blackhound Genesis 4-14×44 FFP MOA.jpg",
+        "rating": 4.7,
+        "sold": 120,
+        "stock": 0
+    },
+        "Arken 4-16×50 SH4 Gen2 FFP": {
+        "price": 99,
+        "image": "Arken 4-16×50 SH4 Gen2 FFP.jpg",
+        "rating": 4.9,
+        "sold": 100,
+        "stock": 0
+    },
+        "VFC M4 GBB MAG": {
+        "price": 109,
+        "image": "VFC M4 GBB MAG.jpg",
+        "rating": 4.9,
+        "sold": 160,
+        "stock": 0
+    },
+        "SRC HICAPA CO2 MAG": {
+        "price": 129,
+        "image": "SRC HICAPA CO2 MAG.jpg",
+        "rating": 4.9,
+        "sold": 300,
+        "stock": 0
+    },
+        "BOLT M4 MIDCAP MAGAZINE": {
+        "price": 119,
+        "image": "BOLT M4 MIDCAP MAGAZINE.jpg",
+        "rating": 4.6,
+        "sold": 230,
+        "stock": 0
+    },
+        "LT AK MAGS": {
+        "price": 89,
+        "image": "LT AK MAGS.jpg",
+        "rating": 4.8,
+        "sold": 120,
+        "stock": 0
+    },
+        "WE GLOCK 17 MAGS": {
+        "price": 99,
+        "image": "WE GLOCK 17 MAGS.jpg",
+        "rating": 4.8,
+        "sold": 190,
+        "stock": 0
+    },
+        "Airsoft Artisan Silencer": {
+        "price": 89,
+        "image": "Airsoft Artisan Silencer.jpg",
+        "rating": 4.9,
+        "sold": 140,
+        "stock": 0
+    },
+        "PTS Dead Air Sandman-S Tracer": {
+        "price": 79,
+        "image": "PTS Dead Air Sandman-S Tracer.jpg",
+        "rating": 4.7,
+        "sold": 210,
+        "stock": 0
+    },
+        "Rovyvon GL4 Pro Rail Mounted Laser": {
+        "price": 99,
+        "image": "Rovyvon GL4 Pro Rail Mounted Laser.jpg",
+        "rating": 4.8,
+        "sold": 100,
+        "stock": 0
+    },
+        "Flow 556K Dummy Suppressor": {
+        "price": 99,
+        "image": "Flow 556K Dummy Suppressor.jpg",
+        "rating": 4.9,
+        "sold": 220,
+        "stock": 0
+    },
+        "10.75 inch URX4 M-Lok Handguard": {
+        "price": 99,
+        "image": "10.75 inch URX4 M-Lok Handguard.jpg",
+        "rating": 4.9,
+        "sold": 210,
+        "stock": 0
     }
-
 }

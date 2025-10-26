@@ -412,19 +412,11 @@ button:hover {
 .carousel-inner img:hover {
   transform: scale(1.02);
 }
-/* Equal button sizes */
-button.btn {
-  min-height: 45px;
-  font-size: 16px;
-  font-weight: 500;
-  transition: all 0.2s ease-in-out;
-}
-
-/* Carousel arrow controls */
+/* Black carousel arrow buttons */
 .custom-carousel-arrow {
   width: 40px;
   height: 40px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: #000; /* Solid black */
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
@@ -433,8 +425,10 @@ button.btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff; /* White icon */
   font-size: 20px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease;
 }
 
 .carousel-control-prev.custom-carousel-arrow {
@@ -446,6 +440,5 @@ button.btn {
 }
 
 .custom-carousel-arrow:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #fff;
+  background-color: #222; /* Slightly lighter on hover */
 }

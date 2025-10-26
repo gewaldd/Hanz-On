@@ -1,72 +1,7 @@
 <?php
-include('db.php');
+include('server.php');
 
 ?>
-
-<?php
-session_start();
-include('db.php'); // your database connection file
-
-$errors = [];
-$success = "";
-
-// REGISTER
-if (isset($_POST['register'])) {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm = $_POST['confirm_password'];
-
-    if ($password !== $confirm) {
-        $errors[] = "Passwords do not match.";
-    } else {
-        $hashed = password_hash($password, PASSWORD_DEFAULT);
-
-        $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, 'user')");
-        $stmt->bind_param("sss", $username, $email, $hashed);
-
-        if ($stmt->execute()) {
-            $success = "Account created! You can now log in.";
-        } else {
-            $errors[] = "Error: " . $conn->error;
-        }
-    }
-}
-
-// LOGIN
-if (isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $login_type = $_POST['login_type']; // member or admin
-
-    $stmt = $conn->prepare("SELECT id, name, password, role FROM users WHERE name = ? AND role = ?");
-    $stmt->bind_param("ss", $username, $login_type);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows === 1) {
-        $user = $result->fetch_assoc();
-        if (password_verify($password, $user['password'])) {
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['user_name'] = $user['name'];
-            $_SESSION['role'] = $user['role'];
-
-            if ($user['role'] === 'admin') {
-                header("Location: admin/index.php");
-            } else {
-                header("Location: index.php");
-            }
-            exit();
-        } else {
-            $errors[] = "Invalid password.";
-        }
-    } else {
-        $errors[] = "User not found or role mismatch.";
-    }
-}
-?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +13,7 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <title>Hanz On Airsoft Supplies</title>
+    <title>Soteria's Game Archive</title>
     <style>
        
         body {
@@ -124,14 +59,14 @@ if (isset($_POST['login'])) {
 
 
         header {
-            background-color: #232324ff;
+            background-color: #0d47a1;
             padding: 10px;
             text-align: center;
         }
 
 
         nav {
-            background-color: #232324ff;
+            background-color: #1976d2;
             padding: 10px;
             text-align: center;
         }
@@ -161,7 +96,7 @@ if (isset($_POST['login'])) {
         }
         body {
             font-family: Arial, sans-serif;
-            background-color: #5c5c5cff;
+            background-color: #2962ff;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -189,11 +124,11 @@ if (isset($_POST['login'])) {
             margin-bottom: 20px;
         }
         .panel p {
-            color: #252525ff;
+            color: #777;
             margin-bottom: 30px;
         }
         .panel button {
-            background-color: #252525ff;
+            background-color: #007bff;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -259,17 +194,16 @@ if (isset($_POST['login'])) {
             border-radius: 5px;
         }
         .modal-content button {
-            background-color: #252525ff;
+            background-color: #007bff;
             color: #fff;
             border: none;
             padding: 10px;
-            border-radius: 10px;
+            border-radius: 5px;
             cursor: pointer;
             width: 100%;
-            margin-top: 30px;
         }
         .close {
-            color: #050505ff;
+            color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
@@ -320,13 +254,13 @@ if (isset($_POST['login'])) {
 </div>
 <div class="alert error" id="alertBoxError" style="<?php echo !empty($errors) ? 'display:block;' : ''; ?>">
     <?php foreach ($errors as $error) {
-        echo ($error);
+        echo "<div>$error</div>";
     } ?>
 </div>
     <div class="container">
         <div class="panel left">
             <img src="Logo.png" alt="Logo" class="logo">
-            <h2>Welcome Back to Hanz-On Airsoft Supplies</h2>
+            <h2>Welcome Back to Soteria Game Store!</h2>
             <p>To keep connected with us please login with your personal info</p>
             <button onclick="openModal()">LOG IN</button>  
             
@@ -395,14 +329,5 @@ if (isset($_POST['login'])) {
             }
         }
     </script>
-
-<form method="POST" action="">
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-    <button type="submit" name="register">SIGN UP</button>
-</form>
-
 </body>
 </html>
